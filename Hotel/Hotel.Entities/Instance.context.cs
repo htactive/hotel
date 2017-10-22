@@ -20,6 +20,14 @@ namespace Hotel.Entities
         public DbSet<UserProfile> UserProfile { get; set; }
         public DbSet<UserRole> UserRole { get; set; }
         public DbSet<Company> Company { get; set; }
+        public DbSet<CompanyInfo> CompanyInfo { get; set; }
+        public DbSet<TopSlide> TopSlide { get; set; }
+        public DbSet<Room> Room { get; set; }
+        public DbSet<RoomImage> RoomImage { get; set; }
+        public DbSet<Article> Article { get; set; }
+        public DbSet<Service> Service { get; set; }
+        public DbSet<Booking> Booking { get; set; }
+        public DbSet<UserFeedback> UserFeedback { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -43,6 +51,41 @@ namespace Hotel.Entities
                 .HasMany(x => x.RoleClaims)
                 .WithOne(x => x.Role)
                 .OnDelete(Microsoft.EntityFrameworkCore.DeleteBehavior.Cascade);
+
+            modelBuilder.Entity<Company>()
+                .HasOne(x => x.CompanyInfo)
+                .WithOne(x => x.Company)
+                .OnDelete(Microsoft.EntityFrameworkCore.DeleteBehavior.Cascade);
+
+            modelBuilder.Entity<Company>()
+                .HasMany(x => x.TopSlides)
+                .WithOne(x => x.Company)
+                .OnDelete(Microsoft.EntityFrameworkCore.DeleteBehavior.Cascade);
+            modelBuilder.Entity<Company>()
+                .HasMany(x => x.Rooms)
+                .WithOne(x => x.Company)
+                .OnDelete(Microsoft.EntityFrameworkCore.DeleteBehavior.Cascade);
+            modelBuilder.Entity<Company>()
+                .HasMany(x => x.Articles)
+                .WithOne(x => x.Company)
+                .OnDelete(Microsoft.EntityFrameworkCore.DeleteBehavior.Cascade);
+            modelBuilder.Entity<Company>()
+                .HasMany(x => x.Services)
+                .WithOne(x => x.Company)
+                .OnDelete(Microsoft.EntityFrameworkCore.DeleteBehavior.Cascade);
+            modelBuilder.Entity<Company>()
+                .HasMany(x => x.Bookings)
+                .WithOne(x => x.Company)
+                .OnDelete(Microsoft.EntityFrameworkCore.DeleteBehavior.Cascade);
+            modelBuilder.Entity<Company>()
+                .HasMany(x => x.UserFeedbacks)
+                .WithOne(x => x.Company)
+                .OnDelete(Microsoft.EntityFrameworkCore.DeleteBehavior.Cascade);
+            modelBuilder.Entity<Room>()
+                .HasMany(x => x.RoomImages)
+                .WithOne(x => x.Room)
+                .OnDelete(Microsoft.EntityFrameworkCore.DeleteBehavior.Cascade);
+
 
 
         }

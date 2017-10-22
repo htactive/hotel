@@ -14,4 +14,11 @@ namespace Hotel.Common
         Active = 1,
         Deactive = 2,
     }
+
+    public enum BookingStatusEnums
+    {
+        Pending = 1,
+        Approved = 2,
+        Canceled = 3
+    }
 }
