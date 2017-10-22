@@ -1,0 +1,15 @@
+﻿<#@ template language="C#" debug="true" hostspecific="true"#>
+<#@ include file="Config.ttinclude"#>using Hotel.Entities;
+using HTActive.Core.Repository;
+namespace Hotel.Repository
+{<#
+foreach(var entity in entities){
+    #>
+
+    public partial interface I<#=entity.Name#>Repository : IBaseRepository<<#=entity.Name#>>
+    {
+    }
+<# 
+  }
+#>
+}
