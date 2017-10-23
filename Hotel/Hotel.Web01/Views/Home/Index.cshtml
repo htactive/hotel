@@ -1,108 +1,313 @@
 ﻿@{
     ViewData["Title"] = "Home Page";
 }
+<!-- Top Slider and Booking form -->
+<div id="home-top-section">
+    <!-- Main Slider -->
+    <div id="main-slider">
+        <div class="items">
+            <a href="#">
+                <img src="assets/img/slider/1.jpg" alt="3" />
+            </a>
+        </div>
+        <div class="items">
+            <a href="#">
+                <img src="assets/img/slider/3.jpg" alt="3" />
+            </a>
+        </div>
+        <div class="items">
+            <a href="#">
+                <img src="assets/img/slider/4.jpg" alt="4" />
+            </a>
+        </div>
+        <div class="items">
+            <a href="#">
+                <img src="assets/img/slider/2.jpg" alt="2" />
+            </a>
+        </div>
+    </div>
 
-<div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="6000">
-    <ol class="carousel-indicators">
-        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-        <li data-target="#myCarousel" data-slide-to="1"></li>
-        <li data-target="#myCarousel" data-slide-to="2"></li>
-        <li data-target="#myCarousel" data-slide-to="3"></li>
-    </ol>
-    <div class="carousel-inner" role="listbox">
-        <div class="item active">
-            <img src="~/images/banner1.svg" alt="ASP.NET" class="img-responsive" />
-            <div class="carousel-caption" role="option">
-                <p>
-                    Learn how to build ASP.NET apps that can run anywhere.
-                    <a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkID=525028&clcid=0x409">
-                        Learn More
-                    </a>
-                </p>
+    <!-- Booking Form -->
+    <div class="booking-form-container container">
+        <div class="booking-form-inner-container">
+            <div id="main-booking-form" class="style-2">
+                <h2>Đặt <span>phòng</span></h2>
+                <form class="booking-form clearfix" action="#">
+                    <!-- Do Not remove the classes -->
+                    <div class="input-daterange clearfix">
+                        <div class="booking-fields col-xs-6 col-md-12">
+                            <input placeholder="Chọn ngày đến" class="datepicker-fields check-in" type="text" name="start" /><!-- Date Picker field ( Do Not remove the "datepicker-fields" class ) -->
+                            <i class="fa fa-calendar"></i><!-- Date Picker Icon -->
+                        </div>
+                        <div class="booking-fields col-xs-6 col-md-12">
+                            <input placeholder="Chọn ngày đi" class="datepicker-fields check-out" type="text" name="end" />
+                            <i class="fa fa-calendar"></i>
+                        </div>
+                    </div>
+                    <div class="booking-fields col-xs-6 col-md-6">
+                        <!-- Select boxes ( you can change the items and its value based on your project's needs ) -->
+                        <select name="room-type">
+                            <option value="">Người lớn</option><!-- Select box items ( you can change the items and its value based on your project's needs ) -->
+                            <option value="2">1</option>
+                            <option value="3">2</option>
+                            <option value="4">3</option>
+                            <option value="5">4</option>
+                            <option value="6">5</option>
+                        </select>
+                        <!-- End of Select boxes -->
+                    </div>
+                    <div class="booking-fields col-xs-6 col-md-6">
+                        <select name="guest">
+                            <option value="">Trẻ em</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                        </select>
+                    </div>
+                    <div class="booking-fields col-xs-6 col-md-12">
+                        <input placeholder="Số điện thoại liên hệ" class="" type="text" name="phone" />
+                    </div>
+                    <div class="booking-button-container">
+                        <input class="btn btn-default" value="Đặt phòng ngay" type="submit" />
+                    </div>
+                </form>
             </div>
         </div>
-        <div class="item">
-            <img src="~/images/banner2.svg" alt="Visual Studio" class="img-responsive" />
-            <div class="carousel-caption" role="option">
-                <p>
-                    There are powerful new features in Visual Studio for building modern web apps.
-                    <a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkID=525030&clcid=0x409">
-                        Learn More
-                    </a>
-                </p>
-            </div>
-        </div>
-        <div class="item">
-            <img src="~/images/banner3.svg" alt="Package Management" class="img-responsive" />
-            <div class="carousel-caption" role="option">
-                <p>
-                    Bring in libraries from NuGet, Bower, and npm, and automate tasks using Grunt or Gulp.
-                    <a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkID=525029&clcid=0x409">
-                        Learn More
-                    </a>
-                </p>
-            </div>
-        </div>
-        <div class="item">
-            <img src="~/images/banner4.svg" alt="Microsoft Azure" class="img-responsive" />
-            <div class="carousel-caption" role="option">
-                <p>
-                    Learn how Microsoft's Azure cloud platform allows you to build, deploy, and scale web apps.
-                    <a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkID=525027&clcid=0x409">
-                        Learn More
-                    </a>
-                </p>
-            </div>
-        </div>
-    </div>
-    <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
-        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-        <span class="sr-only">Previous</span>
-    </a>
-    <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
-        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-        <span class="sr-only">Next</span>
-    </a>
-</div>
-
-<div class="row">
-    <div class="col-md-3">
-        <h2>Application uses</h2>
-        <ul>
-            <li>Sample pages using ASP.NET Core MVC</li>
-            <li><a href="https://go.microsoft.com/fwlink/?LinkId=518004">Bower</a> for managing client-side libraries</li>
-            <li>Theming using <a href="https://go.microsoft.com/fwlink/?LinkID=398939">Bootstrap</a></li>
-        </ul>
-    </div>
-    <div class="col-md-3">
-        <h2>How to</h2>
-        <ul>
-            <li><a href="https://go.microsoft.com/fwlink/?LinkID=398600">Add a Controller and View</a></li>
-            <li><a href="https://go.microsoft.com/fwlink/?LinkId=699315">Manage User Secrets using Secret Manager.</a></li>
-            <li><a href="https://go.microsoft.com/fwlink/?LinkId=699316">Use logging to log a message.</a></li>
-            <li><a href="https://go.microsoft.com/fwlink/?LinkId=699317">Add packages using NuGet.</a></li>
-            <li><a href="https://go.microsoft.com/fwlink/?LinkId=699318">Add client packages using Bower.</a></li>
-            <li><a href="https://go.microsoft.com/fwlink/?LinkId=699319">Target development, staging or production environment.</a></li>
-        </ul>
-    </div>
-    <div class="col-md-3">
-        <h2>Overview</h2>
-        <ul>
-            <li><a href="https://go.microsoft.com/fwlink/?LinkId=518008">Conceptual overview of what is ASP.NET Core</a></li>
-            <li><a href="https://go.microsoft.com/fwlink/?LinkId=699320">Fundamentals of ASP.NET Core such as Startup and middleware.</a></li>
-            <li><a href="https://go.microsoft.com/fwlink/?LinkId=398602">Working with Data</a></li>
-            <li><a href="https://go.microsoft.com/fwlink/?LinkId=398603">Security</a></li>
-            <li><a href="https://go.microsoft.com/fwlink/?LinkID=699321">Client side development</a></li>
-            <li><a href="https://go.microsoft.com/fwlink/?LinkID=699322">Develop on different platforms</a></li>
-            <li><a href="https://go.microsoft.com/fwlink/?LinkID=699323">Read more on the documentation site</a></li>
-        </ul>
-    </div>
-    <div class="col-md-3">
-        <h2>Run &amp; Deploy</h2>
-        <ul>
-            <li><a href="https://go.microsoft.com/fwlink/?LinkID=517851">Run your app</a></li>
-            <li><a href="https://go.microsoft.com/fwlink/?LinkID=517853">Run tools such as EF migrations and more</a></li>
-            <li><a href="https://go.microsoft.com/fwlink/?LinkID=398609">Publish to Microsoft Azure Web Apps</a></li>
-        </ul>
     </div>
 </div>
+<!-- End of Top Slider and Booking form -->
+<!-- Luxury Rooms -->
+<div id="luxury-rooms">
+    <!-- Heading box -->
+    <div class="heading-box">
+        <h2>Hệ thống <span>Phòng</span></h2><!-- Title -->
+        <div class="subtitle">Chọn cho bạn một loại phòng tốt nhất</div><!-- Subtitle -->
+    </div>
+
+    <!-- Room Box Container -->
+    <div class="room-container container">
+        <!-- Room box -->
+        <div class="room-boxes">
+            <img src="assets/img/rooms/1.jpg" alt="King Suit" class="room-img"><!-- Room Image -->
+            <div class="room-details col-xs-6 col-md-4">
+                <div class="title">King Suit</div><!-- Room title -->
+                <div class="description">
+                    <!-- Room Description -->
+                    Short description of rooms will be located in this section that you can describe some special features and equipment of rooms. Visitors can get more information about this rooms by clicking on "Details" button.
+                </div>
+                <a href="#" class="btn btn-default">Details</a><!-- Detail link -->
+            </div>
+            <div class="price-container col-xs-6 col-md-8">
+                <div class="price">
+                    <span>$550</span>
+                    - Per Night
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Room box -->
+        <div class="room-boxes right">
+            <img src="assets/img/rooms/2.jpg" alt="Royal Suit" class="room-img">
+            <div class="room-details col-xs-6 col-md-4">
+                <div class="title">Royal Suit</div>
+                <div class="description">
+                    Short description of rooms will be located in this section that you can describe some special features and equipment of rooms. Visitors can get more information about this rooms by clicking on "Details" button.
+                </div>
+                <a href="#" class="btn btn-default">Details</a>
+            </div>
+            <div class="price-container col-xs-6 col-md-8">
+                <div class="price">
+                    <span>$490</span>
+                    - Per Night
+                </div>
+            </div>
+
+        </div>
+        <!-- Room box -->
+        <div class="room-boxes">
+            <img src="assets/img/rooms/3.jpg" alt="Deluxe Two-bedroom Suite" class="room-img">
+            <div class="room-details col-xs-6 col-md-4">
+                <div class="title">Deluxe Two-bedroom Suite</div>
+                <div class="description">
+                    Short description of rooms will be located in this section that you can describe some special features and equipment of rooms. Visitors can get more information about this rooms by clicking on "Details" button.
+                </div>
+                <a href="#" class="btn btn-default">Details</a>
+            </div>
+            <div class="price-container col-xs-6 col-md-8">
+                <div class="price">
+                    <span>$370</span>
+                    - Per Night
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+<!-- End of Luxury Rooms -->
+<!-- Gallery -->
+<div id="articles-in-home">
+    <!-- Heading box -->
+    <div class="heading-box">
+        <h2>Bài viết</h2><!-- Title -->
+    </div>
+
+    <!-- Gallery Container -->
+    <div class="post-container container">
+        <!-- Post boxes -->
+        <div class="col-lg-4 col-lg-4 col-xs-6">
+            <div class="post-box">
+                <a href="#">
+                    <img src="../assets/img/blog/1.jpg" alt="It is not the mountain we conquer but ourselves" class="post-img">
+                </a>
+                <a href="#" class="post-title">It is not the mountain we conquer but ourselves</a>
+                <div class="post-desc">
+                    Short description about the post will be located in this section. It's the best if you put short description ( about 3 lines ) here and users who want to read more can get all the pages texts by clicking on "Continue Reading ..." button.
+                </div>
+                <div class="post-meta clearfix">
+                    <div class="post-date">28 , May , 2014</div>
+                </div>
+            </div>
+        </div>
+        <!-- Post boxes -->
+        <div class="col-lg-4 col-lg-4 col-xs-6">
+            <div class="post-box">
+                <a href="#">
+                    <img src="../assets/img/blog/2.jpg" alt="You can't cross the sea merely by standing and staring at the water." class="post-img">
+                </a>
+                <a href="#" class="post-title">You can't cross the sea merely by standing and staring at the water.</a>
+                <div class="post-desc">
+                    Short description about the post will be located in this section. It's the best if you put short description ( about 3 lines ) here and users who want to read more can get all the pages texts by clicking on "Continue Reading ..." button.
+                </div>
+                <div class="post-meta clearfix">
+                    <div class="post-date">28 , May , 2014</div>
+                </div>
+            </div>
+        </div>
+        <!-- Post boxes -->
+
+        <div class="col-lg-4 col-lg-4 col-xs-6">
+            <div class="post-box">
+                <a href="#">
+                    <img src="../assets/img/blog/3.jpg" alt="Sometimes you get the best light from a burning bridge." class="post-img">
+                </a>
+                <a href="#" class="post-title">Sometimes you get the best light from a burning bridge.</a>
+                <div class="post-desc">
+                    Short description about the post will be located in this section. It's the best if you put short description ( about 3 lines ) here and users who want to read more can get all the pages texts by clicking on "Continue Reading ..." button.
+                </div>
+
+                <div class="post-meta clearfix">
+                    <div class="post-date">28 , May , 2014</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End of Post Container -->
+
+</div>
+<!-- End of Rooms Container -->
+</div>
+<!-- End of Gallery -->
+<!-- Special Packages -->
+<div id="special-packages" class="container">
+    <!-- Heading box -->
+    <div class="heading-box">
+        <h2>Hình <span>ảnh</span></h2><!-- Title -->
+        <div class="subtitle">Hình ảnh khách sạn</div><!-- Subtitle -->
+    </div>
+    <!-- Gallery Container -->
+    <div class="gallery-container container gallery-grid">
+
+        <!-- Gallery Container -->
+        <div class="gallery-container">
+            <ul class="image-main-box clearfix">
+                <li class="item col-xs-6 col-md-4 lobby">
+                    <figure>
+                        <img src="../assets/img/gallery/1.jpg" alt="11" />
+                        <a href="../assets/img/gallery/1.jpg" class="more-details" data-title="Great View">Enlarge</a>
+                        <figcaption>
+                            <h4><span class="fa fa-search-plus" /></h4>
+                        </figcaption>
+                    </figure>
+                </li>
+                <li class="item col-xs-6 col-md-4 pool">
+                    <figure>
+                        <img src="../assets/img/gallery/5.jpg" alt="11" />
+                        <a href="../assets/img/gallery/5.jpg" class="more-details" data-title="Cozy Spaces">Enlarge</a>
+                        <figcaption>
+                            <h4><span class="fa fa-search-plus" /></h4>
+                        </figcaption>
+                    </figure>
+                </li>
+                <li class="item col-xs-6 col-md-4 rooms">
+                    <figure>
+                        <img src="../assets/img/gallery/6.jpg" alt="11" />
+                        <a href="../assets/img/gallery/6.jpg" class="more-details" data-title="Comfortable Rooms">Enlarge</a>
+                        <figcaption>
+                            <h4><span class="fa fa-search-plus" /></h4>
+                        </figcaption>
+                    </figure>
+                </li>
+                <li class="item col-xs-6 col-md-4 pool">
+                    <figure>
+                        <img src="../assets/img/gallery/7.jpg" alt="11" />
+                        <a href="../assets/img/gallery/7.jpg" class="more-details" data-title="Relaxation Spaces">Enlarge</a>
+                        <figcaption>
+                            <h4><span class="fa fa-search-plus" /></h4>
+                        </figcaption>
+                    </figure>
+                </li>
+                <li class="item col-xs-6 col-md-4 pool">
+                    <figure>
+                        <img src="../assets/img/gallery/9.jpg" alt="11" />
+                        <a href="../assets/img/gallery/9.jpg" class="more-details" data-title="Indoor Pool">Enlarge</a>
+                        <figcaption>
+                            <h4><span class="fa fa-search-plus" /></h4>
+                        </figcaption>
+                    </figure>
+                </li>
+                <li class="item col-xs-6 col-md-4 relaxation">
+                    <figure>
+                        <img src="../assets/img/gallery/10.jpg" alt="11" />
+                        <a href="../assets/img/gallery/10.jpg" class="more-details" data-title="Indoor Pool">Enlarge</a>
+                        <figcaption>
+                            <h4><span class="fa fa-search-plus" /></h4>
+                        </figcaption>
+                    </figure>
+                </li>
+                <li class="item col-xs-6 col-md-4 relaxation">
+                    <figure>
+                        <img src="../assets/img/gallery/11.jpg" alt="11" />
+                        <a href="../assets/img/gallery/11.jpg" class="more-details" data-title="Indoor Pool">Enlarge</a>
+                        <figcaption>
+                            <h4><span class="fa fa-search-plus" /></h4>
+                        </figcaption>
+                    </figure>
+                </li>
+                <li class="item col-xs-6 col-md-4 lobby">
+                    <figure>
+                        <img src="../assets/img/gallery/12.jpg" alt="11" />
+                        <a href="../assets/img/gallery/12.jpg" class="more-details" data-title="Indoor Pool">Enlarge</a>
+                        <figcaption>
+                            <h4><span class="fa fa-search-plus" /></h4>
+                        </figcaption>
+                    </figure>
+                </li>
+                <li class="item col-xs-6 col-md-4 sauna">
+                    <figure>
+                        <img src="../assets/img/gallery/13.jpg" alt="11" />
+                        <a href="../assets/img/gallery/13.jpg" class="more-details" data-title="Indoor Pool">Enlarge</a>
+                        <figcaption>
+                            <h4><span class="fa fa-search-plus" /></h4>
+                        </figcaption>
+                    </figure>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <!-- End of Gallery Container -->
+
+</div>
+<!-- End of Special Packages -->
