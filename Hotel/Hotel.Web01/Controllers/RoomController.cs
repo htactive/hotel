@@ -10,20 +10,21 @@ using Hotel.Repository;
 
 namespace Hotel.Web01.Controllers
 {
-    public class HomeController : BaseController
+    public class RoomController : BaseController
     {
-        public HomeController(InstanceRepository repository) : base(repository)
+        public RoomController(InstanceRepository repository) : base(repository)
         {
         }
 
-        public IActionResult Index()
+        public IActionResult List(int page = 0)
         {
             return View();
         }
-        
-        public IActionResult Error()
+
+        public IActionResult Detail(string slug)
         {
-            return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+            return View();
         }
+
     }
 }

@@ -10,9 +10,9 @@ using Hotel.Repository;
 
 namespace Hotel.Web01.Controllers
 {
-    public class HomeController : BaseController
+    public class ContactController : BaseController
     {
-        public HomeController(InstanceRepository repository) : base(repository)
+        public ContactController(InstanceRepository repository) : base(repository)
         {
         }
 
@@ -20,10 +20,11 @@ namespace Hotel.Web01.Controllers
         {
             return View();
         }
-        
-        public IActionResult Error()
+        [HttpPost]
+        public bool SubmitFeedback(SubmitFeedbackRequestModel request)
         {
-            return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+            return true;
         }
+
     }
 }

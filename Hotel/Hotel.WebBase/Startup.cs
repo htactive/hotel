@@ -67,7 +67,70 @@ namespace Hotel.WebBase
                     controller = "Home",
                     action = "Index"
                 });
-                
+            });
+            app.UseMvc(routes =>
+            {
+                routes.MapRoute("contact", "{cc:regex(^(c_)\\w{{4}}$)}/contact", new
+                {
+                    controller = "Contact",
+                    action = "Index"
+                });
+            });
+            app.UseMvc(routes =>
+            {
+                routes.MapRoute("contact_post", "{cc:regex(^(c_)\\w{{4}}$)}/contact/feedback", new
+                {
+                    controller = "Contact",
+                    action = "SubmitFeedback"
+                });
+            });
+            app.UseMvc(routes =>
+            {
+                routes.MapRoute("rooms", "{cc:regex(^(c_)\\w{{4}}$)}/rooms/{page?}", new
+                {
+                    controller = "Room",
+                    action = "List"
+                });
+            });
+            app.UseMvc(routes =>
+            {
+                routes.MapRoute("room_detail", "{cc:regex(^(c_)\\w{{4}}$)}/room/{slug}", new
+                {
+                    controller = "Room",
+                    action = "Detail"
+                });
+            });
+            app.UseMvc(routes =>
+            {
+                routes.MapRoute("articles", "{cc:regex(^(c_)\\w{{4}}$)}/articles/{page}", new
+                {
+                    controller = "Article",
+                    action = "List"
+                });
+            });
+            app.UseMvc(routes =>
+            {
+                routes.MapRoute("article_detail", "{cc:regex(^(c_)\\w{{4}}$)}/article/{slug}", new
+                {
+                    controller = "Article",
+                    action = "Detail"
+                });
+            });
+            app.UseMvc(routes =>
+            {
+                routes.MapRoute("services", "{cc:regex(^(c_)\\w{{4}}$)}/services/{page}", new
+                {
+                    controller = "Service",
+                    action = "List"
+                });
+            });
+            app.UseMvc(routes =>
+            {
+                routes.MapRoute("service_detail", "{cc:regex(^(c_)\\w{{4}}$)}/service/{slug}", new
+                {
+                    controller = "Service",
+                    action = "Detail"
+                });
             });
         }
     }
