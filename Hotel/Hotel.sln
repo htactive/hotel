@@ -3,15 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.26730.12
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hotel.Entities", "Hotel.Entities\Hotel.Entities.csproj", "{564C299C-C8BE-42FA-B6E9-A68CEA091597}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Hotel.Entities", "Hotel.Entities\Hotel.Entities.csproj", "{564C299C-C8BE-42FA-B6E9-A68CEA091597}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hotel.Repository", "Hotel.Repository\Hotel.Repository.csproj", "{22E7E4E0-483C-436F-BA3E-71B11A32D084}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Hotel.Repository", "Hotel.Repository\Hotel.Repository.csproj", "{22E7E4E0-483C-436F-BA3E-71B11A32D084}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hotel.Common", "Hotel.Common\Hotel.Common.csproj", "{BCB31039-081E-488A-9106-B3381C531F68}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Hotel.Common", "Hotel.Common\Hotel.Common.csproj", "{BCB31039-081E-488A-9106-B3381C531F68}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hotel.WebBase", "Hotel.WebBase\Hotel.WebBase.csproj", "{15B9B175-30A6-4954-98C1-9738D1AB0B19}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Hotel.WebBase", "Hotel.WebBase\Hotel.WebBase.csproj", "{15B9B175-30A6-4954-98C1-9738D1AB0B19}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hotel.Web01", "Hotel.Web01\Hotel.Web01.csproj", "{6C527CD8-B65E-4524-92FE-27AC0D5DE1DE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Hotel.Web01", "Hotel.Web01\Hotel.Web01.csproj", "{6C527CD8-B65E-4524-92FE-27AC0D5DE1DE}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "010Common", "010Common", "{652AAF72-E69E-4BF8-A87E-0CED7D96973A}"
 EndProject
