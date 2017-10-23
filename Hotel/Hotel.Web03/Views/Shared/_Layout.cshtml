@@ -1,71 +1,215 @@
-﻿<!DOCTYPE html>
+﻿
+<!DOCTYPE html>
+<!--[if IE 8]><html class="ie ie8"> <![endif]-->
+<!--[if IE 9]><html class="ie ie9"> <![endif]-->
+<!--[if gt IE 9]><!-->
 <html>
-<head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - Hotel.Web03</title>
+<!--<![endif]-->
 
-    <environment include="Development">
-        <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
-        <link rel="stylesheet" href="~/css/site.css" />
-    </environment>
-    <environment exclude="Development">
-        <link rel="stylesheet" href="https://ajax.aspnetcdn.com/ajax/bootstrap/3.3.7/css/bootstrap.min.css"
-              asp-fallback-href="~/lib/bootstrap/dist/css/bootstrap.min.css"
-              asp-fallback-test-class="sr-only" asp-fallback-test-property="position" asp-fallback-test-value="absolute" />
-        <link rel="stylesheet" href="~/css/site.min.css" asp-append-version="true" />
-    </environment>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="keywords" content="farm activities, itineraries, farm holidays, country holidays, bed and breakfast, hotel, country hotel" />
+    <meta name="description" content="Country Holidays - Premium site template for a country accommodation.">
+    <meta name="author" content="Ansonika">
+    <title>Country Holidays - Premium site template for a country accommodation.</title>
+
+    <!-- Favicons-->
+    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" type="image/x-icon" href="img/apple-touch-icon-57x57-precomposed.png">
+    <link rel="apple-touch-icon" type="image/x-icon" sizes="72x72" href="img/apple-touch-icon-72x72-precomposed.png">
+    <link rel="apple-touch-icon" type="image/x-icon" sizes="114x114" href="img/apple-touch-icon-114x114-precomposed.png">
+    <link rel="apple-touch-icon" type="image/x-icon" sizes="144x144" href="img/apple-touch-icon-144x144-precomposed.png">
+
+    <!-- Google web fonts -->
+    <link href='http://fonts.googleapis.com/css?family=Varela+Round' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Lato:300,400,700' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Gochi+Hand' rel='stylesheet' type='text/css'>
+
+    <!-- BASE CSS -->
+    <link href="css/base.css" rel="stylesheet">
+    <!-- REVOLUTION SLIDER CSS -->
+    <link href="rs-plugin/css/settings.css" rel="stylesheet">
+    <link href="css/extralayers.css" rel="stylesheet">
+    <!--[if lt IE 9]>
+      <script src="js/html5shiv.min.js"></script>
+      <script src="js/respond.min.js"></script>
+    <![endif]-->
+
 </head>
+
 <body>
-    <nav class="navbar navbar-inverse navbar-fixed-top">
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a asp-area="" asp-controller="Home" asp-action="Index" class="navbar-brand">Hotel.Web03</a>
-            </div>
-            <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                    <li><a asp-area="" asp-controller="Home" asp-action="Index">Home</a></li>
-                    <li><a asp-area="" asp-controller="Home" asp-action="About">About</a></li>
-                    <li><a asp-area="" asp-controller="Home" asp-action="Contact">Contact</a></li>
-                </ul>
+
+    <!--[if lte IE 8]>
+        <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a>.</p>
+    <![endif]-->
+
+    <!-- End Preload -->
+
+    <div class="layer"></div>
+    <!-- Mobile menu overlay mask -->
+    <!-- Header================================================== -->
+    <header>
+
+        <div id="top_header">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-4 col-sm-4 col-xs-4">
+                        <div id="logo">
+                            <a href="index.html"><img src="img/logo.png" width="240" height="40" alt="CountryHolidays" data-retina="true"></a>
+                        </div>
+                    </div>
+                    <nav class="col-md-8 col-sm-8 col-xs-8">
+                        <a class="cmn-toggle-switch cmn-toggle-switch__rot  open_close" href="javascript:void(0);"><span>Menu mobile</span></a>
+                        <div class="main-menu">
+                            <div id="header_menu">
+                                <img src="img/logo.png" width="240" height="40" alt="CountryHolidays" data-retina="true">
+                            </div>
+                            <a href="#" class="open_close" id="close_in"><i class="icon_set_1_icon-77"></i></a>
+                            <ul>
+                                <li class="submenu">
+                                    <a href="javascript:void(0);" class="show-submenu">Home <i class="icon-down-open-mini"></i></a>
+                                    <ul>
+                                        <li><a href="index.html">With Revolution Slider</a></li>
+                                        <li><a href="index_2.html">With Video Background</a></li>
+                                        <li><a href="index_3.html">With Booking Form</a></li>
+                                    </ul>
+                                </li>
+                                <li class="submenu">
+                                    <a href="javascript:void(0);" class="show-submenu">Rooms <i class="icon-down-open-mini"></i></a>
+                                    <ul>
+                                        <li><a href="rooms_list.html">Room list</a></li>
+                                        <li><a href="room_details.html">Room details</a></li>
+                                        <li><a href="room_booking.html">Room details Booking</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="about.html">About</a></li>
+                                <li class="submenu">
+                                    <a href="javascript:void(0);" class="show-submenu">Activities <i class="icon-down-open-mini"></i></a>
+                                    <ul>
+                                        <li><a href="all_activities.html">All activities</a></li>
+                                        <li><a href="horses.html">Horses</a></li>
+                                        <li><a href="local_food.html">Discover local food</a></li>
+                                        <li><a href="cooking.html">Cooking local food</a></li>
+                                        <li><a href="farm.html">Farm activities</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="contacts.html">Contact us</a></li>
+                                <li class="megamenu submenu">
+                                    <a href="javascript:void(0);" class="show-submenu-mega">Pages &amp; elements<i class="icon-down-open-mini"></i></a>
+                                    <div class="menu-wrapper">
+                                        <div class="col-md-4">
+                                            <h3>Pages</h3>
+                                            <ul>
+                                                <li><a href="gallery_3_columns.html">Gallery 3 columns</a></li>
+                                                <li><a href="gallery_4_columns.html">Gallery 4 columns</a></li>
+                                                <li><a href="fullscreen_gallery.html">Gallery fullscreen</a></li>
+                                                <li><a href="404.html">404 Error page</a></li>
+                                            </ul>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <h3>Pages</h3>
+                                            <ul>
+                                                <li><a href="blog.html">Blog</a></li>
+                                                <li><a href="blog_post.html">Blog post</a></li>
+                                                <li><a href="site_launch/index.html">Site launch / Coming soon</a></li>
+                                                <li><a href="shortcodes.html"><i class="icon-tools"></i> Shortcodes</a></li>
+                                            </ul>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <h3>Elements</h3>
+                                            <ul>
+                                                <li><a href="boxed/index.html"><i class="icon-columns"></i> Boxed version</a></li>
+                                                <li><a href="icon_pack_1.html"><i class="icon-inbox-alt"></i> Icon pack 1 (1900)</a></li>
+                                                <li><a href="icon_pack_2.html"><i class="icon-inbox-alt"></i> Icon pack 2 (100)</a></li>
+                                                <li><a href="icon_pack_3.html"><i class="icon-inbox-alt"></i> Icon pack 3(17)</a></li>
+                                            </ul>
+                                        </div>
+                                    </div><!-- End menu-wrapper -->
+                                </li>
+                            </ul>
+                        </div><!-- End main-menu -->
+
+                    </nav>
+                </div>
             </div>
         </div>
-    </nav>
-    <div class="container body-content">
-        @RenderBody()
-        <hr />
-        <footer>
-            <p>&copy; 2017 - Hotel.Web03</p>
-        </footer>
-    </div>
+    </header><!-- End Header -->
+    @RenderBody()
 
-    <environment include="Development">
-        <script src="~/lib/jquery/dist/jquery.js"></script>
-        <script src="~/lib/bootstrap/dist/js/bootstrap.js"></script>
-        <script src="~/js/site.js" asp-append-version="true"></script>
-    </environment>
-    <environment exclude="Development">
-        <script src="https://ajax.aspnetcdn.com/ajax/jquery/jquery-2.2.0.min.js"
-                asp-fallback-src="~/lib/jquery/dist/jquery.min.js"
-                asp-fallback-test="window.jQuery"
-                crossorigin="anonymous"
-                integrity="sha384-K+ctZQ+LL8q6tP7I94W+qzQsfRV2a+AfHIi9k8z8l9ggpc8X+Ytst4yBo/hH+8Fk">
-        </script>
-        <script src="https://ajax.aspnetcdn.com/ajax/bootstrap/3.3.7/bootstrap.min.js"
-                asp-fallback-src="~/lib/bootstrap/dist/js/bootstrap.min.js"
-                asp-fallback-test="window.jQuery && window.jQuery.fn && window.jQuery.fn.modal"
-                crossorigin="anonymous"
-                integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa">
-        </script>
-        <script src="~/js/site.min.js" asp-append-version="true"></script>
-    </environment>
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 col-sm-3">
+                    <h3>Contacts</h3>
+                    <ul id="contact_details_footer">
+                        <li>Route de Sablet 1023, Marseille<br>France 01923</li>
+                        <li><a href="tel://004542344599">+45 423 445 99</a> / <a href="tel://004542344599">+45 423 445 99</a></li>
+                        <li><a href="/cdn-cgi/l/email-protection#bbd2d5ddd4fbd8d4ced5cfc9c2d3d4d7d2dfdac2c895d8d4d6"><span class="__cf_email__" data-cfemail="abc2c5cdc4ebc8c4dec5dfd9d2c3c4c7c2cfcad2d885c8c4c6">[email&#160;protected]</span></a></li>
+                    </ul>
+                </div>
+                <div class="col-md-2 col-sm-2">
+                    <h3>About</h3>
+                    <ul>
+                        <li><a href="#">About us</a></li>
+                        <li><a href="#">Rooms</a></li>
+                        <li><a href="#">Activities</a></li>
+                        <li><a href="#">Contact us</a></li>
+                        <li><a href="#">Gallery</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3 col-sm-3">
+                    <h3>Change language</h3>
+                    <ul>
+                        <li><a href="#">English</a></li>
+                        <li><a href="#">French</a></li>
+                        <li><a href="#">Spanish</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3 col-sm-3" id="newsletter">
+                    <h3>Newsletter</h3>
+                    <p>Join our newsletter to keep be informed about offers and news.</p>
+                    <div id="message-newsletter_2"></div>
+                    <form method="post" action="assets/newsletter.php" name="newsletter_2" id="newsletter_2">
+                        <div class="form-group">
+                            <input name="email_newsletter_2" id="email_newsletter_2" type="email" value="" placeholder="Your mail" class="form-control">
+                        </div>
+                        <input type="submit" value="Subscribe" class="btn_1 white" id="submit-newsletter_2">
+                    </form>
+                </div>
+            </div><!-- End row -->
+            <div class="row">
+                <div class="col-md-12">
+                    <div id="social_footer">
+                        <ul>
+                            <li><a href="#"><i class="icon-facebook"></i></a></li>
+                            <li><a href="#"><i class="icon-twitter"></i></a></li>
+                            <li><a href="#"><i class="icon-google"></i></a></li>
+                            <li><a href="#"><i class="icon-instagram"></i></a></li>
+                            <li><a href="#"><i class="icon-pinterest"></i></a></li>
+                            <li><a href="#"><i class="icon-vimeo"></i></a></li>
+                            <li><a href="#"><i class="icon-youtube-play"></i></a></li>
+                        </ul>
+                        <p>© CountryHolidays 2015</p>
+                    </div>
+                </div>
+            </div><!-- End row -->
+        </div><!-- End container -->
+    </footer><!-- End footer -->
 
-    @RenderSection("Scripts", required: false)
+    <div id="toTop"></div><!-- Back to top button -->
+    <!-- Common scripts -->
+    <script src="https://ajax.cloudflare.com/cdn-cgi/scripts/78d64697/cloudflare-static/email-decode.min.js"></script>
+    <script src="js/jquery-1.11.2.min.js"></script>
+    <script src="js/common_scripts_min.js"></script>
+    <script src="js/functions.js"></script>
+    <script src="assets/validate.js"></script>
+
+    <!-- SLIDER REVOLUTION 4.x SCRIPTS  -->
+    <script src="rs-plugin/js/jquery.themepunch.tools.min.js"></script>
+    <script src="rs-plugin/js/jquery.themepunch.revolution.min.js"></script>
+    <script src="js/revolution_func.js"></script>
+
 </body>
 </html>
