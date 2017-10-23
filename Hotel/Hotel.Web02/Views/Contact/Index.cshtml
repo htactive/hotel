@@ -1,0 +1,98 @@
+﻿
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<title>Liên hệ</title>
+<div id="subheader">
+    <h1>Liện hệ</h1>
+    <h3>Thông tin liên hệ với chúng tôi</h3>
+</div>
+<!-- subheader close -->
+
+<div id="map-container">
+    <iframe frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.co.id/maps?f=q&amp;source=s_q&amp;hl=en&amp;q=16+Riverside+Rd,+Singapore&amp;sll=-2.547988,118.037109&amp;sspn=29.394918,50.756836&amp;ie=UTF8&amp;geocode=Fb8IFgAdu40vBg&amp;split=0&amp;hq=&amp;hnear=16+Riverside+Rd,+Singapore&amp;ll=1.444031,103.779771&amp;spn=0.014522,0.024784&amp;t=m&amp;z=14&amp;output=embed&amp;iwloc=false"></iframe>
+</div>
+
+<!-- content begin -->
+<div id="content">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8">
+                <div class="col-md-12">
+                    <h3>Liên hệ ngay với chúng tôi!</h3>
+                    Liên hệ với chúng tôi nếu bạn có bất cứ điều gì thắc mắc<br />
+                    <br />
+                </div>
+                <div class="contact_form_holder">
+                    <form name="contactForm" id='contact_form' method="post" action='send.php'>
+
+                        <div class="col-md-7">
+                            <input type="text" class="form-control" name="name" id="name" placeholder="Tên của bạn" />
+                        </div>
+
+                        <div class="col-md-6">
+                            <input type="text" class="form-control" name="email" id="email" placeholder="Địa chỉ email" />
+                        </div>
+
+                        <div class="col-md-6">
+                            <input type="text" class="form-control" name="phone" id="phone" placeholder="Số điện thoại" />
+                        </div>
+                        <div class="col-md-12">
+                            <input type="text" class="form-control" name="title" id="title" placeholder="Tiều đề" />
+                        </div>
+
+                        <div class="col-md-12">
+                            <textarea cols="10" rows="10" name="message" id="message" class="form-control" placeholder="Nội dung"></textarea>
+                            <div id="mail_success" class="success">Thank you. Your message has been sent.</div>
+                            <div id="mail_failed" class="error">Error, email not sent</div>
+
+                            <p id="btnsubmit">
+                                <input type="submit" id="send" value="Gửi" class="btn btn-custom" />
+                            </p>
+                        </div>
+
+
+                    </form>
+                </div>
+
+            </div>
+
+            <div id="sidebar" class="col-md-4">
+                <!-- widget text -->
+
+                <div class="widget widget-text">
+                    <address>
+                        <h4>Corsiva South Beach</h4>
+                        <span>10 Main Street, South Beach</span>
+                        <span><strong>Phone:</strong>(200) 333 8890</span>
+                        <span><strong>Fax:</strong>(200) 333 8892</span>
+                        <span><strong>Email:</strong><a href="mailto:contact@example.com">contact@example.com</a></span>
+                    </address>
+                    <div class="small-border"></div>
+                    <address>
+                        <h4>Corsiva Los Angles</h4>
+                        <span>15 Main Street, Los Angles</span>
+                        <span><strong>Phone:</strong>(200) 333 8890</span>
+                        <span><strong>Fax:</strong>(200) 333 8892</span>
+                        <span><strong>Email:</strong><a href="mailto:contact@example.com">contact@example.com</a></span>
+                    </address>
+                    <div class="small-border"></div>
+                    <address>
+                        <h4>Corsiva New York</h4>
+                        <span>20 Main Street, New York</span>
+                        <span><strong>Phone:</strong>(200) 333 8890</span>
+                        <span><strong>Fax:</strong>(200) 333 8892</span>
+                        <span><strong>Email:</strong><a href="mailto:contact@example.com">contact@example.com</a></span>
+                    </address>
+
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+    </div>
+<!-- content close -->
+
+
