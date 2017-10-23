@@ -17,7 +17,9 @@ get-childitem env:ASPNETCORE_ENVIRONMENT</pre></p>
 <p><pre>//Add migration:
 add-migration [tenguoiadd]_[sothutu]</pre></p>
 Trong đó:
+
 - Tên người add: account của người add ví dụ: thuan
+
 - Số thứ tự: Số thứ tự của migration do mình add format theo 6 chữ số, ví dụ: 000012
 
 ### Lệnh update database:
