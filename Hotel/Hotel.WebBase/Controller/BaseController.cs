@@ -58,6 +58,8 @@ namespace Hotel.WebBase.Controllers
                 return "VCC_cc_Inactive";
             }
             this.CurrentCompany = Mappers.Mapper.ToModel(entity);
+            ViewBag.CurrentCompany = this.CurrentCompany;
+            ViewBag.BaseHref = $"/{ this.CurrentCompany.CompanyCode}/";
             return string.Empty;
         }
 

@@ -16,7 +16,7 @@ namespace Hotel.Web01.Controllers
         {
         }
 
-        public IActionResult List(int page = 0)
+        public IActionResult List(int p = 0)
         {
             return View();
         }
