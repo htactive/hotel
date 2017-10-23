@@ -23,7 +23,7 @@ Trong đó:
 - Số thứ tự: Số thứ tự của migration do mình add format theo 6 chữ số, ví dụ: 000012
 
 ### Lệnh update database:
-<p><pre>//Add migration:
+<p><pre>//Update database:
 update-database </pre></p>
 Đối với lệnh update database, cần cẩn thận kiểm tra evironment hiện tại trước nếu không sẽ update nhầm lên database production.
 <p><pre>//Xem environment hiện tại:
