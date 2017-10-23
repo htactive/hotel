@@ -1,7 +1,6 @@
 ﻿@{
     Layout = null;
 }
-<base href="@ViewBag.BaseHref" />
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,7 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Hotel">
     <meta name="author" content="">
-
+    <base href="@ViewBag.BaseHref" />
     <!-- LOAD CSS FILES -->
     <link href="~/assets/css/main.css" rel="stylesheet" type="text/css">
 </head>
@@ -30,17 +29,11 @@
         <!-- mainmenu begin -->
         <div id="mainmenu-container">
             <ul id="mainmenu">
-                <li>
-                    <a href="#">Trang chủ</a>
-                </li>
-                
-                <li>
-                    <a href="/rooms">Phòng</a>
-                </li>
-                <li>
-                    <a href="/articles">Tin tức</a>  
-                </li>
-                <li><a href="/contact">Liên hệ</a></li>
+                <li><a href="#">Trang chủ</a></li>
+                <li><a href="rooms">Phòng</a></li>
+                <li><a href="articles">Tin tức</a></li>
+                <li><a href="gallery">Hình ảnh</a></li>
+                <li><a href="contact">Liên hệ</a></li>
             </ul>
         </div>
         <!-- mainmenu close -->
@@ -130,9 +123,10 @@
                         <nav>
                             <ul>
                                 <li><a href="#">Trang chủ</a></li>
-                                <li><a href="#">Phòng</a></li>
-                                <li><a href="#">Tin tức</a></li>
-                                <li><a href="#">Liên hệ</a></li>
+                                <li><a href="rooms">Phòng</a></li>
+                                <li><a href="articles">Tin tức</a></li>
+                                <li><a href="gallery">Hình ảnh</a></li>
+                                <li><a href="contact">Liên hệ</a></li>
                             </ul>
                         </nav>
                     </div>

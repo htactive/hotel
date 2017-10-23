@@ -132,6 +132,15 @@ namespace Hotel.WebBase
                     action = "Detail"
                 });
             });
+
+            app.UseMvc(routes =>
+            {
+                routes.MapRoute("gallery", "{cc:regex(^(c_)\\w{{4}}$)}/gallery", new
+                {
+                    controller = "Gallery",
+                    action = "Index"
+                });
+            });
         }
     }
 }
