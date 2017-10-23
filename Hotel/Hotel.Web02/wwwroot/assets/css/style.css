@@ -1,4 +1,4 @@
-@charset "utf-8";
+﻿@charset "utf-8";
 
 /*- - - - - - - - - - - - - - - - - - - - 
 /* Import font
@@ -763,25 +763,28 @@ section.dark {
 }
 
 #explore-1.side-bg .background-image {
-    background:url('../img/explore/pic (1).jpg')
+    background:url('../../assets/img/explore/pic (1).jpg')
 }
 
 #explore-2.side-bg .background-image {
-    background:url('../img/explore/pic (2).jpg')
+    background: url('../../assets/img/explore/pic (2).jpg')
 }
 
 #explore-3.side-bg .background-image {
-    background:url('../img/explore/pic (3).jpg')
+    background:url('../../assets/img/explore/pic (3).jpg')
 }
 
 #explore-4.side-bg .background-image {
-    background:url('../img/explore/pic (4).jpg')
+    background: url('../../assets/img/explore/pic (4).jpg')
 }
 
 #explore-5.side-bg .background-image {
-    background:url('../img/explore/pic (5).jpg')
+    background: url('../../assets/img/explore/pic (5).jpg')
 }
 
+#explore-6.side-bg .background-image {
+    background: url('../../assets/img/explore/pic (6).jpg')
+}
 .side-bg .inner-padding {
     padding:40px 0
 }
