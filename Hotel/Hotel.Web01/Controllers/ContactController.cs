@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 using Hotel.Web01.Models;
 using Hotel.WebBase.Controllers;
 using Hotel.Repository;
+using Hotel.WebBase.Models;
 
 namespace Hotel.Web01.Controllers
 {
