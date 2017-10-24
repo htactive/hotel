@@ -28,7 +28,7 @@
 @media (max-width: 768px) {
 #banner{width:400px;margin:auto;}
 .intro_title_booking {margin-top:0;text-align:center;}
-#booking_container {height: auto;padding:110px 0 70px 0;}
+#booking_container {height: auto;}
 #book {margin-top:40px;}
 .sub_header_content div{padding:0 10%; font-size:14px;}
 .sub_header_content div h3{font-size:36px;}
@@ -47,7 +47,6 @@
 .main_title h2{  font-size:24px; }
 .main_title p{font-size:16px}
 #booking_container {
-	padding:0 0 70px 0;
 	height: auto;
 }
 .intro_title_booking {
