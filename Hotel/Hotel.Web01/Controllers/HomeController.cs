@@ -18,9 +18,10 @@ namespace Hotel.Web01.Controllers
 
         public IActionResult Index()
         {
-            return View();
+            var homePageViewModel = GetHomePage();
+            return View(homePageViewModel);
         }
-        
+
         public IActionResult Error()
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
