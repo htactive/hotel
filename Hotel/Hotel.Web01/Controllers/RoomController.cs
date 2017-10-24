@@ -18,11 +18,13 @@ namespace Hotel.Web01.Controllers
 
         public IActionResult List(int p = 0)
         {
+            var viewmodel = GetRoomsListPage(10);
             return View();
         }
 
         public IActionResult Detail(string slug)
         {
+            var viewmodel = GetRoomDetailPage(slug);
             return View();
         }
 

@@ -12,9 +12,10 @@ using System;
 namespace Hotel.Web01.Migrations
 {
     [DbContext(typeof(InstanceEntities))]
-    partial class InstanceEntitiesModelSnapshot : ModelSnapshot
+    [Migration("20171024141401_thuan_000004")]
+    partial class thuan_000004
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -200,16 +201,10 @@ namespace Hotel.Web01.Migrations
 
                     b.Property<int?>("CompanyId");
 
-                    b.Property<DateTime?>("CreatedDate");
-
                     b.Property<string>("Description")
                         .HasMaxLength(2147483647);
 
                     b.Property<int?>("ImageId");
-
-                    b.Property<bool?>("IsHidden");
-
-                    b.Property<int?>("Priority");
 
                     b.Property<string>("Title")
                         .HasMaxLength(256);
@@ -328,8 +323,6 @@ namespace Hotel.Web01.Migrations
                         .HasMaxLength(2147483647);
 
                     b.Property<bool?>("IsHidden");
-
-                    b.Property<int?>("Priority");
 
                     b.Property<string>("ShortDescription")
                         .HasMaxLength(2147483647);

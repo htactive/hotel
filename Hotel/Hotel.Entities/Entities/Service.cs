@@ -23,6 +23,7 @@ namespace Hotel.Entities
         [ForeignKey("CoverImageId")]
         public Image CoverImage { get; set; }
         public bool? IsHidden { get; set; }
+        public int? Priority { get; set; }
         public int? CompanyId { get; set; }
         [ForeignKey("CompanyId")]
         public Company Company { get; set; }

@@ -20,6 +20,7 @@ namespace Hotel.WebBase.Controllers
 {
     public class BaseController : Controller
     {
+        const int TakeInHome = 20;
         protected InstanceRepository Repository { get; private set; }
 
         public BaseController(InstanceRepository repository)
@@ -38,6 +39,8 @@ namespace Hotel.WebBase.Controllers
                 throw new Exception(ccValidateResult);
             }
             ViewBag.CurrentUser = this.CurrentUser;
+            ViewBag.CurrentCompanyInfo = this.GetCompanyInfo();
+            ViewBag.PhotosInFooter = this.GetPhotosListPage(TakeInHome, null).Photos;
             base.OnActionExecuting(context);
         }
 
@@ -60,7 +63,6 @@ namespace Hotel.WebBase.Controllers
             this.CurrentCompany = Mappers.Mapper.ToModel(entity);
             ViewBag.CurrentCompany = this.CurrentCompany;
             ViewBag.BaseHref = $"/{ this.CurrentCompany.CompanyCode}/";
-            ViewBag.CurrentCompanyInfo = this.GetCompanyInfo();
             return string.Empty;
         }
 
@@ -134,14 +136,258 @@ namespace Hotel.WebBase.Controllers
         {
             var viewmodel = new HomePageViewModel
             {
-                CompanyInfo = GetCompanyInfo(),
                 TopSlides = GetTopSlides(),
-                Rooms = GetRoomsInHome()
+                Rooms = GetRoomsListPage(TakeInHome, null)?.Rooms,
+                Services = GetServicesListPage(TakeInHome, null).Services,
+                Articles = GetArticlesListPage(TakeInHome, null)?.Articles
             };
 
             return viewmodel;
         }
-        protected CompanyInfoModel GetCompanyInfo()
+
+        protected RoomsListPageViewModel GetRoomsListPage(int pageSize, int? currentPage = 0)
+        {
+            if (CurrentCompany == null) return null;
+            if (pageSize <= 0)
+            {
+                throw new Exception("PageSize should be greater than zero");
+            }
+
+            var query = this.Repository.RoomRepository.GetAll()
+                .Include(x => x.CoverImage)
+                .Include("RoomImages.Image")
+                .Where(x => x.CompanyId == this.CurrentCompany.Id && x.IsHidden != true);
+
+            var totalCount = currentPage == null ? 0 : query.Count();
+            var entities = query
+                .OrderBy(x => x.Priority)
+                .Skip((currentPage ?? 0) * pageSize).Take(pageSize).ToList();
+
+            var viewmodel = new RoomsListPageViewModel()
+            {
+                CurrentPage = currentPage ?? 0,
+                PageSize = pageSize,
+                TotalPage = (int)Math.Ceiling(1.0 * totalCount / pageSize),
+                Rooms = entities.Select(x => Mappers.Mapper.ToModel(x, (m, e) =>
+                {
+                    m.CoverImage = Mappers.Mapper.ToModel(e.CoverImage);
+                    m.RoomImages = e.RoomImages.Select(r => Mappers.Mapper.ToModel(r, (mm, ee) =>
+                    {
+                        mm.Image = Mappers.Mapper.ToModel(ee.Image);
+                    })).ToList();
+                })).ToList()
+            };
+            return viewmodel;
+        }
+
+        protected RoomDetailPageViewModel GetRoomDetailPage(string request)
+        {
+            if (this.CurrentCompany == null) return null;
+            request = (request ?? string.Empty).ToLower();
+            var query = this.Repository.RoomRepository.GetAll()
+                .Include(x => x.CoverImage)
+                .Include("RoomImages.Image")
+                .Where(x => x.CompanyId == this.CurrentCompany.Id);
+            var entity = query.FirstOrDefault(x => x.Slug == request);
+            if (entity == null)
+            {
+                if (int.TryParse(request, out int id))
+                {
+                    entity = query.FirstOrDefault(x => x.Id == id);
+                }
+            }
+            if (entity == null || entity.IsHidden == true)
+            {
+                return null;
+            }
+            var relatedRooms = query.Where(x => x.IsHidden != true && x.Id != entity.Id)
+                .OrderBy(x => x.Priority - entity.Priority > 0 ? (x.Priority - entity.Priority) : (entity.Priority - x.Priority)).Take(TakeInHome).ToList();
+            Func<Room, RoomModel> mapper = (en) =>
+            {
+                return Mappers.Mapper.ToModel(en, (m, e) =>
+                {
+                    m.CoverImage = Mappers.Mapper.ToModel(e.CoverImage);
+                    m.RoomImages = e.RoomImages.Select(r => Mappers.Mapper.ToModel(r, (mm, ee) =>
+                    {
+                        mm.Image = Mappers.Mapper.ToModel(ee.Image);
+                    })).ToList();
+                });
+            };
+            var viewmodel = new RoomDetailPageViewModel()
+            {
+                Room = mapper(entity),
+                RelatedRooms = relatedRooms.Select(mapper).ToList()
+            };
+            return viewmodel;
+        }
+
+        protected ArticlesListPageViewModel GetArticlesListPage(int pageSize, int? currentPage = 0)
+        {
+            if (CurrentCompany == null) return null;
+            if (pageSize <= 0)
+            {
+                throw new Exception("PageSize should be greater than zero");
+            }
+
+            var query = this.Repository.ArticleRepository.GetAll().
+                Include(x => x.CoverImage)
+                .Where(x => x.CompanyId == this.CurrentCompany.Id && x.IsHidden != true);
+            var totalCount = currentPage == null ? 0 : query.Count();
+            var entities = query
+                .OrderByDescending(x => x.CreatedDate)
+                .Skip((currentPage ?? 0) * pageSize)
+                .Take(pageSize)
+                .ToList();
+            var viewmodel = new ArticlesListPageViewModel()
+            {
+                CurrentPage = currentPage ?? 0,
+                PageSize = pageSize,
+                TotalPage = (int)Math.Ceiling(1.0 * totalCount / pageSize),
+                Articles = entities.Select(x => Mappers.Mapper.ToModel(x, (m, e) =>
+                {
+                    m.CoverImage = Mappers.Mapper.ToModel(e.CoverImage);
+                })).ToList(),
+
+            };
+            return viewmodel;
+        }
+
+        protected ArticleDetailPageViewModel GetArticleDetailPage(string request)
+        {
+            if (this.CurrentCompany == null) return null;
+            request = (request ?? string.Empty).ToLower();
+            var query = this.Repository.ArticleRepository.GetAll()
+                .Include(x => x.CoverImage)
+                .Where(x => x.CompanyId == this.CurrentCompany.Id);
+            var entity = query.FirstOrDefault(x => x.Slug == request);
+            if (entity == null)
+            {
+                if (int.TryParse(request, out int id))
+                {
+                    entity = query.FirstOrDefault(x => x.Id == id);
+                }
+            }
+            if (entity == null || entity.IsHidden == true)
+            {
+                return null;
+            }
+            var relatedArticles = query.Where(x => x.IsHidden != true && x.Id != entity.Id && x.CreatedDate <= entity.CreatedDate)
+                .OrderByDescending(x => x.CreatedDate).Take(TakeInHome).ToList();
+            Func<Article, ArticleModel> mapper = (en) =>
+            {
+                return Mappers.Mapper.ToModel(en, (m, e) =>
+                {
+                    m.CoverImage = Mappers.Mapper.ToModel(e.CoverImage);
+                });
+            };
+            var viewmodel = new ArticleDetailPageViewModel()
+            {
+                Article = mapper(entity),
+                RelatedArticles = relatedArticles.Select(mapper).ToList()
+            };
+            return viewmodel;
+        }
+
+        protected ServicesListPageViewModel GetServicesListPage(int pageSize, int? currentPage = 0)
+        {
+            if (CurrentCompany == null) return null;
+            if (pageSize <= 0)
+            {
+                throw new Exception("PageSize should be greater than zero");
+            }
+
+            var query = this.Repository.ServiceRepository.GetAll().
+                Include(x => x.CoverImage)
+                .Where(x => x.CompanyId == this.CurrentCompany.Id && x.IsHidden != true);
+            var totalCount = currentPage == null ? 0 : query.Count();
+            var entities = query
+                .OrderBy(x => x.Priority)
+                .Skip((currentPage ?? 0) * pageSize)
+                .Take(pageSize)
+                .ToList();
+            var viewmodel = new ServicesListPageViewModel()
+            {
+                CurrentPage = currentPage ?? 0,
+                PageSize = pageSize,
+                TotalPage = (int)Math.Ceiling(1.0 * totalCount / pageSize),
+                Services = entities.Select(x => Mappers.Mapper.ToModel(x, (m, e) =>
+                {
+                    m.CoverImage = Mappers.Mapper.ToModel(e.CoverImage);
+                })).ToList(),
+
+            };
+            return viewmodel;
+        }
+
+        protected ServiceDetailPageViewModel GetServiceDetailPage(string request)
+        {
+            if (this.CurrentCompany == null) return null;
+            request = (request ?? string.Empty).ToLower();
+            var query = this.Repository.ServiceRepository.GetAll()
+                .Include(x => x.CoverImage)
+                .Where(x => x.CompanyId == this.CurrentCompany.Id);
+            var entity = query.FirstOrDefault(x => x.Slug == request);
+            if (entity == null)
+            {
+                if (int.TryParse(request, out int id))
+                {
+                    entity = query.FirstOrDefault(x => x.Id == id);
+                }
+            }
+            if (entity == null || entity.IsHidden == true)
+            {
+                return null;
+            }
+            var relatedServices = query.Where(x => x.IsHidden != true && x.Id != entity.Id)
+                .OrderBy(x => x.Priority - entity.Priority > 0 ? (x.Priority - entity.Priority) : (entity.Priority - x.Priority))
+                .Take(TakeInHome).ToList();
+            Func<Service, ServiceModel> mapper = (en) =>
+            {
+                return Mappers.Mapper.ToModel(en, (m, e) =>
+                {
+                    m.CoverImage = Mappers.Mapper.ToModel(e.CoverImage);
+                });
+            };
+            var viewmodel = new ServiceDetailPageViewModel()
+            {
+                Service = mapper(entity),
+                RelatedServices = relatedServices.Select(mapper).ToList()
+            };
+            return viewmodel;
+        }
+
+        protected PhotosListPageViewModel GetPhotosListPage(int pageSize, int? currentPage = 0)
+        {
+            if (CurrentCompany == null) return null;
+            if (pageSize <= 0)
+            {
+                throw new Exception("PageSize should be greater than zero");
+            }
+
+            var query = this.Repository.PhotoRepository.GetAll().
+                Include(x => x.Image)
+                .Where(x => x.CompanyId == this.CurrentCompany.Id && x.IsHidden != true);
+            var totalCount = currentPage == null ? 0 : query.Count();
+            var entities = query
+                .OrderBy(x => x.Priority).ThenByDescending(x => x.CreatedDate)
+                .Skip((currentPage ?? 0) * pageSize)
+                .Take(pageSize)
+                .ToList();
+            var viewmodel = new PhotosListPageViewModel()
+            {
+                CurrentPage = currentPage ?? 0,
+                PageSize = pageSize,
+                TotalPage = (int)Math.Ceiling(1.0 * totalCount / pageSize),
+                Photos = entities.Select(x => Mappers.Mapper.ToModel(x, (m, e) =>
+                {
+                    m.Image = Mappers.Mapper.ToModel(e.Image);
+                })).ToList(),
+            };
+            return viewmodel;
+        }
+
+        #region Private method
+        private CompanyInfoModel GetCompanyInfo()
         {
             if (CurrentCompany == null) return null;
             var entity = Repository.CompanyInfoRepository.GetAll()
@@ -155,12 +401,13 @@ namespace Hotel.WebBase.Controllers
             return model;
         }
 
-        protected List<TopSlideModel> GetTopSlides()
+        private List<TopSlideModel> GetTopSlides()
         {
             if (CurrentCompany == null) return null;
             var entities = this.Repository.TopSlideRepository.GetAll()
                 .Include(x => x.Image)
-                .Where(x => x.CompanyId == this.CurrentCompany.Id).Take(10).ToList();
+                .Where(x => x.CompanyId == this.CurrentCompany.Id && x.IsHidden != true)
+                .OrderBy(x => x.Priority).Take(TakeInHome).ToList();
             var models = entities.Select(x => Mappers.Mapper.ToModel(x, (m, e) =>
             {
                 m.Image = Mappers.Mapper.ToModel(e.Image);
@@ -168,24 +415,7 @@ namespace Hotel.WebBase.Controllers
             return models;
         }
 
-        protected List<RoomModel> GetRoomsInHome()
-        {
-            if (CurrentCompany == null) return null;
-            var entities = this.Repository.RoomRepository.GetAll()
-                .Include(x => x.CoverImage)
-                .Include("RoomImages.Image")
-                .Where(x => x.CompanyId == this.CurrentCompany.Id)
-                .Take(10)
-                .ToList();
-            var models = entities.Select(x => Mappers.Mapper.ToModel(x, (m, e) =>
-            {
-                m.CoverImage = Mappers.Mapper.ToModel(e.CoverImage);
-                m.RoomImages = e.RoomImages.Select(r => Mappers.Mapper.ToModel(r, (mm, ee) =>
-                {
-                    mm.Image = Mappers.Mapper.ToModel(ee.Image);
-                })).ToList();
-            })).ToList();
-            return models;
-        }
+        #endregion
+
     }
 }
