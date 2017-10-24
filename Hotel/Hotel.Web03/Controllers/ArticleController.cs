@@ -23,8 +23,7 @@ namespace Hotel.Web01.Controllers
 
         public IActionResult Detail(string slug)
         {
-            // Get data by slug
-
+            // get detail by slug
             return View();
         }
     }
