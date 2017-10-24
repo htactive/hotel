@@ -18,6 +18,7 @@ namespace Hotel.Web04.Controllers
 
         public IActionResult Index()
         {
+            ViewBag.ActivePage = "home";
             return View();
         }
 

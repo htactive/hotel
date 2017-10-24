@@ -19,6 +19,7 @@ namespace Hotel.Web04.Controllers
 
         public IActionResult Index()
         {
+            ViewBag.ActivePage = "contact";
             return View();
         }
 

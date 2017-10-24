@@ -18,11 +18,13 @@ namespace Hotel.Web04.Controllers
 
         public IActionResult List(int p = 0)
         {
+            ViewBag.ActivePage = "room";
             return View();
         }
 
         public IActionResult Detail(string slug)
         {
+            ViewBag.ActivePage = "room";
             ViewBag.RoomTitle = "Phòng giường đôi sao hỏa";
             return View();
         }
