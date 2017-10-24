@@ -129,7 +129,7 @@ namespace Hotel.Repository
         }
 		protected override int GetKeyId(CompanyInfo model)
         {
-            return model.Id;
+            return model.CompanyId;
         }
 	}
 

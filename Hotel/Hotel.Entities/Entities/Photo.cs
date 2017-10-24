@@ -18,5 +18,6 @@ namespace Hotel.Entities
         public int? ImageId { get; set; }
         [ForeignKey("ImageId")]
         public Image Image { get; set; }
+        public Company Company { get; set; }
     }
 }
