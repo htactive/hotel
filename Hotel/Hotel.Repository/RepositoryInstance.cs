@@ -108,6 +108,60 @@ namespace Hotel.Repository
 				(_CompanyRepository = ServiceProvider.GetService<ICompanyRepository>());
 			}
 		}
+		private ICompanyInfoRepository _CompanyInfoRepository;
+        public ICompanyInfoRepository CompanyInfoRepository 
+		{ 
+			get
+			{
+				return _CompanyInfoRepository ?? 
+				(_CompanyInfoRepository = ServiceProvider.GetService<ICompanyInfoRepository>());
+			}
+		}
+		private IArticleRepository _ArticleRepository;
+        public IArticleRepository ArticleRepository 
+		{ 
+			get
+			{
+				return _ArticleRepository ?? 
+				(_ArticleRepository = ServiceProvider.GetService<IArticleRepository>());
+			}
+		}
+		private IRoomRepository _RoomRepository;
+        public IRoomRepository RoomRepository 
+		{ 
+			get
+			{
+				return _RoomRepository ?? 
+				(_RoomRepository = ServiceProvider.GetService<IRoomRepository>());
+			}
+		}
+		private IPhotoRepository _PhotoRepository;
+        public IPhotoRepository PhotoRepository 
+		{ 
+			get
+			{
+				return _PhotoRepository ?? 
+				(_PhotoRepository = ServiceProvider.GetService<IPhotoRepository>());
+			}
+		}
+		private IServiceRepository _ServiceRepository;
+        public IServiceRepository ServiceRepository 
+		{ 
+			get
+			{
+				return _ServiceRepository ?? 
+				(_ServiceRepository = ServiceProvider.GetService<IServiceRepository>());
+			}
+		}
+		private ITopSlideRepository _TopSlideRepository;
+        public ITopSlideRepository TopSlideRepository 
+		{ 
+			get
+			{
+				return _TopSlideRepository ?? 
+				(_TopSlideRepository = ServiceProvider.GetService<ITopSlideRepository>());
+			}
+		}
 		#endregion
     }
 	
@@ -124,6 +178,12 @@ namespace Hotel.Repository
 			services.AddScoped<IUserProfileRepository, UserProfileRepository>();
 			services.AddScoped<IUserRoleRepository, UserRoleRepository>();
 			services.AddScoped<ICompanyRepository, CompanyRepository>();
+			services.AddScoped<ICompanyInfoRepository, CompanyInfoRepository>();
+			services.AddScoped<IArticleRepository, ArticleRepository>();
+			services.AddScoped<IRoomRepository, RoomRepository>();
+			services.AddScoped<IPhotoRepository, PhotoRepository>();
+			services.AddScoped<IServiceRepository, ServiceRepository>();
+			services.AddScoped<ITopSlideRepository, TopSlideRepository>();
 		}
     }
 }

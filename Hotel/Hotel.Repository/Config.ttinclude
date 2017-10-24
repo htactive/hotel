@@ -11,6 +11,12 @@ var entities = new List<EntityMetadataRender>(){
 	new EntityMetadataRender(){Name = "UserProfile"},
 	new EntityMetadataRender(){Name = "UserRole"},
 	new EntityMetadataRender(){Name = "Company"},
+	new EntityMetadataRender(){Name = "CompanyInfo"},
+	new EntityMetadataRender(){Name = "Article"},
+	new EntityMetadataRender(){Name = "Room"},
+	new EntityMetadataRender(){Name = "Photo"},
+	new EntityMetadataRender(){Name = "Service"},
+	new EntityMetadataRender(){Name = "TopSlide"},
 
 };
 #>

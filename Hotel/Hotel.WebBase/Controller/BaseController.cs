@@ -128,5 +128,63 @@ namespace Hotel.WebBase.Controllers
         {
             get; private set;
         }
+
+        protected HomePageViewModel GetHomePage()
+        {
+            var viewmodel = new HomePageViewModel
+            {
+                CompanyInfo = GetCompanyInfo(),
+                TopSlides = GetTopSlides(),
+                Rooms = GetRoomsInHome()
+            };
+
+            return viewmodel;
+        }
+        protected CompanyInfoModel GetCompanyInfo()
+        {
+            if (CurrentCompany == null) return null;
+            var entity = Repository.CompanyInfoRepository.GetAll()
+                .Include(x => x.Logo)
+                .FirstOrDefault(x => x.CompanyId == this.CurrentCompany.Id);
+            var model = Mappers.Mapper.ToModel(entity);
+            if (model != null)
+            {
+                model.Logo = Mappers.Mapper.ToModel(entity.Logo);
+            }
+            return model;
+        }
+
+        protected List<TopSlideModel> GetTopSlides()
+        {
+            if (CurrentCompany == null) return null;
+            var entities = this.Repository.TopSlideRepository.GetAll()
+                .Include(x => x.Image)
+                .Where(x => x.CompanyId == this.CurrentCompany.Id).Take(10).ToList();
+            var models = entities.Select(x => Mappers.Mapper.ToModel(x, (m, e) =>
+            {
+                m.Image = Mappers.Mapper.ToModel(e.Image);
+            })).ToList();
+            return models;
+        }
+
+        protected List<RoomModel> GetRoomsInHome()
+        {
+            if (CurrentCompany == null) return null;
+            var entities = this.Repository.RoomRepository.GetAll()
+                .Include(x => x.CoverImage)
+                .Include("RoomImages.Image")
+                .Where(x => x.CompanyId == this.CurrentCompany.Id)
+                .Take(10)
+                .ToList();
+            var models = entities.Select(x => Mappers.Mapper.ToModel(x, (m, e) =>
+            {
+                m.CoverImage = Mappers.Mapper.ToModel(e.CoverImage);
+                m.RoomImages = e.RoomImages.Select(r => Mappers.Mapper.ToModel(r, (mm, ee) =>
+                {
+                    mm.Image = Mappers.Mapper.ToModel(ee.Image);
+                })).ToList();
+            })).ToList();
+            return models;
+        }
     }
 }

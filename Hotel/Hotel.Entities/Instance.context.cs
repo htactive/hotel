@@ -28,6 +28,7 @@ namespace Hotel.Entities
         public DbSet<Service> Service { get; set; }
         public DbSet<Booking> Booking { get; set; }
         public DbSet<UserFeedback> UserFeedback { get; set; }
+        public DbSet<Photo> Photo { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -81,13 +82,14 @@ namespace Hotel.Entities
                 .HasMany(x => x.UserFeedbacks)
                 .WithOne(x => x.Company)
                 .OnDelete(Microsoft.EntityFrameworkCore.DeleteBehavior.Cascade);
+            modelBuilder.Entity<Company>()
+                .HasMany(x => x.Photos)
+                .WithOne(x => x.Company)
+                .OnDelete(Microsoft.EntityFrameworkCore.DeleteBehavior.Cascade);
             modelBuilder.Entity<Room>()
                 .HasMany(x => x.RoomImages)
                 .WithOne(x => x.Room)
                 .OnDelete(Microsoft.EntityFrameworkCore.DeleteBehavior.Cascade);
-
-
-
         }
     }
 }

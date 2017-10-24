@@ -38,4 +38,28 @@ namespace Hotel.Repository
     public partial interface ICompanyRepository : IBaseRepository<Company>
     {
     }
+
+    public partial interface ICompanyInfoRepository : IBaseRepository<CompanyInfo>
+    {
+    }
+
+    public partial interface IArticleRepository : IBaseRepository<Article>
+    {
+    }
+
+    public partial interface IRoomRepository : IBaseRepository<Room>
+    {
+    }
+
+    public partial interface IPhotoRepository : IBaseRepository<Photo>
+    {
+    }
+
+    public partial interface IServiceRepository : IBaseRepository<Service>
+    {
+    }
+
+    public partial interface ITopSlideRepository : IBaseRepository<TopSlide>
+    {
+    }
 }

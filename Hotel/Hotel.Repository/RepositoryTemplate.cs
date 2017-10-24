@@ -119,4 +119,82 @@ namespace Hotel.Repository
             return model.Id;
         }
 	}
+
+    public partial class CompanyInfoRepository : BaseRepository<CompanyInfo, InstanceEntities>, ICompanyInfoRepository
+    {
+        public CompanyInfoRepository(IBaseUnitOfWork<InstanceEntities> unitOfWork)
+            : base(unitOfWork)
+        {
+
+        }
+		protected override int GetKeyId(CompanyInfo model)
+        {
+            return model.Id;
+        }
+	}
+
+    public partial class ArticleRepository : BaseRepository<Article, InstanceEntities>, IArticleRepository
+    {
+        public ArticleRepository(IBaseUnitOfWork<InstanceEntities> unitOfWork)
+            : base(unitOfWork)
+        {
+
+        }
+		protected override int GetKeyId(Article model)
+        {
+            return model.Id;
+        }
+	}
+
+    public partial class RoomRepository : BaseRepository<Room, InstanceEntities>, IRoomRepository
+    {
+        public RoomRepository(IBaseUnitOfWork<InstanceEntities> unitOfWork)
+            : base(unitOfWork)
+        {
+
+        }
+		protected override int GetKeyId(Room model)
+        {
+            return model.Id;
+        }
+	}
+
+    public partial class PhotoRepository : BaseRepository<Photo, InstanceEntities>, IPhotoRepository
+    {
+        public PhotoRepository(IBaseUnitOfWork<InstanceEntities> unitOfWork)
+            : base(unitOfWork)
+        {
+
+        }
+		protected override int GetKeyId(Photo model)
+        {
+            return model.Id;
+        }
+	}
+
+    public partial class ServiceRepository : BaseRepository<Service, InstanceEntities>, IServiceRepository
+    {
+        public ServiceRepository(IBaseUnitOfWork<InstanceEntities> unitOfWork)
+            : base(unitOfWork)
+        {
+
+        }
+		protected override int GetKeyId(Service model)
+        {
+            return model.Id;
+        }
+	}
+
+    public partial class TopSlideRepository : BaseRepository<TopSlide, InstanceEntities>, ITopSlideRepository
+    {
+        public TopSlideRepository(IBaseUnitOfWork<InstanceEntities> unitOfWork)
+            : base(unitOfWork)
+        {
+
+        }
+		protected override int GetKeyId(TopSlide model)
+        {
+            return model.Id;
+        }
+	}
 }

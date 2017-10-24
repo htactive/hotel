@@ -24,5 +24,6 @@ namespace Hotel.Entities
         public List<Service> Services { get; set; }
         public List<Booking> Bookings { get; set; }
         public List<UserFeedback> UserFeedbacks { get; set; }
+        public List<Photo> Photos { get; set; }
     }
 }

@@ -9,21 +9,21 @@ namespace Hotel.WebBase.Mappers
 {
     public partial class Mapper
     {
-        public static CompanyModel ToModel(Company entity, Action<CompanyModel, Company> then = null)
+        public static PhotoModel ToModel(Photo entity, Action<PhotoModel, Photo> then = null)
         {
             if (entity == null) return null;
-            var model = new CompanyModel()
+            var model = new PhotoModel()
             {
                 Id = entity.Id,
-                CompanyCode = entity.CompanyCode,
-                ExpiredDate = entity.ExpiredDate,
-                IsActive = entity.IsActive
+                Description = entity.Description,
+                Title = entity.Title,
+                ImageId = entity.ImageId
             };
             then?.Invoke(model, entity);
             return model;
         }
 
-        public static List<CompanyModel> ToModel(IEnumerable<Company> entities, Action<CompanyModel, Company> then = null)
+        public static List<PhotoModel> ToModel(IEnumerable<Photo> entities, Action<PhotoModel, Photo> then = null)
         {
             return entities?.Select(x => ToModel(x, then)).ToList();
         }
