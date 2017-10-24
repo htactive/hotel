@@ -7,12 +7,13 @@ using Microsoft.AspNetCore.Mvc;
 using Hotel.Web04.Models;
 using Hotel.WebBase.Controllers;
 using Hotel.Repository;
+using Hotel.WebBase.Models;
 
 namespace Hotel.Web04.Controllers
 {
-    public class HomeController : BaseController
+    public class ContactController : BaseController
     {
-        public HomeController(InstanceRepository repository) : base(repository)
+        public ContactController(InstanceRepository repository) : base(repository)
         {
         }
 
@@ -21,9 +22,10 @@ namespace Hotel.Web04.Controllers
             return View();
         }
 
-        public IActionResult Error()
+        [HttpPost]
+        public bool SubmitFeedback(SubmitFeedbackRequestModel request)
         {
-            return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+            return true;
         }
     }
 }

@@ -1,0 +1,323 @@
+@charset "utf-8";
+
+/* Starhotel template color: Turqoise 
+
+				HEX = #75c5cf
+
+				RGB = 90, 186, 198 
+
+====================================================  				
+
+*/
+
+
+
+/* Basic Styles 
+
+-------------------------------------------------- */
+
+/* Links color */
+
+a, .navbar-default .navbar-nav > li.current-menu-ancestor > a, .navbar-default .navbar-nav > .open > a, .navbar-default .navbar-nav .open .dropdown-menu > .active > a, .navbar-default .navbar-nav .open .dropdown-menu > .active > a:hover, .wpb_wrapper .ui-state-default a, .ui-widget-content a, .vc_tta-color-grey.vc_tta-style-classic .vc_tta-tab > a, .vc_tta-color-grey.vc_tta-style-classic .vc_tta-panel.vc_active .vc_tta-panel-title > a {
+
+    color: #75c5cf;
+
+}
+
+/* Secondary text color */
+
+#reservation-form .price, label span, .room-thumb .main .price, .room-thumb .content p span, .blog-author span, #owl-reviews .text-balloon span, .ui-state-highlight, .ui-widget-content .ui-state-highlight, .ui-widget-header .ui-state-highlight, .ui-state-hover, .ui-widget-content .ui-state-hover, .ui-widget-header .ui-state-hover, .ui-state-focus, .ui-widget-content .ui-state-focus, .ui-widget-header .ui-state-focus, .ui-state-active, .ui-widget-content .ui-state-active, .ui-widget-header .ui-state-active, aside .widget ul a:hover, .yamm a:hover, .pagination > li > a {
+
+    color: #75c5cf !important;
+
+}
+
+/* Icon color */
+
+#reservation-form .fa.infield, #reservation-form .form-inline .fa.infield, .room-thumb .content i, .box-icon i, table i, #go-top i, .testimonials .owl-theme .owl-controls .owl-buttons div i, .standard-slider .owl-theme .owl-controls .owl-buttons div i, .testimonials .owl-theme .owl-controls .owl-buttons div, .standard-slider .owl-theme .owl-controls .owl-buttons div, #go-top {
+
+    color: #75c5cf;
+
+}
+
+/* UI border color */
+
+header, .navbar-nav .dropdown-menu, .blog-author img, .comment .avatar img, aside h3, blockquote, .ui-widget-header, .ui-state-highlight, .ui-widget-content .ui-state-highlight, .ui-widget-header .ui-state-highlight, .ui-state-hover, .ui-widget-content .ui-state-hover, .ui-widget-header .ui-state-hover, .ui-state-focus, .ui-widget-content .ui-state-focus, .ui-widget-header .ui-state-focus, .ui-state-active, .ui-widget-content .ui-state-active, .ui-widget-header .ui-state-active, #owl-gallery, #owl-reviews img, .parallax-effect, .revolution-slider, .testimonials .owl-theme .owl-controls .owl-buttons div, .standard-slider .owl-theme .owl-controls .owl-buttons div, #go-top, .box-icon .circle, .testimonials .owl-theme .owl-controls .owl-buttons div, .standard-slider .owl-theme .owl-controls .owl-buttons div, #map, .vc_images_carousel, .ubermenu-skin-none .ubermenu-submenu-drop {
+
+    border-color: #75c5cf !important;
+
+}
+
+/* UI background color */
+
+#lang_sel ul ul a, #lang_sel ul ul a:visited {
+
+    background-color: #272727;
+
+}
+
+#top-header .th-text .th-item .btn-group ul.dropdown-menu > li > a:hover, article .meta-date, .comment .comment-reply-link, aside .widget .tagcloud a, aside .widget ul a:hover .badge, #call-to-action, .nav-pills > li.active > a, .nav-pills > li.active > a:hover, .nav-pills > li.active > a:focus, .pagination > .active > a, .pagination > .active > span, .pagination > .active > a:hover, .pagination > .active > span:hover, .pagination > .active > a:focus, .pagination > .active > span:focus, .pagination > li > span.current, #go-top:hover, .testimonials .owl-theme .owl-controls .owl-buttons div:hover, .standard-slider .owl-theme .owl-controls .owl-buttons div:hover, .box-icon .circle:hover, .gallery a i, .gallery-slider a i, .vc_images_carousel a i, #lang_sel a:hover, #lang_sel ul ul a:hover, .sticky .meta:first-of-type::after {
+
+    background: #75c5cf;
+
+}
+
+/* RGB background color */
+
+.room-thumb .main .price, .comment, .table-striped > tbody > tr:nth-child(odd) > td, .table-striped > tbody > tr:nth-child(odd) > th, .panel-default > .panel-heading {
+
+    background-color: rgba(90, 186, 198, 0.05);
+
+}
+
+.parallax-effect .color-overlay {
+
+    background-color: rgba(90, 186, 198, 0.8);
+
+}
+
+/* Header
+
+-------------------------------------------------- */
+
+/* Navigation text colors */
+
+.navbar-default .navbar-brand, .navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus, .navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:focus, .navbar-default .navbar-nav > .open > a, .navbar-default .navbar-nav > .open > a:hover, .navbar-default .navbar-nav > .open > a:focus, .navbar-default .navbar-nav .dropdown-menu > li > a:hover, .navbar-default .navbar-nav .dropdown-menu > li > a:focus, .navbar-default .navbar-nav > li.current-menu-ancestor > a, .ubermenu.ubermenu-main .ubermenu-item-level-0:hover > .ubermenu-target, .ubermenu-main .ubermenu-item-level-0.ubermenu-current-menu-parent > .ubermenu-target, .ubermenu-main .ubermenu-item-level-0.ubermenu-current-menu-ancestor > .ubermenu-target {
+
+    color: #75c5cf;
+
+}
+
+/* Navigation Mobile colors */
+
+ @media (max-width: 767px) {
+
+.navbar-default .navbar-nav .open .dropdown-menu > li > a:hover, .navbar-default .navbar-nav .open .dropdown-menu > li > a:focus, .navbar-default .navbar-nav .open .dropdown-menu > .active > a, .navbar-default .navbar-nav .open .dropdown-menu > .active > a:hover, .navbar-default .navbar-nav .open .dropdown-menu > .active > a:focus {
+
+    color: #75c5cf;
+
+    background-color: #ffffff;
+
+}
+
+}
+
+/* Primary Button Color
+
+-------------------------------------------------- */
+
+.btn-default {
+
+    color: #75c5cf;
+
+}
+
+.btn-default:hover, .btn-default:focus, .btn-default:active, .btn-default.active, .open .dropdown-toggle.btn-default {
+
+    color: #75c5cf;
+
+}
+
+.btn-primary, .btn-primary.disabled, .btn-primary[disabled] {
+
+    background-color: #75c5cf;
+
+    border-color: #35929e;
+
+}
+
+.btn-primary:hover, .btn-primary:focus, .btn-primary:active, .btn-primary.active, .open .dropdown-toggle.btn-primary {
+
+    background-color: #64cedb;
+
+    border-color: #35929e;
+
+}
+
+/* Other Styles
+
+-------------------------------------------------- */
+
+body, .wpb_wrapper .wpb_tabs .ui-state-active a, .wpb_wrapper .wpb_tabs .ui-state-active a:link, .ui-widget-content, .wpb_wrapper .wpb_tour .wpb_tabs_nav li a:hover, .wpb_wrapper .wpb_tour .wpb_tabs_nav li a:active, .wpb_wrapper .wpb_tour .ui-state-active a, .wpb_wrapper .wpb_tour .ui-state-active a:link, .vc_tta-color-grey.vc_tta-style-classic .vc_tta-tab.vc_active > a, .vc_tta-color-grey.vc_tta-style-classic .vc_tta-panel .vc_tta-panel-title > a {
+
+    color: #333333;
+
+}
+
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6, a:hover, a:focus, .box-icon a:hover, .usp a:hover i, .navbar-default .navbar-nav > li > a, .navbar-default .navbar-nav .dropdown-menu > li > a {
+
+    color: #5e5e5e;
+
+}
+
+aside .widget ul a {
+
+    color: #272727;
+
+}
+
+.nav-tabs > li.active > a, .nav-tabs > li.active > a:hover, .nav-tabs > li.active > a:focus, .nav-pills > li > a {
+
+    color: #555555;
+
+}
+
+blockquote span, aside .widget .news-content span a {
+
+    color: #cccccc;
+
+}
+
+.room-thumb .main .price span, article .meta-author, .meta-category, .meta-comments {
+
+    color: #979797;
+
+}
+
+.badge {
+
+    background: #cccccc;
+
+}
+
+aside .widget .tagcloud a:hover {
+
+    background-color: #000;
+
+}
+
+aside .widget ul li {
+
+    border-top: 0;
+
+    border-right: 0;
+
+    border-bottom: 1px solid #e9e9e9;
+
+    border-left: 0;
+
+}
+
+.blog article, .form-control, aside .widget .news-thumb img, h1.lined-heading:before, h2.lined-heading:before, h3.lined-heading:before, h4.lined-heading:before, h5.lined-heading:before, h6.lined-heading:before, .wpcf7 input[type="text"], .wpcf7 input[type="email"], .wpcf7 input[type="number"], .wpcf7 input[type="date"], .wpcf7 select, .wpcf7 textarea {
+
+    border-color: #efefef;
+
+}
+
+.table > thead > tr > th, .table > tbody > tr > th, .table > tfoot > tr > th, .table > thead > tr > td, .table > tbody > tr > td, .table > tfoot > tr > td, .nav-tabs, .nav-tabs > li.active > a, .nav-tabs > li.active > a:hover, .nav-tabs > li.active > a:focus, .room-thumb .main, .room-thumb, .room-thumb .main .price, .room-thumb img, .wpb_wrapper .ui-widget-header, .wpb_wrapper .wpb_tabs .ui-state-active a, .wpb_wrapper .wpb_tabs .ui-state-active a:link, .wpb_tour .ui-state-default a, .wpb_accordion .wpb_accordion_wrapper .wpb_accordion_section .wpb_accordion_header a, .wpb_accordion .wpb_accordion_wrapper .wpb_accordion_section:first-child .wpb_accordion_header a, .wpb_accordion .wpb_accordion_wrapper .wpb_accordion_section:last-child .wpb_accordion_header a, .wpb_wrapper .wpb_tabs .wpb_tabs_nav li a:hover, .wpb_wrapper .ui-widget-header, .vc_tta-tabs:not([class*="vc_tta-gap"]):not(.vc_tta-o-no-fill).vc_tta-tabs-position-left .vc_tta-tab.vc_active > a, .vc_tta-color-grey.vc_tta-style-classic .vc_tta-tab > a:hover, .vc_tta-tabs:not([class*="vc_tta-gap"]):not(.vc_tta-o-no-fill).vc_tta-tabs-position-top .vc_tta-tab.vc_active > a {
+
+    border-color: #efefef !important;
+
+}
+
+.ui-widget-header {
+
+    color: #efefef;
+
+}
+
+#top-header, #top-header a, #lang_sel a.lang_sel_sel {
+
+    background-color: #272727;
+
+    color: #939393;
+
+}
+
+#top-header .th-text .th-item .btn-group ul.dropdown-menu > li > a, #top-header .th-text .th-item .btn-group .btn-default, #lang_sel ul ul a, #lang_sel ul ul a:visited {
+
+    color: #939393;
+
+}
+
+#top-header a:hover, #top-header .th-text .th-item .btn-group .btn-default:hover, .parallax-effect h1, .parallax-effect h2, .parallax-effect h3, .parallax-effect h4, .parallax-effect h5, .parallax-effect h6, .breadcrumb > li a, .parallax-effect #parallax-pagetitle {
+
+    color: #ffffff;
+
+}
+
+#top-header .th-text .th-item {
+
+    border-right: 1px solid #3c3c3c;
+
+}
+
+.navbar-default, .navbar-default .navbar-nav > .open > a, .navbar-default .navbar-nav > .open > a:hover, .navbar-default .navbar-nav > .open > a:focus, .navbar-nav .dropdown-menu > li > a:hover, .navbar-nav .dropdown-menu > li > a:focus, .navbar-nav .dropdown-menu, .ubermenu-skin-none .ubermenu-item .ubermenu-submenu-drop {
+
+    background-color: #ffffff;
+
+}
+
+.navbar-nav .dropdown-menu {
+
+    background-color: rgba(255, 255, 255, 0.95);
+
+}
+
+.navbar-nav .dropdown-menu > li > a {
+
+    border-bottom: 1px solid #e1e1e1;
+
+    background-color: transparent;
+
+    border-right: 1px solid #fff;
+
+    border-left: 1px solid #fff;
+
+}
+
+header #logo {
+
+    border-right: 1px solid #e1e1e1;
+
+}
+
+footer {
+
+    color: #c1c1c1;
+
+    background: #3c3c3c;
+
+}
+
+footer h1, footer h2, footer h3, footer h4, footer h5, footer h6 {
+
+    color: #898989;
+
+}
+
+footer, footer a, footer .form-control {
+
+    color: #c1c1c1;
+
+}
+
+footer ul li, footer .form-control, footer .widget .news-thumb img {
+
+    border-color: #898989;
+
+}
+
+footer .footer-bottom {
+
+    background-color: #272727;
+
+}
+
+/* Navigation Mobile colors */
+
+@media (max-width: 767px) {
+
+    .navbar-nav .dropdown-menu > li > a {
+
+        border: 0;
+
+    }
+
+    header #logo {
+
+        border: 0;
+
+    }
+
+}

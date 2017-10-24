@@ -1,0 +1,336 @@
+﻿@{
+    ViewData["Title"] = "Danh sách phòng";
+}
+
+<div id="content" class="site-content">
+    <!-- Parallax Effect -->
+    <script type="text/javascript">
+jQuery(document).ready(function () {
+            jQuery('#parallax-pagetitle').parallax("50%", -0.55);
+        });</script>
+    <div class="parallax-effect">
+        <div id="parallax-pagetitle" style="background-image: url(http://www.slashdown.net/starhotel-wp/wp-content/uploads/2015/03/parallax-01.jpg);">
+            <div class="color-overlay">
+                <!-- Page title -->
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm-12">
+
+                            <ol class="breadcrumb">
+                                <li><a href="http://www.slashdown.net/starhotel-wp">Trang chủ</a></li>
+                                <li class="active">Phòng</li>
+                            </ol>
+
+                            <h1>Danh sách phòng</h1>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Filter -->
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <ul class='nav nav-pills' id='filters'><li class='active'><a href='#' data-filter='*'>Tất cả</a></li><li><a href='#' data-filter='.Apartment'>Loại phòng 1</a></li><li><a href='#' data-filter='.Double-Room'>Loại phòng 2</a></li><li><a href='#' data-filter='.Executive-Room'>Loại phòng 3</a></li><li><a href='#' data-filter='.Single-Room'>Loại phòng 4</a></li></ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Rooms -->
+    <div class="rooms mt100">
+        <div class="container">
+            <div class="row room-list">
+                <!-- Room -->
+                <div class="col-sm-4 Double-Room">
+                    <div class="room-thumb">
+                        <img width="356" height="228" src="http://www.slashdown.net/starhotel-wp/wp-content/uploads/2015/03/room-08.jpg" class="img-responsive wp-post-image" alt="" />                                <div class="mask">
+                            <div class="main">
+                                <h5>Jungle View</h5>
+                                <div class='price'> € 139<span>a night</span></div>
+                            </div>
+                            <div class="content">
+                                <p><span>A modern hotel room in Star Hotel</span>Nunc tempor erat in magna pulvinar fermentum. Pellentesque scelerisque at leo nec vestibulum. malesuada metus.</p>
+                                <div class="row">
+                                    <div class="col-xs-6">
+                                        <ul class="list-unstyled">
+                                            <li><i class='fa fa-check-circle'></i> Incl. breakfast</li>
+                                            <li><i class='fa fa-check-circle'></i> Private balcony</li>
+                                            <li><i class='fa fa-check-circle'></i> Sea view</li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-xs-6">
+                                        <ul class="list-unstyled">
+                                            <li><i class='fa fa-check-circle'></i> Free Wi-Fi</li>
+                                            <li><i class='fa fa-check-circle'></i> Incl. breakfast</li>
+                                            <li><i class='fa fa-check-circle'></i> Bathroom</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <a href="room/phong-sao-hoa" class="btn btn-primary btn-block"> Xem chi tiết </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Room -->
+                <div class="col-sm-4 Double-Room Executive-Room">
+                    <div class="room-thumb">
+                        <img width="356" height="228" src="http://www.slashdown.net/starhotel-wp/wp-content/uploads/2015/03/room-04.jpg" class="img-responsive wp-post-image" alt="" />                                <div class="mask">
+                            <div class="main">
+                                <h5>Deluxe Room</h5>
+                                <div class='price'> € 79<span>a night</span></div>
+                            </div>
+                            <div class="content">
+                                <p><span>A modern hotel room in Star Hotel</span>Nunc tempor erat in magna pulvinar fermentum. Pellentesque scelerisque at leo nec vestibulum. malesuada metus.</p>
+                                <div class="row">
+                                    <div class="col-xs-6">
+                                        <ul class="list-unstyled">
+                                            <li><i class='fa fa-check-circle'></i> Incl. breakfast</li>
+                                            <li><i class='fa fa-check-circle'></i> Private balcony</li>
+                                            <li><i class='fa fa-check-circle'></i> Sea view</li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-xs-6">
+                                        <ul class="list-unstyled">
+                                            <li><i class='fa fa-check-circle'></i> Free Wi-Fi</li>
+                                            <li><i class='fa fa-check-circle'></i> Incl. breakfast</li>
+                                            <li><i class='fa fa-check-circle'></i> Bathroom</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <a href="room/phong-sao-hoa" class="btn btn-primary btn-block"> Xem chi tiết </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Room -->
+                <div class="col-sm-4 Double-Room">
+                    <div class="room-thumb">
+                        <img width="356" height="228" src="http://www.slashdown.net/starhotel-wp/wp-content/uploads/2015/03/room-05.jpg" class="img-responsive wp-post-image" alt="" />                                <div class="mask">
+                            <div class="main">
+                                <h5>Honeymoon Suite</h5>
+                                <div class='price'> € 79<span>a night</span></div>
+                            </div>
+                            <div class="content">
+                                <p><span>A modern hotel room in Star Hotel</span>Nunc tempor erat in magna pulvinar fermentum. Pellentesque scelerisque at leo nec vestibulum. malesuada metus.</p>
+                                <div class="row">
+                                    <div class="col-xs-6">
+                                        <ul class="list-unstyled">
+                                            <li><i class='fa fa-check-circle'></i> Incl. breakfast</li>
+                                            <li><i class='fa fa-check-circle'></i> Private balcony</li>
+                                            <li><i class='fa fa-check-circle'></i> Sea view</li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-xs-6">
+                                        <ul class="list-unstyled">
+                                            <li><i class='fa fa-check-circle'></i> Free Wi-Fi</li>
+                                            <li><i class='fa fa-check-circle'></i> Incl. breakfast</li>
+                                            <li><i class='fa fa-check-circle'></i> Bathroom</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <a href="room/phong-sao-hoa" class="btn btn-primary btn-block"> Xem chi tiết </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Room -->
+                <div class="col-sm-4 Apartment Executive-Room Single-Room">
+                    <div class="room-thumb">
+                        <img width="356" height="228" src="http://www.slashdown.net/starhotel-wp/wp-content/uploads/2015/03/room-06.jpg" class="img-responsive wp-post-image" alt="" />                                <div class="mask">
+                            <div class="main">
+                                <h5>Family Room</h5>
+                                <div class='price'> € 59<span>a night</span></div>
+                            </div>
+                            <div class="content">
+                                <p><span>A modern hotel room in Star Hotel</span>Nunc tempor erat in magna pulvinar fermentum. Pellentesque scelerisque at leo nec vestibulum. malesuada metus.</p>
+                                <div class="row">
+                                    <div class="col-xs-6">
+                                        <ul class="list-unstyled">
+                                            <li><i class='fa fa-check-circle'></i> Incl. breakfast</li>
+                                            <li><i class='fa fa-check-circle'></i> Private balcony</li>
+                                            <li><i class='fa fa-check-circle'></i> Sea view</li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-xs-6">
+                                        <ul class="list-unstyled">
+                                            <li><i class='fa fa-check-circle'></i> Free Wi-Fi</li>
+                                            <li><i class='fa fa-check-circle'></i> Incl. breakfast</li>
+                                            <li><i class='fa fa-check-circle'></i> Bathroom</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <a href="room/phong-sao-hoa" class="btn btn-primary btn-block"> Xem chi tiết </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Room -->
+                <div class="col-sm-4 Executive-Room Single-Room">
+                    <div class="room-thumb">
+                        <img width="356" height="228" src="http://www.slashdown.net/starhotel-wp/wp-content/uploads/2015/03/room-07.jpg" class="img-responsive wp-post-image" alt="" />                                <div class="mask">
+                            <div class="main">
+                                <h5>Business Class</h5>
+                                <div class='price'> € 89<span>a night</span></div>
+                            </div>
+                            <div class="content">
+                                <p><span>A modern hotel room in Star Hotel</span>Nunc tempor erat in magna pulvinar fermentum. Pellentesque scelerisque at leo nec vestibulum. malesuada metus.</p>
+                                <div class="row">
+                                    <div class="col-xs-6">
+                                        <ul class="list-unstyled">
+                                            <li><i class='fa fa-check-circle'></i> Incl. breakfast</li>
+                                            <li><i class='fa fa-check-circle'></i> Private balcony</li>
+                                            <li><i class='fa fa-check-circle'></i> Sea view</li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-xs-6">
+                                        <ul class="list-unstyled">
+                                            <li><i class='fa fa-check-circle'></i> Free Wi-Fi</li>
+                                            <li><i class='fa fa-check-circle'></i> Incl. breakfast</li>
+                                            <li><i class='fa fa-check-circle'></i> Bathroom</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <a href="room/phong-sao-hoa" class="btn btn-primary btn-block"> Xem chi tiết </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Room -->
+                <div class="col-sm-4 Apartment Double-Room">
+                    <div class="room-thumb">
+                        <img width="356" height="228" src="http://www.slashdown.net/starhotel-wp/wp-content/uploads/2015/03/room-09.jpg" class="img-responsive wp-post-image" alt="" />                                <div class="mask">
+                            <div class="main">
+                                <h5>Special Spa Room</h5>
+                                <div class='price'> € 259<span>a night</span></div>
+                            </div>
+                            <div class="content">
+                                <p><span>A modern hotel room in Star Hotel</span>Nunc tempor erat in magna pulvinar fermentum. Pellentesque scelerisque at leo nec vestibulum. malesuada metus.</p>
+                                <div class="row">
+                                    <div class="col-xs-6">
+                                        <ul class="list-unstyled">
+                                            <li><i class='fa fa-check-circle'></i> Incl. breakfast</li>
+                                            <li><i class='fa fa-check-circle'></i> Private balcony</li>
+                                            <li><i class='fa fa-check-circle'></i> Sea view</li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-xs-6">
+                                        <ul class="list-unstyled">
+                                            <li><i class='fa fa-check-circle'></i> Free Wi-Fi</li>
+                                            <li><i class='fa fa-check-circle'></i> Incl. breakfast</li>
+                                            <li><i class='fa fa-check-circle'></i> Bathroom</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <a href="room/phong-sao-hoa" class="btn btn-primary btn-block"> Xem chi tiết </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Room -->
+                <div class="col-sm-4 Apartment Single-Room">
+                    <div class="room-thumb">
+                        <img width="356" height="228" src="http://www.slashdown.net/starhotel-wp/wp-content/uploads/2015/03/room-03.jpg" class="img-responsive wp-post-image" alt="" />                                <div class="mask">
+                            <div class="main">
+                                <h5>Single Room</h5>
+                                <div class='price'> € 79<span>a night</span></div>
+                            </div>
+                            <div class="content">
+                                <p><span>A modern hotel room in Star Hotel</span>Nunc tempor erat in magna pulvinar fermentum. Pellentesque scelerisque at leo nec vestibulum. malesuada metus.</p>
+                                <div class="row">
+                                    <div class="col-xs-6">
+                                        <ul class="list-unstyled">
+                                            <li><i class='fa fa-check-circle'></i> Incl. breakfast</li>
+                                            <li><i class='fa fa-check-circle'></i> Private balcony</li>
+                                            <li><i class='fa fa-check-circle'></i> Sea view</li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-xs-6">
+                                        <ul class="list-unstyled">
+                                            <li><i class='fa fa-check-circle'></i> Free Wi-Fi</li>
+                                            <li><i class='fa fa-check-circle'></i> Incl. breakfast</li>
+                                            <li><i class='fa fa-check-circle'></i> Bathroom</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <a href="room/phong-sao-hoa" class="btn btn-primary btn-block"> Xem chi tiết </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Room -->
+                <div class="col-sm-4 Apartment Double-Room">
+                    <div class="room-thumb">
+                        <img width="356" height="228" src="http://www.slashdown.net/starhotel-wp/wp-content/uploads/2015/03/room-02.jpg" class="img-responsive wp-post-image" alt="" />                                <div class="mask">
+                            <div class="main">
+                                <h5>King Size Bedroom</h5>
+                                <div class='price'> € 79<span>a night</span></div>
+                            </div>
+                            <div class="content">
+                                <p><span>A modern hotel room in Star Hotel</span>Nunc tempor erat in magna pulvinar fermentum. Pellentesque scelerisque at leo nec vestibulum. malesuada metus.</p>
+                                <div class="row">
+                                    <div class="col-xs-6">
+                                        <ul class="list-unstyled">
+                                            <li><i class='fa fa-check-circle'></i> Incl. breakfast</li>
+                                            <li><i class='fa fa-check-circle'></i> Private balcony</li>
+                                            <li><i class='fa fa-check-circle'></i> Sea view</li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-xs-6">
+                                        <ul class="list-unstyled">
+                                            <li><i class='fa fa-check-circle'></i> Free Wi-Fi</li>
+                                            <li><i class='fa fa-check-circle'></i> Incl. breakfast</li>
+                                            <li><i class='fa fa-check-circle'></i> Bathroom</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <a href="room/phong-sao-hoa" class="btn btn-primary btn-block"> Xem chi tiết </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Room -->
+                <div class="col-sm-4 Double-Room Executive-Room">
+                    <div class="room-thumb">
+                        <img width="356" height="228" src="http://www.slashdown.net/starhotel-wp/wp-content/uploads/2015/03/room-01.jpg" class="img-responsive wp-post-image" alt="" />                                <div class="mask">
+                            <div class="main">
+                                <h5>Double Bedroom</h5>
+                                <div class='price'> € 79<span>a night</span></div>
+                            </div>
+                            <div class="content">
+                                <p><span>A modern hotel room in Star Hotel</span>Nunc tempor erat in magna pulvinar fermentum. Pellentesque scelerisque at leo nec vestibulum. malesuada metus.</p>
+                                <div class="row">
+                                    <div class="col-xs-6">
+                                        <ul class="list-unstyled">
+                                            <li><i class='fa fa-check-circle'></i> Incl. breakfast</li>
+                                            <li><i class='fa fa-check-circle'></i> Private balcony</li>
+                                            <li><i class='fa fa-check-circle'></i> Sea view</li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-xs-6">
+                                        <ul class="list-unstyled">
+                                            <li><i class='fa fa-check-circle'></i> Free Wi-Fi</li>
+                                            <li><i class='fa fa-check-circle'></i> Incl. breakfast</li>
+                                            <li><i class='fa fa-check-circle'></i> Bathroom</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <a href="http://www.slashdown.net/starhotel-wp/room/double-bedroom/" class="btn btn-primary btn-block"> Book now </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <div class="text-center mt30">
+        <ul class="pagination clearfix">
+            <li><span class="page-numbers current">1</span></li>
+            <li><a class="page-numbers" href="rooms/2">2</a></li>
+            <li><a class="next page-numbers" href="rooms/3"><i class="fa fa-arrow-right" aria-hidden="true"></i></a></li>
+        </ul>
+    </div>
+</div>

@@ -1,0 +1,377 @@
+﻿@{
+    ViewData["Title"] = "Chi tiết phòng";
+}
+
+<div id="content" class="site-content">
+    
+    <div id="content" class="site-content">
+        <!-- Parallax Effect -->
+        <script type="text/javascript">
+jQuery(document).ready(function () {
+                jQuery('#parallax-pagetitle').parallax("50%", -0.55);
+            });</script>
+        <div class="parallax-effect">
+            <div id="parallax-pagetitle" style="background-image: url(http://www.slashdown.net/starhotel-wp/wp-content/uploads/2015/03/parallax-01.jpg);">
+                <div class="color-overlay">
+                    <!-- Page title -->
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-sm-12">
+
+                                <ol class="breadcrumb">
+                                    <li><a href="">Trang chủ</a></li>
+                                    <li>
+                                        <a href="rooms">Phòng</a>
+                                    </li>
+                                    <li class="active">@ViewBag.RoomTitle</li>
+                                </ol>
+
+                                <h1>@ViewBag.RoomTitle</h1>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                <!-- Slider -->
+                <div class="room-slider standard-slider mt50">
+                    <div class="col-sm-12 col-md-8">
+                        <div id="owl-standard" class="owl-carousel">
+                            <div class='item mfp_open'> <a href='http://www.slashdown.net/starhotel-wp/wp-content/uploads/2015/03/room-slider-01.jpg'><img src='http://www.slashdown.net/starhotel-wp/wp-content/uploads/2015/03/room-slider-01.jpg' alt='' class='img-responsive'></a> </div><div class='item mfp_open'> <a href='http://www.slashdown.net/starhotel-wp/wp-content/uploads/2015/03/room-slider-02.jpg'><img src='http://www.slashdown.net/starhotel-wp/wp-content/uploads/2015/03/room-slider-02.jpg' alt='' class='img-responsive'></a> </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <!-- Reservation form -->
+                <div id="reservation-form" class="mt50 clearfix">
+                    <div class="col-sm-12 col-md-4">
+                        <form class="reservation-vertical clearfix" role="form" method="post"
+                              action="http://www.slashdown.net/starhotel-wp/wp-content/themes/starhotel/inc/sendmail/reservation.php"
+                              name="reservationform" id="reservationform">
+                            <h2 class="lined-heading"><span>Đặt giữ phòng</span></h2>
+                            <div class="price">
+                                <h4>@ViewBag.RoomTitle</h4> $ 69
+                            </div>                            <!-- Error message -->
+                            <div id="message"></div>
+                            <div class="form-group">
+                                <label for="email" accesskey="E">Email</label>
+                                <div class="popover-icon" data-container="body" data-toggle="popover" data-trigger="hover" data-placement="right" data-content="Please fill in your email"> <i class="fa fa-info-circle fa-lg"> </i> </div>
+                                <input name="email" type="text" id="email" value="" class="form-control" placeholder="Email của bạn" />
+                            </div>
+                            <div class="form-group">
+                                <label for="phone" accesskey="P">Số điện thoại</label>
+                                <div class="popover-icon" data-container="body" data-toggle="popover" data-trigger="hover" data-placement="right" data-content="Please add your country code"><i class="fa fa-info-circle fa-lg"> </i></div>
+                                <input name="phone" type="text" id="phone" value="" class="form-control" placeholder="Số điện thoại của bạn" />
+                            </div>
+                            <div class="form-group">
+                                <select class="hidden" name="room" id="room">
+                                    <option selected="selected">Double Bedroom</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="checkin">Nhận phòng</label>
+                                <div class="popover-icon" data-container="body" data-toggle="popover" data-trigger="hover" data-placement="right" data-content="Nhận phòng trước 11:00"> <i class="fa fa-info-circle fa-lg"> </i> </div>
+
+                                <i class="fa fa-calendar infield"></i>
+                                <input name="checkin" type="text" id="checkin" value="" class="form-control" placeholder="Nhận phòng" />
+                            </div>
+                            <div class="form-group">
+                                <label for="checkout">Trả phòng</label>
+                                <div class="popover-icon" data-container="body" data-toggle="popover" data-trigger="hover" data-placement="right" data-content="Trả phòng sau 12:00"> <i class="fa fa-info-circle fa-lg"> </i> </div>
+
+                                <i class="fa fa-calendar infield"></i>
+                                <input name="checkout" type="text" id="checkout" value="" class="form-control" placeholder="Trả phòng" />
+                            </div>
+                            <div class="form-group">
+                                <div class="guests-select">
+                                    <label>Số lượng </label>
+                                    <i class="fa fa-user infield"></i>
+                                    <div class="total form-control" id="test">1</div>
+                                    <div class="guests">
+                                        <div class="form-group adults">
+                                            <label for="adults">Người lớn</label>
+                                            <div class="popover-icon" data-container="body" data-toggle="popover" data-trigger="hover" data-placement="right" data-content="+18 years">
+                                                <i class="fa fa-info-circle fa-lg"> </i>
+                                            </div>
+                                            <select name="adults" id="adults" class="form-control">
+                                                <option value='1'>1 Người</option>
+                                                <option value='2'>2 Người</option>
+                                                <option value='3'>3 Người</option>
+                                            </select>
+                                        </div>
+                                        <div class="form-group children">
+                                            <label for="children">Trẻ em</label>
+                                            <div class="popover-icon" data-container="body" data-toggle="popover" data-trigger="hover" data-placement="right" data-content="0 till 18 years">
+                                                <i class="fa fa-info-circle fa-lg"> </i>
+                                            </div>
+                                            <select name="children" id="children" class="form-control">
+                                                <option value='0'>0 Trẻ</option>
+                                                <option value='1'>1 Trẻ</option>
+                                                <option value='2'>2 Trẻ</option>
+                                                <option value='3'>3 Trẻ</option>
+                                            </select>
+                                        </div>
+                                        <button type="button" class="btn btn-ghost-color button-save btn-block">Lưu</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <button type="submit" class="btn btn-primary btn-block">Đặt ngay</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- Room Content -->
+        <div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="vc_row wpb_row vc_row-fluid">
+                            <div class="wpb_column vc_column_container vc_col-sm-6">
+                                <div class="vc_column-inner ">
+                                    <div class="wpb_wrapper">
+                                        <h2 class="lined-heading mt50">
+                                            <span>
+                                                Chi tiết phòng
+                                            </span>
+                                        </h2>
+
+                                        <table class="table table-striped mt30">
+                                            <tbody>
+
+                                                <tr>
+
+
+                                                    <td>
+                                                        <i class="fa fa-check-circle"></i> Double Bed
+                                                    </td>
+
+
+                                                    <td>
+                                                        <i class="fa fa-check-circle"></i> Free Internet
+                                                    </td>
+
+
+                                                    <td>
+                                                        <i class="fa fa-check-circle"></i> Free Newspaper
+                                                    </td>
+
+
+                                                </tr>
+
+
+                                                <tr>
+
+
+                                                    <td>
+                                                        <i class="fa fa-check-circle"></i> 60 square meter
+                                                    </td>
+
+
+                                                    <td>
+                                                        <i class="fa fa-check-circle"></i> Beach view
+                                                    </td>
+
+
+                                                    <td>
+                                                        <i class="fa fa-check-circle"></i> 2 persons
+                                                    </td>
+
+
+                                                </tr>
+
+
+                                                <tr>
+
+
+                                                    <td>
+                                                        <i class="fa fa-check-circle"></i> Double Bed
+                                                    </td>
+
+
+                                                    <td>
+                                                        <i class="fa fa-check-circle"></i> Free Internet
+                                                    </td>
+
+
+                                                    <td>
+                                                        <i class="fa fa-check-circle"></i> Breakfast included
+                                                    </td>
+
+
+                                                </tr>
+
+
+                                                <tr>
+
+
+                                                    <td>
+                                                        <i class="fa fa-check-circle"></i> Private Balcony
+                                                    </td>
+
+
+                                                    <td>
+                                                        <i class="fa fa-check-circle"></i> Flat Screen TV
+                                                    </td>
+
+
+                                                    <td>
+                                                        <i class="fa fa-check-circle"></i> Jacuzzi
+                                                    </td>
+
+
+                                                </tr>
+
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div><div class="wpb_column vc_column_container vc_col-sm-6">
+                                <div class="vc_column-inner ">
+                                    <div class="wpb_wrapper">
+                                        <h2 class="lined-heading mt50">
+                                            <span>
+                                                Tổng quan
+                                            </span>
+                                        </h2>
+
+                                        <div class="wpb_tabs wpb_content_element" data-interval="0">
+                                            <div class="wpb_wrapper wpb_tour_tabs_wrapper ui-tabs vc_clearfix">
+                                                <div class="wpb_wrapper">
+                                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse interdum eleifend augue, quis rhoncus purus fermentum. In hendrerit risus arcu, in eleifend metus dapibus varius. Nulla dolor sapien, laoreet vel tincidunt non, egestas non justo. Phasellus et mattis lectus, et gravida urna.</p>
+                                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse interdum eleifend augue, quis rhoncus purus fermentum. In hendrerit risus arcu, in eleifend metus dapibus varius. Nulla dolor sapien, laoreet vel tincidunt non, egestas non justo. Phasellus et mattis lectus, et gravida urna.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div><div class="vc_row wpb_row vc_row-fluid">
+                            <div class="wpb_column vc_column_container vc_col-sm-12">
+                                <div class="vc_column-inner ">
+                                    <div class="wpb_wrapper">
+                                        <h2 class="lined-heading mt50">
+                                            <span>
+                                                Phòng khác
+                                            </span>
+                                        </h2>
+
+                                        <!-- Rooms -->
+                                        <div class="rooms mt110">
+                                            <div class="row room-list">
+
+                                                <!-- Room -->
+                                                <div class="col-sm-4 ">
+                                                    <div class="room-thumb">
+                                                        <img width="356" height="228" src="http://www.slashdown.net/starhotel-wp/wp-content/uploads/2015/03/room-08.jpg" class="img-responsive wp-post-image" alt="" />                            <div class="mask">
+                                                            <div class="main">
+                                                                <h5>Jungle View</h5>
+                                                                <div class='price'> € 139<span>a night</span></div>
+                                                            </div>
+                                                            <div class="content">
+                                                                <p><span>A modern hotel room in Star Hotel</span>Nunc tempor erat in magna pulvinar fermentum. Pellentesque scelerisque at leo nec vestibulum. malesuada metus.</p>
+
+                                                                <div class="row">
+                                                                    <div class="col-xs-6">
+                                                                        <ul class="list-unstyled">
+                                                                            <li><i class='fa fa-check-circle'></i> Incl. breakfast</li>
+                                                                            <li><i class='fa fa-check-circle'></i> Private balcony</li>
+                                                                            <li><i class='fa fa-check-circle'></i> Sea view</li>
+                                                                        </ul>
+                                                                    </div>
+                                                                    <div class="col-xs-6">
+                                                                        <ul class="list-unstyled">
+                                                                            <li><i class='fa fa-check-circle'></i> Free Wi-Fi</li>
+                                                                            <li><i class='fa fa-check-circle'></i> Incl. breakfast</li>
+                                                                            <li><i class='fa fa-check-circle'></i> Bathroom</li>
+                                                                        </ul>
+                                                                    </div>
+                                                                </div>
+                                                                <a href="room/phong-sao-hoa" class="btn btn-primary btn-block"> Xem chi tiết </a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <!-- Room -->
+                                                <div class="col-sm-4 ">
+                                                    <div class="room-thumb">
+                                                        <img width="356" height="228" src="http://www.slashdown.net/starhotel-wp/wp-content/uploads/2015/03/room-08.jpg" class="img-responsive wp-post-image" alt="" />                            <div class="mask">
+                                                            <div class="main">
+                                                                <h5>Jungle View</h5>
+                                                                <div class='price'> € 139<span>a night</span></div>
+                                                            </div>
+                                                            <div class="content">
+                                                                <p><span>A modern hotel room in Star Hotel</span>Nunc tempor erat in magna pulvinar fermentum. Pellentesque scelerisque at leo nec vestibulum. malesuada metus.</p>
+
+                                                                <div class="row">
+                                                                    <div class="col-xs-6">
+                                                                        <ul class="list-unstyled">
+                                                                            <li><i class='fa fa-check-circle'></i> Incl. breakfast</li>
+                                                                            <li><i class='fa fa-check-circle'></i> Private balcony</li>
+                                                                            <li><i class='fa fa-check-circle'></i> Sea view</li>
+                                                                        </ul>
+                                                                    </div>
+                                                                    <div class="col-xs-6">
+                                                                        <ul class="list-unstyled">
+                                                                            <li><i class='fa fa-check-circle'></i> Free Wi-Fi</li>
+                                                                            <li><i class='fa fa-check-circle'></i> Incl. breakfast</li>
+                                                                            <li><i class='fa fa-check-circle'></i> Bathroom</li>
+                                                                        </ul>
+                                                                    </div>
+                                                                </div>
+                                                                <a href="room/phong-sao-hoa" class="btn btn-primary btn-block"> Xem chi tiết </a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <!-- Room -->
+                                                <div class="col-sm-4 ">
+                                                    <div class="room-thumb">
+                                                        <img width="356" height="228" src="http://www.slashdown.net/starhotel-wp/wp-content/uploads/2015/03/room-08.jpg" class="img-responsive wp-post-image" alt="" />                            <div class="mask">
+                                                            <div class="main">
+                                                                <h5>Jungle View</h5>
+                                                                <div class='price'> € 139<span>a night</span></div>
+                                                            </div>
+                                                            <div class="content">
+                                                                <p><span>A modern hotel room in Star Hotel</span>Nunc tempor erat in magna pulvinar fermentum. Pellentesque scelerisque at leo nec vestibulum. malesuada metus.</p>
+
+                                                                <div class="row">
+                                                                    <div class="col-xs-6">
+                                                                        <ul class="list-unstyled">
+                                                                            <li><i class='fa fa-check-circle'></i> Incl. breakfast</li>
+                                                                            <li><i class='fa fa-check-circle'></i> Private balcony</li>
+                                                                            <li><i class='fa fa-check-circle'></i> Sea view</li>
+                                                                        </ul>
+                                                                    </div>
+                                                                    <div class="col-xs-6">
+                                                                        <ul class="list-unstyled">
+                                                                            <li><i class='fa fa-check-circle'></i> Free Wi-Fi</li>
+                                                                            <li><i class='fa fa-check-circle'></i> Incl. breakfast</li>
+                                                                            <li><i class='fa fa-check-circle'></i> Bathroom</li>
+                                                                        </ul>
+                                                                    </div>
+                                                                </div>
+                                                                <a href="room/phong-sao-hoa" class="btn btn-primary btn-block"> Xem chi tiết </a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

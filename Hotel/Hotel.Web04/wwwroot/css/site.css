@@ -1,8 +1,4 @@
-﻿body {
-    padding-top: 50px;
-    padding-bottom: 20px;
-}
-
+﻿
 /* Wrapping element */
 /* Set some basic padding to keep content from hitting the edges */
 .body-content {
@@ -32,4 +28,235 @@
     .carousel-caption {
         display: none;
     }
+}
+
+
+.tp-caption a {
+    color: #ffffff;
+    text-shadow: none;
+    -webkit-transition: all 0.2s ease-out;
+    -moz-transition: all 0.2s ease-out;
+    -o-transition: all 0.2s ease-out;
+    -ms-transition: all 0.2s ease-out
+}
+
+    .tp-caption a:hover {
+        color: #ffffff
+    }
+
+.starhotelbigtext span {
+    letter-spacing: -3px
+}
+
+    .starhotelbigtext span i {
+        font-size: 0.5em;
+        vertical-align: middle
+    }
+
+body, .ui-widget, .revolution-starhotel {
+    font-family: "Open Sans";
+    line-height: 18px;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 13px;
+}
+
+.btn, .revolution-starhotel {
+    font-family: "Open Sans";
+    font-weight: 700;
+    font-style: normal;
+    font-size: 13px;
+}
+
+.navbar-nav {
+    font-family: "Open Sans";
+    font-weight: 600;
+    font-style: normal;
+    font-size: 13px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: "Open Sans";
+    font-weight: 600;
+    font-style: normal;
+}
+
+h1, .parallax-effect .content h3 {
+    font-size: 36px;
+}
+
+h2 {
+    font-size: 24px;
+}
+
+h3 {
+    font-size: 18px;
+}
+
+h4, .room-thumb .main h5 {
+    font-size: 14px;
+}
+
+h5 {
+    font-size: 12px;
+}
+
+h6 {
+    font-size: 10px;
+}
+
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
+    color: #5e5e5e;
+}
+
+body, aside .widget ul a, .nav-tabs > li.active > a, .nav-tabs > li.active > a:hover, .nav-tabs > li.active > a:focus, .nav-pills > li > a, .wpb_wrapper .wpb_tabs .ui-state-active a, .wpb_wrapper .wpb_tabs .ui-state-active a:link, .ui-widget-content, .wpb_wrapper .wpb_tour .wpb_tabs_nav li a:hover, .wpb_wrapper .wpb_tour .wpb_tabs_nav li a:active, .wpb_wrapper .wpb_tour .ui-state-active a, .wpb_wrapper .wpb_tour .ui-state-active a:link, .vc_tta-color-grey.vc_tta-style-classic .vc_tta-tab.vc_active > a, .vc_tta-color-grey.vc_tta-style-classic .vc_tta-panel .vc_tta-panel-title > a {
+    color: #333333;
+}
+
+blockquote span, aside .widget .news-content span a, .room-thumb .main .price span {
+    color: #cccccc;
+}
+
+.badge {
+    background: #cccccc;
+}
+
+a, .navbar-default .navbar-brand, .navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus, .navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:focus, .navbar-default .navbar-nav > .open > a, .navbar-default .navbar-nav > .open > a:hover, .navbar-default .navbar-nav > .open > a:focus, .navbar-default .navbar-nav .dropdown-menu > li > a:hover, .navbar-default .navbar-nav .dropdown-menu > li > a:focus, .navbar-default .navbar-nav > li.current-menu-ancestor > a, .navbar-default .navbar-nav .open .dropdown-menu > li > a:hover, .navbar-default .navbar-nav .open .dropdown-menu > li > a:focus, .navbar-default .navbar-nav .open .dropdown-menu > .active > a, .navbar-default .navbar-nav .open .dropdown-menu > .active > a:hover, .navbar-default .navbar-nav .open .dropdown-menu > .active > a:focus, .btn-default, .btn-default:hover, .btn-default:focus, .btn-default:active, .btn-default.active, .open .dropdown-toggle.btn-default, .wpb_wrapper .ui-state-default a, .ui-widget-content a, .vc_tta-color-grey.vc_tta-style-classic .vc_tta-tab > a, .vc_tta-color-grey.vc_tta-style-classic .vc_tta-panel.vc_active .vc_tta-panel-title > a {
+    color: #75c5cf;
+}
+
+    a:hover, a:focus, .box-icon a:hover, .usp a:hover i {
+        color: #5e5e5e;
+    }
+
+aside .widget .tagcloud a:hover {
+    background-color: #5e5e5e;
+}
+
+article .meta-author, .meta-category, .meta-comments {
+    color: #979797;
+}
+
+header, .navbar-nav .dropdown-menu, .blog-author img, .comment .avatar img, aside h3, blockquote, .ui-widget-header, .ui-state-highlight, .ui-widget-content .ui-state-highlight, .ui-widget-header .ui-state-highlight, .ui-state-hover, .ui-widget-content .ui-state-hover, .ui-widget-header .ui-state-hover, .ui-state-focus, .ui-widget-content .ui-state-focus, .ui-widget-header .ui-state-focus, .ui-state-active, .ui-widget-content .ui-state-active, .ui-widget-header .ui-state-active, #owl-gallery, .vc_images_carousel, #owl-reviews img, .parallax-effect, .revolution-slider, .testimonials .owl-theme .owl-controls .owl-buttons div, .standard-slider .owl-theme .owl-controls .owl-buttons div, #go-top, .box-icon .circle, .testimonials .owl-theme .owl-controls .owl-buttons div, .standard-slider .owl-theme .owl-controls .owl-buttons div, #map, .ubermenu-skin-none .ubermenu-submenu, .ubermenu-skin-none .ubermenu-submenu-drop {
+    border-color: #75c5cf;
+}
+
+    #top-header .th-text .th-item .btn-group ul.dropdown-menu > li > a:hover, article .meta-date, .comment .comment-reply-link, aside .widget .tagcloud a, aside .widget ul a:hover .badge, #call-to-action, .nav-pills > li.active > a, .nav-pills > li.active > a:hover, .nav-pills > li.active > a:focus, .pagination > .active > a, .pagination > .active > span, .pagination > .active > a:hover, .pagination > .active > span:hover, .pagination > .active > a:focus, .pagination > .active > span:focus, .pagination > li > span.current, #go-top:hover, .testimonials .owl-theme .owl-controls .owl-buttons div:hover, .standard-slider .owl-theme .owl-controls .owl-buttons div:hover, .box-icon .circle:hover, .gallery a i, .gallery-slider a i, .vc_images_carousel a i, .carousel a i, .sticky .meta:first-of-type::after {
+        background-color: #75c5cf;
+    }
+
+    #reservation-form .fa.infield, #reservation-form .form-inline .fa.infield, .room-thumb .content i, .box-icon i, table i, #go-top i, .testimonials .owl-theme .owl-controls .owl-buttons div i, .standard-slider .owl-theme .owl-controls .owl-buttons div i, .testimonials .owl-theme .owl-controls .owl-buttons div, .standard-slider .owl-theme .owl-controls .owl-buttons div, #go-top, #reservation-form .price, label span, .room-thumb .main .price, .room-thumb .content p span, .blog-author span, #owl-reviews .text-balloon span, .ui-state-highlight, .ui-widget-content .ui-state-highlight, .ui-widget-header .ui-state-highlight, .ui-state-hover, .ui-widget-content .ui-state-hover, .ui-widget-header .ui-state-hover, .ui-state-focus, .ui-widget-content .ui-state-focus, .ui-widget-header .ui-state-focus, .ui-state-active, .ui-widget-content .ui-state-active, .ui-widget-header .ui-state-active, aside .widget ul a:hover, .yamm a:hover {
+        color: #75c5cf;
+    }
+
+.room-thumb .main .price, .comment, .table-striped > tbody > tr:nth-child(odd) > td, .table-striped > tbody > tr:nth-child(odd) > th, .panel-default > .panel-heading {
+    background: rgba(90,186,198,0.03);
+}
+
+.blog article, aside .widget ul li, .form-control, aside .widget .news-thumb img, .table > thead > tr > th, .table > tbody > tr > th, .table > tfoot > tr > th, .table > thead > tr > td, .table > tbody > tr > td, .table > tfoot > tr > td, h1.lined-heading:before, h2.lined-heading:before, h3.lined-heading:before, h4.lined-heading:before, h5.lined-heading:before, h6.lined-heading:before, .nav-tabs, .nav-tabs > li.active > a, .nav-tabs > li.active > a:hover, .nav-tabs > li.active > a:focus, .nav > li > a:hover, .nav > li > a:focus, .room-thumb .main, .room-thumb, .room-thumb .main .price, .room-thumb img, .wpb_wrapper .ui-widget-header, .wpb_wrapper .wpb_tabs .ui-state-active a, .wpb_wrapper .wpb_tabs .ui-state-active a:link, .wpb_tour .ui-state-default a, .wpb_accordion .wpb_accordion_wrapper .wpb_accordion_section .wpb_accordion_header a, .wpb_accordion .wpb_accordion_wrapper .wpb_accordion_section:first-child .wpb_accordion_header a, .wpb_accordion .wpb_accordion_wrapper .wpb_accordion_section:last-child .wpb_accordion_header a, .wpb_wrapper .wpb_tabs .wpb_tabs_nav li a:hover, .wpb_wrapper .ui-widget-header, .wpcf7 input[type="text"], .wpcf7 input[type="email"], .wpcf7 input[type="number"], .wpcf7 input[type="date"], .wpcf7 select, .wpcf7 textarea, .vc_tta-tabs:not([class*="vc_tta-gap"]):not(.vc_tta-o-no-fill).vc_tta-tabs-position-left .vc_tta-tab.vc_active > a, .vc_tta-color-grey.vc_tta-style-classic .vc_tta-tab > a:hover, .vc_tta-tabs:not([class*="vc_tta-gap"]):not(.vc_tta-o-no-fill).vc_tta-tabs-position-top .vc_tta-tab.vc_active > a {
+    border-color: #efefef;
+}
+
+.ui-widget-header {
+    color: #efefef;
+}
+
+.btn-primary, .btn-primary.disabled, .btn-primary[disabled] {
+    background-color: #75c5cf;
+}
+
+    .btn-primary, .btn-primary:hover, .btn-primary:focus, .btn-primary:active, .btn-primary.active, .open .dropdown-toggle.btn-primary, .btn-primary.disabled, .btn-primary[disabled] {
+        border-color: #35929e;
+    }
+
+        .btn-primary:hover, .btn-primary:focus, .btn-primary:active, .btn-primary.active, .open .dropdown-toggle.btn-primary {
+            background-color: #64cedb;
+        }
+
+.btn-ghost-color {
+    background-color: #ffffff;
+}
+
+.btn-ghost-color {
+    border-color: #75c5cf;
+}
+
+    .btn-ghost-color, .btn-ghost-color:hover, .btn-ghost-color:focus, .tp-caption a.btn-ghost-color {
+        color: #75c5cf;
+    }
+
+        .btn-ghost-color:hover {
+            background-color: rgba(117,197,207,0.03);
+        }
+
+.navbar-default .navbar-nav > li > a, .navbar-default .navbar-nav .dropdown-menu > li > a {
+    color: #5e5e5e;
+}
+
+.navbar-default, .navbar-default .navbar-nav > .open > a, .navbar-default .navbar-nav > .open > a:hover, .navbar-default .navbar-nav > .open > a:focus, .navbar-nav .dropdown-menu > li > a:hover, .navbar-nav .dropdown-menu > li > a:focus, .navbar-nav .dropdown-menu, .ubermenu-skin-none .ubermenu-item .ubermenu-submenu-drop {
+    background-color: #ffffff;
+}
+
+    .navbar-nav .dropdown-menu > li > a, header #logo {
+        border-color: #e1e1e1;
+    }
+
+footer {
+    background-color: #3c3c3c;
+}
+
+    footer h1, footer h2, footer h3, footer h4, footer h5, footer h6 {
+        color: #898989;
+    }
+
+    footer, footer a, footer .form-control {
+        color: #c1c1c1;
+    }
+
+        footer ul li, footer .form-control, footer .widget .news-thumb img {
+            border-color: #898989;
+        }
+
+        footer .footer-bottom {
+            background-color: #272727;
+        }
+
+#top-header, #top-header a, #lang_sel a.lang_sel_sel, #lang_sel ul ul a, #lang_sel ul ul a:visited {
+    background-color: #272727;
+}
+
+    #top-header .th-text .th-item .btn-group ul.dropdown-menu > li > a, #lang_sel a.lang_sel_sel, #lang_sel ul ul a, #lang_sel ul ul a:visited {
+        color: #939393;
+    }
+
+    #top-header a:hover, #top-header .th-text .th-item .btn-group .btn-default:hover, #top-header a, #top-header .th-text .th-item .btn-group ul.dropdown-menu > li > a, #top-header .th-text .th-item .btn-group .btn-default {
+        color: #ffffff;
+    }
+
+    #top-header .th-text .th-item {
+        border-color: #3c3c3c;
+    }
+
+.parallax-effect .color-overlay {
+    background: rgba(117,197,207,0.8);
+}
+
+.parallax-effect h1, .parallax-effect h2, .parallax-effect h3, .parallax-effect h4, .parallax-effect h5, .parallax-effect h6, .breadcrumb > li a, .parallax-effect #parallax-pagetitle {
+    color: #FFFFFF;
+}
+
+body {
+    background-color: #FFFFFF;
+}
+
+.btn-ghost-color, .btn-ghost-color:hover, .btn-ghost-color:focus, .tp-caption a.btn-ghost-color {
+    color: #75c5cf;
+}
+
+.btn-ghost-color {
+    border-color: #75c5cf;
+}
+
+.btn-ghost-color {
+    background-color: #ffffff;
 }

@@ -1,70 +1,284 @@
 ﻿<!DOCTYPE html>
 <html>
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - Hotel.Web04</title>
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>@ViewData["Title"] - Khách sạn Mường Thanh</title>
+    <base href="@ViewBag.BaseHref" />
     <environment include="Development">
         <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
-        <link rel="stylesheet" href="~/css/site.css" />
     </environment>
     <environment exclude="Development">
         <link rel="stylesheet" href="https://ajax.aspnetcdn.com/ajax/bootstrap/3.3.7/css/bootstrap.min.css"
               asp-fallback-href="~/lib/bootstrap/dist/css/bootstrap.min.css"
               asp-fallback-test-class="sr-only" asp-fallback-test-property="position" asp-fallback-test-value="absolute" />
-        <link rel="stylesheet" href="~/css/site.min.css" asp-append-version="true" />
     </environment>
+
+    <style>
+        footer .widget .news-content h4 {
+            font-size: 14px !important;
+        }
+    </style>
+
+    <script type="text/javascript">
+        window._wpemojiSettings = { "baseUrl": "https:\/\/s.w.org\/images\/core\/emoji\/2.2.1\/72x72\/", "ext": ".png", "svgUrl": "https:\/\/s.w.org\/images\/core\/emoji\/2.2.1\/svg\/", "svgExt": ".svg", "source": { "concatemoji": "http:\/\/www.slashdown.net\/starhotel-wp\/wp-includes\/js\/wp-emoji-release.min.js?ver=4.7.6" } };
+        !function (a, b, c) { function d(a) { var b, c, d, e, f = String.fromCharCode; if (!k || !k.fillText) return !1; switch (k.clearRect(0, 0, j.width, j.height), k.textBaseline = "top", k.font = "600 32px Arial", a) { case "flag": return k.fillText(f(55356, 56826, 55356, 56819), 0, 0), !(j.toDataURL().length < 3e3) && (k.clearRect(0, 0, j.width, j.height), k.fillText(f(55356, 57331, 65039, 8205, 55356, 57096), 0, 0), b = j.toDataURL(), k.clearRect(0, 0, j.width, j.height), k.fillText(f(55356, 57331, 55356, 57096), 0, 0), c = j.toDataURL(), b !== c); case "emoji4": return k.fillText(f(55357, 56425, 55356, 57341, 8205, 55357, 56507), 0, 0), d = j.toDataURL(), k.clearRect(0, 0, j.width, j.height), k.fillText(f(55357, 56425, 55356, 57341, 55357, 56507), 0, 0), e = j.toDataURL(), d !== e }return !1 } function e(a) { var c = b.createElement("script"); c.src = a, c.defer = c.type = "text/javascript", b.getElementsByTagName("head")[0].appendChild(c) } var f, g, h, i, j = b.createElement("canvas"), k = j.getContext && j.getContext("2d"); for (i = Array("flag", "emoji4"), c.supports = { everything: !0, everythingExceptFlag: !0 }, h = 0; h < i.length; h++)c.supports[i[h]] = d(i[h]), c.supports.everything = c.supports.everything && c.supports[i[h]], "flag" !== i[h] && (c.supports.everythingExceptFlag = c.supports.everythingExceptFlag && c.supports[i[h]]); c.supports.everythingExceptFlag = c.supports.everythingExceptFlag && !c.supports.flag, c.DOMReady = !1, c.readyCallback = function () { c.DOMReady = !0 }, c.supports.everything || (g = function () { c.readyCallback() }, b.addEventListener ? (b.addEventListener("DOMContentLoaded", g, !1), a.addEventListener("load", g, !1)) : (a.attachEvent("onload", g), b.attachEvent("onreadystatechange", function () { "complete" === b.readyState && c.readyCallback() })), f = c.source || {}, f.concatemoji ? e(f.concatemoji) : f.wpemoji && f.twemoji && (e(f.twemoji), e(f.wpemoji))) }(window, document, window._wpemojiSettings);
+    </script>
+
+    <style type="text/css">
+        img.wp-smiley,
+        img.emoji {
+            display: inline !important;
+            border: none !important;
+            box-shadow: none !important;
+            height: 1em !important;
+            width: 1em !important;
+            margin: 0 .07em !important;
+            vertical-align: -0.1em !important;
+            background: none !important;
+            padding: 0 !important;
+        }
+    </style>
+
+    <link rel='stylesheet' id='contact-form-7-css' href='~/lib/css/styles.css' type='text/css' media='all' />
+    <link rel='stylesheet' id='rs-plugin-settings-css' href='~/lib/css/settings.css' media='all' />
+    <style type="text/css" data-type="vc_shortcodes-custom-css">
+        .vc_custom_1464770932019 {
+            margin-top: 50px !important;
+        }
+
+        .vc_custom_1464770950170 {
+            margin-top: 50px !important;
+        }
+
+        .vc_custom_1464770990837 {
+            margin-top: 50px !important;
+        }
+
+        .vc_custom_1464771000491 {
+            margin-top: 25px !important;
+        }
+    </style>
+
+    <link rel='stylesheet' id='animate_css-css' href='~/css/animate.css' type='text/css' media='all' />
+    <link rel='stylesheet' id='bootstrapwp_css-css' href='~/css/bootstrap.css' type='text/css' media='all' />
+    <link rel='stylesheet' id='font-awesome_css-css' href='~/css/font-awesome.min.css' type='text/css' media='all' />
+    <link rel='stylesheet' id='owlcarousel_css-css' href='~/css/owl.carousel.css' type='text/css' media='all' />
+    <link rel='stylesheet' id='owl-theme_css-css' href='~/css/owl.theme.css' type='text/css' media='all' />
+    <link rel='stylesheet' id='magnific_popup_css-css' href='~/css/magnific_popup.css' type='text/css' media='all' />
+    <link rel='stylesheet' id='jqueryui_css-css' href='~/css/jquery-ui-1.10.4.custom.min.css' type='text/css' media='all' />
+    <link rel='stylesheet' id='theme_css-css' href='~/css/theme.css' type='text/css' media='all' />
+    <link rel="stylesheet" href="~/css/site.css" />
+    <link rel='stylesheet' id='responsive_css-css' href='~/css/responsive.css' type='text/css' media='all' />
+    <link rel='stylesheet' id='style_css-css' href='~/css/style.css' type='text/css' media='all' />
+    <link rel='stylesheet' id='js_composer_front-css' href='~/lib/css/js_composer.min.css' type='text/css' media='all' />
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+    <script type='text/javascript' src='~/js/jquery.js'></script>
+    <script type='text/javascript' src='~/js/jquery.gmap.min.js'></script>
+    <script type='text/javascript' src='~/js/jquery-migrate.min.js'></script>
+    <script type='text/javascript' src='~/lib/js/jquery.themepunch.tools.min.js'></script>
+    <script type='text/javascript' src='~/lib/js/jquery.themepunch.revolution.min.js'></script>
+    <script type='text/javascript' src='~/js/jquery.parallax-1.1.3.js'></script>
+    <script type="text/javascript" src="~/lib/js/revolution.extension.video.min.js"></script>
+    <script type="text/javascript" src="~/lib/js/revolution.extension.slideanims.min.js"></script>
+    <script type="text/javascript" src="~/lib/js/revolution.extension.layeranimation.min.js"></script>
+    <script type="text/javascript" src="~/lib/js/revolution.extension.navigation.min.js"></script>
+
+    <noscript>
+        <style type="text/css">
+            .wpb_animate_when_almost_visible {
+                opacity: 1;
+            }
+        </style>
+    </noscript>
 </head>
-<body>
-    <nav class="navbar navbar-inverse navbar-fixed-top">
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a asp-area="" asp-controller="Home" asp-action="Index" class="navbar-brand">Hotel.Web04</a>
-            </div>
-            <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                    <li><a asp-area="" asp-controller="Home" asp-action="Index">Home</a></li>
-                    <li><a asp-area="" asp-controller="Home" asp-action="About">About</a></li>
-                    <li><a asp-area="" asp-controller="Home" asp-action="Contact">Contact</a></li>
-                </ul>
+<body class="home page-template page-template-page-slider-reservation page-template-page-slider-reservation-php page page-id-8 wpb-js-composer js-comp-ver-4.11.2.1 vc_responsive">
+    <link rel="stylesheet" property="stylesheet" href="~/css/turquoise.css">
+    <div id="page" class="hfeed site">
+        <!-- Top header -->
+        <div id="top-header">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-6">
+                        <div class="th-text th-left-center">
+                            <div class="th-item"> <a href="tel://0123456789"><i class="fa fa-phone"></i> 0123456789</a> </div>
+                            <div class="th-item"> <a href="mailto:services@htactive.com"><i class="fa fa-envelope"></i> services@htactive.com </a></div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="th-text th-right-center hidden-xs">
+                            <div class="th-item hidden-xs">
+                                <div class="social-icons">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
-    </nav>
-    <div class="container body-content">
-        @RenderBody()
-        <hr />
-        <footer>
-            <p>&copy; 2017 - Hotel.Web04</p>
-        </footer>
-    </div>
 
-    <environment include="Development">
-        <script src="~/lib/jquery/dist/jquery.js"></script>
-        <script src="~/lib/bootstrap/dist/js/bootstrap.js"></script>
-        <script src="~/js/site.js" asp-append-version="true"></script>
-    </environment>
-    <environment exclude="Development">
-        <script src="https://ajax.aspnetcdn.com/ajax/jquery/jquery-2.2.0.min.js"
-                asp-fallback-src="~/lib/jquery/dist/jquery.min.js"
-                asp-fallback-test="window.jQuery"
-                crossorigin="anonymous"
-                integrity="sha384-K+ctZQ+LL8q6tP7I94W+qzQsfRV2a+AfHIi9k8z8l9ggpc8X+Ytst4yBo/hH+8Fk">
-        </script>
-        <script src="https://ajax.aspnetcdn.com/ajax/bootstrap/3.3.7/bootstrap.min.js"
-                asp-fallback-src="~/lib/bootstrap/dist/js/bootstrap.min.js"
-                asp-fallback-test="window.jQuery && window.jQuery.fn && window.jQuery.fn.modal"
-                crossorigin="anonymous"
-                integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa">
-        </script>
-        <script src="~/js/site.min.js" asp-append-version="true"></script>
-    </environment>
+        <!-- Header -->
+        <header>
+            <div class="navbar yamm navbar-default" id="sticky">
+                <div class="container">
+                    <!-- Brand and toggle get grouped for better mobile display -->
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                            <span class="sr-only"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <a class="navbar-brand" href="http://www.slashdown.net/starhotel-wp">
+                            <!-- Logo -->
+                            <div id="logo">
+                                <img id="default-logo" src="http://www.slashdown.net/starhotel-wp/wp-content/uploads/2016/06/logo-1.png" alt="Starhotel" style="height:44px;">
+                                <img id="retina-logo" src="http://www.slashdown.net/starhotel-wp/wp-content/uploads/2016/06/logo-retina-1.png" alt="Starhotel" style="height:44px;">
+                            </div>
+                        </a>
+                    </div>
+                    <div id="bs-example-navbar-collapse-1" class="collapse navbar-collapse">
+                        <ul id="menu-primary" class="nav navbar-nav">
+                            <li id="menu-item-137" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home current-menu-item page_item page-item-8 current_page_item menu-item-137 active active">
+                                <a href="http://www.slashdown.net/starhotel-wp/">Trang chủ</a></li>
+                            <li id="menu-item-143" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-143">
+                                <a href="rooms" >Phòng</a>
+                            </li>
+                            <li id="menu-item-159" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-159">
+                                <a href="services" >Dịch vụ</a>
+                            </li>
+                            <li id="menu-item-159" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-159">
+                                <a href="articles">Tin tức</a>
+                            </li>
+                            <li id="menu-item-139" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-139">
+                                <a href="gallery">Hình ảnh</a></li>
+                            <li id="menu-item-258" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-258">
+                                <a href="contact" >Liên hệ</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Body -->
+        @RenderBody()
+
+        <!-- Footer -->
+        <footer>
+
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-4 col-sm-4">
+                        <div class="widget">
+                            <h4>Thông tin khách sạn</h4>			<div class="textwidget">
+                                <p>vài dòng mô tả khách sạn từ database</p>
+                                <p>vài dòng mô tả khách sạn từ database vài dòng mô tả khách sạn từ database vài dòng mô tả khách sạn từ database</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-5 col-sm-5">
+                        <div class="widget">
+                            <h4>Tin tức mới nhất</h4><ul class="list-unstyled">
+                                <li>
+                                    <article>
+                                        <div class="news-thumb"> <a href="http://www.slashdown.net/starhotel-wp/blog/pool/new-lounge-area/"><img width="75" height="75" src="http://www.slashdown.net/starhotel-wp/wp-content/uploads/2015/03/blog-img-e1429642868724-165x165.jpg" class="attachment-75x75 size-75x75 wp-post-image" alt="" /></a> </div>
+                                        <div class="news-content clearfix">
+                                            <h4><a href="http://www.slashdown.net/starhotel-wp/blog/pool/new-lounge-area/" title="New lounge area">New lounge area</a></h4>
+                                            <span><a href="http://www.slashdown.net/starhotel-wp/blog/pool/new-lounge-area/">March 18, 2015</a></span>
+                                        </div>
+                                    </article>
+                                </li>
+                                <li>
+                                    <article>
+                                        <div class="news-thumb"> <a href="http://www.slashdown.net/starhotel-wp/blog/and-this-is-another-post/"><img width="75" height="75" src="http://www.slashdown.net/starhotel-wp/wp-content/uploads/2015/02/slide2-e1429650906315-165x165.jpg" class="attachment-75x75 size-75x75 wp-post-image" alt="" /></a> </div>
+                                        <div class="news-content clearfix">
+                                            <h4><a href="http://www.slashdown.net/starhotel-wp/blog/and-this-is-another-post/" title="And this is another post">And this is another post</a></h4>
+                                            <span><a href="http://www.slashdown.net/starhotel-wp/blog/and-this-is-another-post/">March 17, 2015</a></span>
+                                        </div>
+                                    </article>
+                                </li>
+                                <li>
+                                    <article>
+                                        <div class="news-thumb"> <a href="http://www.slashdown.net/starhotel-wp/blog/new-rooms/"><img width="75" height="75" src="http://www.slashdown.net/starhotel-wp/wp-content/uploads/2015/03/slide1-e1429650748302-165x165.jpg" class="attachment-75x75 size-75x75 wp-post-image" alt="" /></a> </div>
+                                        <div class="news-content clearfix">
+                                            <h4><a href="http://www.slashdown.net/starhotel-wp/blog/new-rooms/" title="Renovated gym">Renovated gym</a></h4>
+                                            <span><a href="http://www.slashdown.net/starhotel-wp/blog/new-rooms/">March 14, 2015</a></span>
+                                        </div>
+                                    </article>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="col-md-3 col-sm-3">
+                        <div class="widget">
+                            <h4>Địa chỉ</h4>			<div class="textwidget">
+                                <address>
+                                    <strong>Mường Thanh</strong><br />
+                                    962 Ngô Quyền<br />
+                                    An Hải Tây, Sơn Trà, Đà Nẵng<br />
+                                    <abbr title="Phone">P:</abbr> <a href="#">(123) 456-7890</a><br>
+                                    <abbr title="Email">E:</abbr> <a href="#">mail@example.com</a><br>
+                                    <abbr title="Website">W:</abbr> <a href="#">www.slashdown.nl</a><br>
+                                </address>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="container">
+                    <div class="col-xs-12 text-center"> &copy; 2017. Xây dựng và thiết kế bởi <a href="http://www.htactive.com" target="_blank">HT Active</a>. </div>
+                </div>
+            </div>
+        </footer>
+        <!-- Go-top Button -->
+        <div id="go-top"><i class="fa fa-angle-up fa-2x"></i></div>
+    </div>
+    <script type="text/javascript">
+        function revslider_showDoubleJqueryError(sliderID) {
+            var errorMessage = "Revolution Slider Error: You have some jquery.js library include that comes after the revolution files js include.";
+            errorMessage += "<br> This includes make eliminates the revolution slider libraries, and make it not work.";
+            errorMessage += "<br><br> To fix it you can:<br>&nbsp;&nbsp;&nbsp; 1. In the Slider Settings -> Troubleshooting set option:  <strong><b>Put JS Includes To Body</b></strong> option to true.";
+            errorMessage += "<br>&nbsp;&nbsp;&nbsp; 2. Find the double jquery.js include and remove it.";
+            errorMessage = "<span style='font-size:16px;color:#BC0C06;'>" + errorMessage + "</span>";
+            jQuery(sliderID).show().html(errorMessage);
+        }
+    </script>
+    <link rel='stylesheet' id='font-awesome-css' href='~/css/font-awesome.min.css' type='text/css' media='all' />
+    <script type='text/javascript' src='~/lib/js/jquery.form.min.js'></script>
+    <script type='text/javascript' src='~/lib/js/scripts.js'></script>
+    <script type='text/javascript' src='~/js/bootstrap.min.js'></script>
+    <script type='text/javascript' src='~/js/bootstrap-hover-dropdown.min.js'></script>
+    <script type='text/javascript' src='~/js/owl.carousel.min.js'></script>
+    <script type='text/javascript' src='~/js/jquery.nicescroll.js'></script>
+    <script type='text/javascript' src='~/js/jquery.magnific_popup.js'></script>
+    <script type='text/javascript' src='~/js/jquery-ui-1.10.4.custom.min.js'></script>
+    <script type='text/javascript' src='~/js/jquery.sticky.js'></script>
+    <script type='text/javascript' src='~/js/jquery.forms.js'></script>
+    <script type='text/javascript' src='~/js/waypoints.min.js'></script>
+    <script type='text/javascript' src='~/js/jquery.isotope.min.js'></script>
+    <script type='text/javascript' src='~/js/skip-link-focus-fix.js'></script>
+    <script type='text/javascript' src='~/js/comment-reply.min.js'></script>
+    <script type='text/javascript'>
+        /* <![CDATA[ */
+        var object_sh_gmaps = { "mapaddress": "Calle Hamburgo, Las Palmas, Spanje", "maplatitude": "", "maplongitude": "", "mapicon": "http:\/\/localhost\/wordpress\/wp-content\/themes\/starhotel\/images\/ui\/gmap-icon.png", "mappopover": "                    <h4>Our hotel<\/h4><p>This is our hotel<\/p>                ", "mapiconwidth": "42", "mapiconheight": "53", "mapzoom": "12" };
+        var object_sh_date = { "datepickerformat": "mm\/dd\/yy" };
+        var object_sh_translations = { "translations_months": ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"], "translations_days": ["Su", "Mo", "Tu", "We", "Th", "Fr", "Sa"] };
+        var object_sh_gmaps = { "mapaddress": "Calle Hamburgo, Las Palmas, Spanje", "maplatitude": "", "maplongitude": "", "mapicon": "http:\/\/localhost\/wordpress\/wp-content\/themes\/starhotel\/images\/ui\/gmap-icon.png", "mappopover": "                    <h4>Our hotel<\/h4><p>This is our hotel<\/p>                ", "mapiconwidth": "42", "mapiconheight": "53", "mapzoom": "12" };
+        var object_sh_date = { "datepickerformat": "mm\/dd\/yy" };
+        var object_sh_translations = { "translations_months": ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"], "translations_days": ["Su", "Mo", "Tu", "We", "Th", "Fr", "Sa"] };
+/* ]]> */
+    </script>
+    <script type='text/javascript' src='~/js/custom.js'></script>
+    <script type='text/javascript' src='~/js/wp-embed.min.js'></script>
+    <script type='text/javascript' src='~/lib/js/js_composer_front.min.js'></script>
+    <script type='text/javascript' src='~/js/core.min.js'></script>
+    <script type='text/javascript' src='~/js/widget.min.js'></script>
+    <script type='text/javascript' src='~/js/tabs.min.js'></script>
+    <script type='text/javascript' src='~/lib/js/jquery-ui-tabs-rotate.min.js'></script>
+    
 
     @RenderSection("Scripts", required: false)
 </body>

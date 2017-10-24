@@ -135,7 +135,7 @@ namespace Hotel.WebBase
 
             app.UseMvc(routes =>
             {
-                routes.MapRoute("gallery", "{cc:regex(^(c_)\\w{{4}}$)}/gallery", new
+                routes.MapRoute("gallery", "{cc:regex(^(c_)\\w{{4}}$)}/gallery/{p?}", new
                 {
                     controller = "Gallery",
                     action = "Index"
