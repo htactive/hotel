@@ -27,6 +27,9 @@
     <link href='http://fonts.googleapis.com/css?family=Lato:300,400,700' rel='stylesheet' type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=Gochi+Hand' rel='stylesheet' type='text/css'>
 
+    <!-- SPECIFIC CSS -->
+    <link href="/css/date_time_picker.css" rel="stylesheet">
+
     <!-- BASE CSS -->
     <link href="/css/base.css" rel="stylesheet">
     <!-- REVOLUTION SLIDER CSS -->
@@ -162,5 +165,45 @@
     <script src="/rs-plugin/js/jquery.themepunch.revolution.min.js"></script>
     <script src="/js/revolution_func.js"></script>
 
+    <!-- Specific scripts -->
+    <script src="/js/quantity-bt.js"></script>
+    <script src="/js/bootstrap-datepicker.js"></script>
+    <script>
+        var nowTemp = new Date();
+        var now = new Date(nowTemp.getFullYear(), nowTemp.getMonth(), nowTemp.getDate(), 0, 0, 0, 0);
+
+        var checkin = $('#check_in').datepicker({
+
+            todayHighlight: true,
+
+            beforeShowDay: function (date) {
+                return date.valueOf() >= now.valueOf();
+            },
+            autoclose: true
+
+        }).on('changeDate', function (ev) {
+            if (ev.date.valueOf() > checkout.datepicker("getDate").valueOf() || !checkout.datepicker("getDate").valueOf()) {
+
+                var newDate = new Date(ev.date);
+                newDate.setDate(newDate.getDate() + 1);
+                checkout.datepicker("update", newDate);
+
+            }
+            $('#check_out')[0].focus();
+        });
+
+
+        var checkout = $('#check_out').datepicker({
+            beforeShowDay: function (date) {
+                if (!checkin.datepicker("getDate").valueOf()) {
+                    return date.valueOf() >= new Date().valueOf();
+                } else {
+                    return date.valueOf() > checkin.datepicker("getDate").valueOf();
+                }
+            },
+            autoclose: true
+
+        }).on('changeDate', function (ev) { });
+    </script>
 </body>
 </html>
