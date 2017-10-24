@@ -1,130 +1,94 @@
-﻿@{
-    ViewData["Title"] = "Room details";
-    ViewBag.BodyClass = "internal-pages sticky room-details trans-header";
-}
-
-<div class="room-detail-page">
-
-    <!-- Main Slider -->
-    <div id="room-details-slider">
-        <div class="items">
-            <img src="../assets/img/slider/1.jpg" alt="3" /><!-- Change the URL section based on your image\'s name -->
-        </div>
-        <div class="items">
-            <img src="../assets/img/slider/3.jpg" alt="3" />
-        </div>
-        <div class="items">
-            <img src="../assets/img/slider/4.jpg" alt="4" />
-        </div>
-        <div class="items">
-            <img src="../assets/img/slider/2.jpg" alt="2" />
+﻿<section class="sub_header" id="bg_general">
+    <div class="sub_header_content">
+        <div class="animated fadeInDown">
+            <h1>Local Food</h1>
+            <p>
+                Ridiculus sociosqu cursus neque cursus curae ante scelerisque vehicula.
+            </p>
         </div>
     </div>
+</section><!-- End Section -->
 
-    <div class="booking-title-box">
-        <div class="booking-title-box-inner container">
-            <!-- Heading box -->
-            <div class="heading-box">
-                <h2><span>Deluxe</span> One-bedroom Suite</h2><!-- Title -->
-                <div class="subtitle price">$240 <span>- Per Night</span></div><!-- Subtitle -->
-            </div>
-
-            <!-- Booking form -->
-            <form class="booking-form clearfix" action="#">
-                <!-- Do Not remove the classes -->
-                <div class="input-daterange col-md-6">
-                    <div class="booking-fields col-md-6">
-                        <input placeholder="Check-in" class="datepicker-fields check-in" type="text" name="start" /><!-- Date Picker field ( Do Not remove the "datepicker-fields" class ) -->
-                        <i class="fa fa-calendar"></i><!-- Date Picker Icon -->
-                    </div>
-                    <div class="booking-fields col-md-6">
-                        <input placeholder="Check-Out" class="datepicker-fields check-out" type="text" name="end" />
-                        <i class="fa fa-calendar"></i>
-                    </div>
-                </div>
-                <div class="booking-fields col-md-3">
-                    <!-- Select boxes ( you can change the items and its value based on your project's needs ) -->
-                    <select name="room-type" id="booking-field2">
-                        <option value="">Adult</option><!-- Select box items ( you can change the items and its value based on your project's needs ) -->
-                        <option value="2">1</option>
-                        <option value="3">2</option>
-                        <option value="4">3</option>
-                        <option value="5">4</option>
-                        <option value="6">5</option>
-                    </select>
-                    <!-- End of Select boxes -->
-                </div>
-                <div class="booking-fields col-md-3">
-                    <select name="guest" id="booking-field3">
-                        <option value="1">Children</option>
-                        <option value="2">1</option>
-                        <option value="3">2</option>
-                        <option value="4">3</option>
-                        <option value="5">4</option>
-                        <option value="6">5</option>
-                    </select>
-                </div>
-                <div class="booking-button-container">
-                    <input class="btn btn-default" value="Book Now" type="submit" /><!-- Submit button -->
-                </div>
-            </form>
-        </div>
-    </div>
-    <div class="room-details container">
-        <div class="description">
-            All details about the rooms can be added in this section. Details can be included of all details and features of the rooms like descriptive details about the view, equipments and etc. Also you can describe all the services which are included in this rooms that means that what services a guest can use by booking this room. Descriptive details can helps the guest to choose the best room and enjoy the time they will spend in this room. You can list all the highlighted features and services that guest can use by booking this room in the below list, this list helps the users to be notified about the important features of this room.
-        </div>
-        <ul class="services list-inline">
-            <li><i class="fa fa-check"></i>Breakfast Included</li>
-            <li><i class="fa fa-check"></i>Free Wifi</li>
-            <li><i class="fa fa-check"></i>Room Size : 60 sqm</li>
-            <li><i class="fa fa-check"></i>Max 2 people</li>
-            <li><i class="fa fa-check"></i>Sea View</li>
+<div id="position">
+    <div class="container">
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Category</a></li>
+            <li>Page active</li>
         </ul>
     </div>
-</div>
+</div><!-- End Position -->
 
-<!-- Rooms Container -->
-<div class="room-container container room-grid">
-    <!-- Heading box -->
-    <div class="heading-box">
-        <h2>Other <span>Rooms</span></h2><!-- Title -->
-    </div>
+<div class="container margin_60">
+    <div class="row">
+        <div class="col-lg-9 col-md-8">
+            <img src="/img/food_1.jpg" alt="" class="img-responsive styled nopadding">
+            <h3>Nonumes explicari</h3>
+            <p>
+                Ad qui consulatu scripserit comprehensam. Eum <strong>purto epicurei cotidieque</strong> at, ius luptatum invidunt no, vim at sint pertinacia repudiandae. Ad cum dicant laboramus delicatissimi, ex has nonumes explicari prodesset, brute tincidunt conclusionemque no has. Sit ullum latine ei. Ius id adhuc iriure torquatos. Justo prompta senserit eos cu, omnesque posidonium liberavisse pri in. Malorum fabulas elaboraret mea in, vel ut harum tacimates posidonium.
+            </p>
+            <div class="row">
+                <div class="col-md-6">
+                    <img src="/img/food_2.jpg" alt="" class="img-responsive styled">
+                    <h3>Ubique impetus</h3>
+                    <p>
+                        Ad sed apeirian senserit gloriatur, eu iusto ubique impetus quo. Sea no essent cotidieque reformidans, sea an <strong>persius moderatius</strong> comprehensam, at nam tamquam alterum definiebas. Nibh facilisi mei eu, essent virtute ius id. Ne ullum consequat sit, dolorum deserunt expetendis no eam.
+                    </p>
+                </div>
+                <div class="col-md-6">
+                    <img src="/img/food_3.jpg" alt="" class="img-responsive styled">
+                    <h3>ullum consequat </h3>
+                    <p>
+                        Ad sed apeirian senserit gloriatur, eu iusto ubique impetus quo. Sea no <strong>essent cotidieque</strong> reformidans, sea an persius moderatius comprehensam, at nam tamquam alterum definiebas. Nibh facilisi mei eu, essent virtute ius id. Ne ullum consequat sit, dolorum deserunt expetendis no eam.
+                    </p>
+                </div>
+            </div><!-- End row -->
 
-    <!-- Room Boxes -->
-    <div class="room-box col-xs-6">
-        <div class="img-container">
-            <img src="../assets/img/rooms/grid/5.jpg" alt="">
-            <a href="#" class="btn btn-default">More Details</a>
-        </div>
-        <div class="details">
-            <div class="title"><a href="#"><span>Royal</span> Suit</a></div>
-            <div class="desc">
-                Short description of rooms will be located in this section that you can describe some special features and equipment of rooms.
-            </div>
-            <div class="price">
-                <span>$530</span>
-                - Per Night
-            </div>
-        </div>
-    </div>
+            <hr>
 
-    <!-- Room Boxes -->
-    <div class="room-box col-xs-6">
-        <div class="img-container">
-            <img src="../assets/img/rooms/grid/6.jpg" alt="">
-            <a href="#" class="btn btn-default">More Details</a>
-        </div>
-        <div class="details">
-            <div class="title"><a href="#"><span>King</span> Suit</a></div>
-            <div class="desc">
-                Short description of rooms will be located in this section that you can describe some special features and equipment of rooms.
+            <h3>Table for pricing and other stuff</h3>
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>Impetus</th>
+                        <th>Virtute</th>
+                        <th>Facilisi</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Definiebas</td>
+                        <td>$50 /hr</td>
+                        <td>$90 /hr</td>
+                    </tr>
+                    <tr>
+                        <td>Tamquam</td>
+                        <td>$150 /hr</td>
+                        <td>$250 /hr</td>
+                    </tr>
+                    <tr>
+                        <td>Consequat</td>
+                        <td>$350 /hr</td>
+                        <td>$450 /hr</td>
+                    </tr>
+                </tbody>
+            </table>
+
+        </div><!-- End col-lg-9 -->
+
+        <div class="col-lg-3 col-md-4">
+            <div class="box_style_1" id="general_facilities">
+                <h3>General facilities</h3>
+                <ul>
+                    <li><i class="icon_set_1_icon-86"></i>Free Wifi</li>
+                    <li><i class="icon_set_2_icon-103"></i>Loundry service</li>
+                    <li><i class="icon_set_2_icon-110"></i>Swimming pool</li>
+                    <li><i class="icon_set_1_icon-58"></i>Restaurant</li>
+                    <li><i class="icon_set_2_icon-106"></i>Safe box</li>
+                </ul>
+                <p>His <strong>civibus tacimates</strong> ex, an quo nominavi qualisque. In erant dissentiunt vel, dicit legimus docendi an nam. Te congue perfecto eos, aliquid corrumpit ea est, eam petentium repudiandae ad.</p>
             </div>
-            <div class="price">
-                <span>$620</span>
-                - Per Night
-            </div>
-        </div>
-    </div>
-</div>
-<!-- End of Rooms Container -->
+
+        </div><!-- End col-lg-3 -->
+    </div><!-- End row -->
+</div><!-- End Container -->
