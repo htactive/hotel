@@ -1,40 +1,34 @@
-﻿<!-- slider -->
+﻿@model Hotel.WebBase.Models.HomePageViewModel;
+@{
+    var slider = Model.TopSlides;
+    var rooms = Model.Rooms;
+    var companyInfo = Model.CompanyInfo;
+}
+<!-- slider -->
 <div id="slider">
     <div class="callbacks_container">
         <ul class="rslides pic_slider">
-            <li>
-                <div class="text-wrap">
-                    <div class="inner">
-                        <div class="mid">
-                            <h3>The Best Value</h3>
-                            <h1>Under The Sun</h1>
-                            <div class="desc">
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-                                ullamco laboris nisi ut aliquip ex ea commodo consequat.
+
+            @for (int i = 0; i < slider.Count(); i++)
+            {
+                <li>
+                    <div class="text-wrap">
+                        <div class="inner">
+                            <div class="mid">
+                                <h3>@slider[i].Text2</h3>
+                                <h1>@slider[i].Text1</h1>
+                                <div class="desc">
+                                    @slider[i].Text3.Trim();
+                                </div>
                             </div>
                         </div>
+
                     </div>
 
-                </div>
-                <img src="~/assets/img/slider-home/pic%20(1).jpg" alt="">
-            </li>
+                    <img @string.Format("src = {0}", slider[i].Image.Url) alt="">
 
-            <li>
-                <div class="text-wrap">
-                    <div class="inner">
-                        <div class="mid">
-                            <h3>Stay With Us</h3>
-                            <h1>Feel Like Home</h1>
-                            <div class="desc">
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-                                ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-                <img src="~/assets/img/slider-home/pic%20(2).jpg" alt="">
-            </li>
+                </li>
+            }
         </ul>
     </div>
 </div>
@@ -42,152 +36,95 @@
 
 <div class="clearfix"></div>
 
-    <div class="container" style="padding-top:50px">
-        <!---begin booking-->
-        <div class="col-md-12">
-            <div class="contact_form_holder">
-                <form name="contactForm" id='booking_form' method="post" action='reservation.php'>
-                    <div class="col-md-8">
-                        <div class="col-md-4">
-                            <input type="text" class="form-control" name="name" id="name" placeholder="Tên của bạn*" />
-                        </div>
+<div class="container" style="padding-top:50px">
+    <!---begin booking-->
+    <div class="col-md-12">
+        <div class="contact_form_holder">
+            <form name="contactForm" id='booking_form' method="post" action='reservation.php'>
+                <div class="col-md-8">
+                    <div class="col-md-4">
+                        <input type="text" class="form-control" name="name" id="name" placeholder="Tên của bạn*" />
+                    </div>
 
-                        <div class="col-md-4">
-                            <input type="text" class="form-control" name="email" id="email" placeholder="Địa chỉ email*" />
-                            <div id="error_email" class="error">Please check your email</div>
-                        </div>
+                    <div class="col-md-4">
+                        <input type="text" class="form-control" name="email" id="email" placeholder="Địa chỉ email*" />
+                        <div id="error_email" class="error">Please check your email</div>
+                    </div>
 
-                        <div class="col-md-4">
-                            <select name="guest" id="guest" class="form-control">
-                                <option>Số người</option>
-                                <option>1</option>
-                                <option>2</option>
-                                <option>3</option>
-                                <option>4</option>
-                                <option>5</option>
-                                <option>>5</option>
-                            </select>
-                        </div>
-                        <div class="col-md-4">
-                            <input type="text" class="form-control" name="checkin" id="checkin" placeholder="Ngày thuê" />
-                            <div id="error_datepicker" class="error">Xin nhập lai</div>
-                        </div>
-
-                        <div class="col-md-4">
-                            <input type="text" class="form-control" name="checkout" id="checkout" placeholder="Ngày trả" />
-                            <div id="error_person_num" class="error">Xin nhập lại</div>
-                        </div>
-
-                        <div class="col-md-4">
-                            <select name="room" id="room" class="form-control">
-                                <option>Chọn phòng</option>
-                                <option>Single Room</option>
-                                <option>Double Room</option>
-                                <option>Triple Room</option>
-                                <option>Elegant Room</option>
-                            </select>
-                        </div>
+                    <div class="col-md-4">
+                        <select name="guest" id="guest" class="form-control">
+                            <option>Số người</option>
+                            <option>1</option>
+                            <option>2</option>
+                            <option>3</option>
+                            <option>4</option>
+                            <option>5</option>
+                            <option>>5</option>
+                        </select>
                     </div>
                     <div class="col-md-4">
-                        <textarea cols="10" rows="5" name="message" id="message" class="form-control" placeholder="Ghi chú"></textarea>
-                        <div id="error_message" class="error">Please check your message</div>
-                        <div id="mail_success" class="success">Thank you. Your message has been sent.</div>
-                        <div id="mail_failed" class="error">Error, email not sent</div>
-
-                        <div id="mail_success" class="success">Thank you. Your message has been sent.</div>
-                        <div id="mail_failed" class="error">Error, email not sent</div>
-
-                        <p id="btnsubmit">
-                            <input type="submit" id="send" value="Đặt phòng" class="btn btn-custom" />
-                        </p>
+                        <input type="text" class="form-control" name="checkin" id="checkin" placeholder="Ngày thuê" />
+                        <div id="error_datepicker" class="error">Xin nhập lai</div>
                     </div>
 
+                    <div class="col-md-4">
+                        <input type="text" class="form-control" name="checkout" id="checkout" placeholder="Ngày trả" />
+                        <div id="error_person_num" class="error">Xin nhập lại</div>
+                    </div>
 
-</form>
-            </div>
+                    <div class="col-md-4">
+                        <select name="room" id="room" class="form-control">
+                            <option>Chọn phòng</option>
+                            @for (int j = 0; j < rooms.Count(); j++)
+                            {
+                                <option>@rooms[j].Name</option>
+                            }
+                        </select>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <textarea cols="10" rows="5" name="message" id="message" class="form-control" placeholder="Ghi chú"></textarea>
+                    <div id="error_message" class="error">Please check your message</div>
+                    <div id="mail_success" class="success">Thank you. Your message has been sent.</div>
+                    <div id="mail_failed" class="error">Error, email not sent</div>
 
+                    <div id="mail_success" class="success">Thank you. Your message has been sent.</div>
+                    <div id="mail_failed" class="error">Error, email not sent</div>
+
+                    <p id="btnsubmit">
+                        <input type="submit" id="send" value="Đặt phòng" class="btn btn-custom" />
+                    </p>
+                </div>
+
+
+            </form>
         </div>
-        <!---end booking-->
+
     </div>
+    <!---end booking-->
+</div>
 
 <!-- content begin -->
 <div id="content" class="no-top no-bottom">
 
 
     <div class="fx custom-carousel-1">
-        <div class="room-item item">
-            <div class="overlay">
-                <a href="single-room.html">
-                    <h1>Deluxe Room</h1>
-                </a>
-                <div class="desc">
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip.
-                    <div class="price">$199<span>/Đêm</span></div>
-                    <a href="single-room.html" class="btn-border">Xem chi tiết</a>
+        @for (int i = 0; i < rooms.Count(); i++)
+        {
+            <div class="room-item item">
+                <div class="overlay">
+                    <a href="single-room.html">
+                        <h1>@rooms[i].Name</h1>
+                    </a>
+                    <div class="desc">
+                        @rooms[i].Description.ToString();
+                        <div class="price">@string.Format("{0:C}", rooms[i].Price)<span>/Đêm</span></div>
+                        <a href="single-room.html" class="btn-border">Xem chi tiết</a>
+                    </div>
                 </div>
+                <img @string.Format("src = {0}", rooms[i].RoomImages?.FirstOrDefault()?.Image.Url) alt="">
             </div>
-            <img src="~/assets/img/room/pic%20(1).jpg" alt="">
-        </div>
-
-        <div class="room-item item">
-            <div class="overlay">
-                <a href="single-room.html">
-                    <h1>Luxury Room</h1>
-                </a>
-                <div class="desc">
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip.
-                    <div class="price">$299<span>/Đêm</span></div>
-                    <a href="single-room.html" class="btn-border">Xem chi tiết</a>
-                </div>
-
-            </div>
-            <img src="~/assets/img/room/pic%20(2).jpg" alt="">
-        </div>
-
-        <div class="room-item item">
-            <div class="overlay">
-                <a href="single-room.html">
-                    <h1>Premier Room</h1>
-                </a>
-                <div class="desc">
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip.
-                    <div class="price">$399<span>/Đêm</span></div>
-                    <a href="single-room.html" class="btn-border">Xem chi tiết</a>
-                </div>
-            </div>
-            <img src="~/assets/img/room/pic%20(3).jpg" alt="">
-        </div>
-
-        <div class="room-item item">
-            <div class="overlay">
-                <a href="single-room.html">
-                    <h1>Deluxe Suite</h1>
-                </a>
-                <div class="desc">
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip.
-                    <div class="price">$499<span>/Đêm</span></div>
-                    <a href="single-room.html" class="btn-border">Xem chi tiết</a>
-                </div>
-            </div>
-            <img src="~/assets/img/room/pic%20(4).jpg" alt="">
-        </div>
-
-        <div class="room-item item">
-            <div class="overlay">
-                <a href="single-room.html">
-                    <h1>Luxury Suite</h1>
-                </a>
-                <div class="desc">
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip.
-                    <div class="price">$599<span>/Đêm</span></div>
-                    <a href="single-room.html" class="btn-border">Xem chi tiết</a>
-                </div>
-            </div>
-            <img src="~/assets/img/room/pic%20(5).jpg" alt="">
-        </div>
-
-
-
+        }
     </div>
 
     <section>
@@ -283,8 +220,8 @@
 
 
     @*<section class="call-to-action text-center">
-        <a href="#" class="btn-big-border">Make Your Reservation</a>
-    </section>*@
+            <a href="#" class="btn-big-border">Make Your Reservation</a>
+        </section>*@
 
 
 </div>

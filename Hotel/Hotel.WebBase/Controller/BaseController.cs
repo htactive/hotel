@@ -60,6 +60,7 @@ namespace Hotel.WebBase.Controllers
             this.CurrentCompany = Mappers.Mapper.ToModel(entity);
             ViewBag.CurrentCompany = this.CurrentCompany;
             ViewBag.BaseHref = $"/{ this.CurrentCompany.CompanyCode}/";
+            ViewBag.CurrentCompanyInfo = this.GetCompanyInfo();
             return string.Empty;
         }
 

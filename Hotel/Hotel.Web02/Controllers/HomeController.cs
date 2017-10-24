@@ -18,7 +18,9 @@ namespace Hotel.Web02.Controllers
 
         public IActionResult Index()
         {
-            return View();
+            
+            var model = GetHomePage();
+            return View(model);
         }
 
         public IActionResult About()

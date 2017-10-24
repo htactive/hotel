@@ -15,7 +15,7 @@ namespace Hotel.WebBase.Mappers
             var imageUrl = entity.Url;
             if (!string.IsNullOrEmpty(entity.S3FileKey))
             {
-                imageUrl = string.Format("https://s3-ap-southeast-1.amazonaws.com/dfwresource/{0}", entity.S3FileKey);
+                imageUrl = string.Format("https://s3-ap-southeast-1.amazonaws.com/hotelsdanang/{0}", entity.S3FileKey);
             }
             return entity == null ? null : new ImageModel()
             {

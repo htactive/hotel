@@ -1,6 +1,10 @@
 ﻿@{
     Layout = null;
 }
+@{ 
+    var companyInfo = (Hotel.WebBase.Models.CompanyInfoModel)ViewBag.CurrentCompanyInfo;
+}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -29,7 +33,7 @@
         <!-- mainmenu begin -->
         <div id="mainmenu-container">
             <ul id="mainmenu">
-                <li><a href="#">Trang chủ</a></li>
+                <li><a href="">Trang chủ</a></li>
                 <li><a href="rooms">Phòng</a></li>
                 <li><a href="articles">Tin tức</a></li>
                 <li><a href="gallery">Hình ảnh</a></li>
@@ -50,7 +54,7 @@
             <div class="row">
                 <div class="col-md-4">
                     <h3>Về chúng tôi</h3>
-                    Tập đoàn Mường Thanh đã phát triển bền vững thành Tập đoàn kinh tế tổng hợp đa ngành hoạt động trên các lĩnh vực Đầu tư- Xây dựng- Du lịch giải trí 
+                    @Html.Raw(companyInfo.LongDescription)
                 </div>
                 <div class="col-md-4">
                     <h3>Tin mới nhất</h3>
