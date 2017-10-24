@@ -16,15 +16,16 @@ namespace Hotel.Web01.Controllers
         {
         }
 
-        public IActionResult List(int page = 0)
+        public IActionResult List()
         {
             return View();
         }
 
         public IActionResult Detail(string slug)
         {
+            // Get data by slug
+
             return View();
         }
-
     }
 }
