@@ -1,180 +1,194 @@
 ﻿@{
     ViewData["Title"] = "Home Page";
-    ViewBag.BodyClass = "internal-pages trans-header sticky";
 }
 
-<!-- Internal Page Header -->
-<div class="internal-page-title about-page" data-parallax="scroll" data-image-src="../assets/img/internal-header.jpg">
-    <h1>Danh sách phòng</h1>
-    <ol class="breadcrumb">
-        <!-- Internal Page Breadcrumb -->
-        <li><a href="/">Trang chủ</a></li>
-        <li class="active">Danh sách phòng</li>
-    </ol>
-</div>
-<!-- End of Internal Page Header -->
-<!-- Rooms Container -->
-<div class="room-container container room-list">
-
-    <!-- Room Boxes -->
-    <div class="room-box clearfix">
-        <div class="img-container col-xs-6">
-            <img src="../assets/img/rooms/grid/1.jpg" alt="1">
-            <a href="room/slug" class="btn btn-default">Xem thêm</a>
-        </div>
-        <div class="details col-xs-6">
-            <div class="title"><a href="room/slug">Phòng đơn</a></div>
-            <div class="desc">
-                Short description of rooms will be located in this section that you can describe some special features and equipment of rooms.
-                <ul class="facilities list-inline">
-                    <li><i class="fa fa-check"></i>Breakfast Included</li>
-                    <li><i class="fa fa-check"></i>Free Wifi</li>
-                    <li><i class="fa fa-check"></i>Room Size : 60 sqm</li>
-                    <li><i class="fa fa-check"></i>Max 2 people</li>
-                    <li><i class="fa fa-check"></i>Sea View</li>
-                </ul>
-            </div>
-            <div class="price">
-                <span>$240</span>
-                - Per Night
-            </div>
+<section class="sub_header" id="bg_room">
+    <div class="sub_header_content">
+        <div class="animated fadeInDown">
+            <h1>All rooms</h1>
+            <p>
+                Ridiculus sociosqu cursus neque cursus curae ante scelerisque vehicula.
+            </p>
         </div>
     </div>
+</section><!-- End Section -->
 
-    <!-- Room Boxes -->
-    <div class="room-box clearfix">
-        <div class="img-container col-xs-6">
-            <img src="../assets/img/rooms/grid/2.jpg" alt="2">
-            <a href="room/slug" class="btn btn-default">More Details</a>
-        </div>
-        <div class="details col-xs-6">
-            <div class="title"><a href="room/slug">Double <span>Room</span></a></div>
-            <div class="desc">
-                Short description of rooms will be located in this section that you can describe some special features and equipment of rooms.
-                <ul class="facilities list-inline">
-                    <li><i class="fa fa-check"></i>Breakfast Included</li>
-                    <li><i class="fa fa-check"></i>Free Wifi</li>
-                    <li><i class="fa fa-check"></i>Room Size : 60 sqm</li>
-                    <li><i class="fa fa-check"></i>Max 2 people</li>
-                    <li><i class="fa fa-check"></i>Sea View</li>
-                </ul>
-            </div>
-            <div class="price">
-                <span>$350</span>
-                - Per Night
-            </div>
-        </div>
+<div id="position">
+    <div class="container">
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Category</a></li>
+            <li>Page active</li>
+        </ul>
     </div>
+</div><!-- End Position -->
 
-    <!-- Room Boxes -->
-    <div class="room-box clearfix">
-        <div class="img-container col-xs-6">
-            <img src="../assets/img/rooms/grid/3.jpg" alt="">
-            <a href="room/slug" class="btn btn-default">More Details</a>
-        </div>
-        <div class="details col-xs-6">
-            <div class="title"><a href="room/slug">Deluxe <span>One-bedroom</span> Suite</a></div>
-            <div class="desc">
-                Short description of rooms will be located in this section that you can describe some special features and equipment of rooms.
-                <ul class="facilities list-inline">
-                    <li><i class="fa fa-check"></i>Breakfast Included</li>
-                    <li><i class="fa fa-check"></i>Free Wifi</li>
-                    <li><i class="fa fa-check"></i>Room Size : 60 sqm</li>
-                    <li><i class="fa fa-check"></i>Max 2 people</li>
-                    <li><i class="fa fa-check"></i>Sea View</li>
-                </ul>
-            </div>
-            <div class="price">
-                <span>$440</span>
-                - Per Night
-            </div>
-        </div>
-    </div>
+<div class="container margin_60">
+    <div class="row">
+        <div class="col-lg-9 col-md-8">
+            <div class="strip_all_rooms_list wow fadeIn" data-wow-delay="0.1s">
+                <div class="row">
+                    <div class="col-lg-4 col-md-4 col-sm-4">
+                        <div class="img_list">
+                            <a href="room/slug"><img src="/img/room_list_1.jpg" alt=""></a>
+                        </div>
+                    </div>
+                    <div class="clearfix visible-xs-block">
+                    </div>
+                    <div class="col-lg-6 col-md-6 col-sm-6">
+                        <div class="rooms_list_desc">
+                            <h3><strong>Single</strong> room</h3>
+                            <p>
+                                Sed pretium, ligula sollicitudin laoreet viverra, tortor libero sodales leo, eget blandit nunc tortor eu nibh. Lorem ipsum dolor sit amet, consectetuer adipiscing elit....
+                            </p>
+                            <ul class="add_info">
+                                <li>
+                                    <a href="javascript:void(0);" class="tooltip-1" data-placement="top" title="Plasma TV with cable channels"><i class="icon_set_2_icon-116"></i></a>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0);" class="tooltip-1" data-placement="top" title="Breakfast included"><i class="icon_set_1_icon-59"></i></a>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0);" class="tooltip-1" data-placement="top" title="King size bed"><i class="icon_set_2_icon-104"></i></a>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0);" class="tooltip-1" data-placement="top" title="Shower"><i class="icon_set_2_icon-118"></i></a>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0);" class="tooltip-1" data-placement="top" title="No smoking"><i class="icon_set_1_icon-47"></i></a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-2 col-md-2 col-sm-2">
+                        <div class="price_list">
+                            <div>
+                                <sup>$</sup>89*<span class="normal_price_list">$99</span><small>*Pax/Per night</small>
+                                <p>
+                                    <a href="room/slug" class="btn_1">Details</a>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div><!--End strip -->
 
-    <!-- Room Boxes -->
-    <div class="room-box clearfix">
-        <div class="img-container col-xs-6">
-            <img src="../assets/img/rooms/grid/4.jpg" alt="">
-            <a href="room/slug" class="btn btn-default">More Details</a>
-        </div>
-        <div class="details col-xs-6">
-            <div class="title"><a href="room/slug">Deluxe <span>Two-bedroom</span> Suite</a></div>
-            <div class="desc">
-                Short description of rooms will be located in this section that you can describe some special features and equipment of rooms.
-                <ul class="facilities list-inline">
-                    <li><i class="fa fa-check"></i>Breakfast Included</li>
-                    <li><i class="fa fa-check"></i>Free Wifi</li>
-                    <li><i class="fa fa-check"></i>Room Size : 60 sqm</li>
-                    <li><i class="fa fa-check"></i>Max 2 people</li>
-                    <li><i class="fa fa-check"></i>Sea View</li>
-                </ul>
-            </div>
-            <div class="price">
-                <span>$480</span>
-                - Per Night
-            </div>
-        </div>
-    </div>
+            <div class="strip_all_rooms_list wow fadeIn" data-wow-delay="0.2s">
+                <div class="row">
+                    <div class="col-lg-4 col-md-4 col-sm-4">
+                        <div class="img_list">
+                            <a href="room/slug"><img src="/img/room_list_2.jpg" alt=""></a>
+                        </div>
+                    </div>
+                    <div class="clearfix visible-xs-block">
+                    </div>
+                    <div class="col-lg-6 col-md-6 col-sm-6">
+                        <div class="rooms_list_desc">
+                            <h3><strong>Double</strong> room</h3>
+                            <p>
+                                Sed pretium, ligula sollicitudin laoreet viverra, tortor libero sodales leo, eget blandit nunc tortor eu nibh. Lorem ipsum dolor sit amet, consectetuer adipiscing elit....
+                            </p>
+                            <ul class="add_info">
+                                <li>
+                                    <a href="javascript:void(0);" class="tooltip-1" data-placement="top" title="Plasma TV with cable channels"><i class="icon_set_2_icon-116"></i></a>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0);" class="tooltip-1" data-placement="top" title="Breakfast included"><i class="icon_set_1_icon-59"></i></a>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0);" class="tooltip-1" data-placement="top" title="King size bed"><i class="icon_set_2_icon-104"></i></a>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0);" class="tooltip-1" data-placement="top" title="Shower"><i class="icon_set_2_icon-118"></i></a>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0);" class="tooltip-1" data-placement="top" title="No smoking"><i class="icon_set_1_icon-47"></i></a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-2 col-md-2 col-sm-2">
+                        <div class="price_list">
+                            <div>
+                                <sup>$</sup>89*<span class="normal_price_list">$99</span><small>*Pax/Per night</small>
+                                <p>
+                                    <a href="room/slug" class="btn_1">Details</a>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div><!--End strip -->
 
-    <!-- Room Boxes -->
-    <div class="room-box clearfix">
-        <div class="img-container col-xs-6">
-            <img src="../assets/img/rooms/grid/5.jpg" alt="">
-            <a href="room/slug" class="btn btn-default">More Details</a>
-        </div>
-        <div class="details col-xs-6">
-            <div class="title"><a href="room/slug"><span>Royal</span> Suit</a></div>
-            <div class="desc">
-                Short description of rooms will be located in this section that you can describe some special features and equipment of rooms.
-                <ul class="facilities list-inline">
-                    <li><i class="fa fa-check"></i>Breakfast Included</li>
-                    <li><i class="fa fa-check"></i>Free Wifi</li>
-                    <li><i class="fa fa-check"></i>Room Size : 60 sqm</li>
-                    <li><i class="fa fa-check"></i>Max 2 people</li>
-                    <li><i class="fa fa-check"></i>Sea View</li>
-                </ul>
-            </div>
-            <div class="price">
-                <span>$530</span>
-                - Per Night
-            </div>
-        </div>
-    </div>
+            <div class="strip_all_rooms_list wow fadeIn" data-wow-delay="0.3s">
+                <div class="row">
+                    <div class="col-lg-4 col-md-4 col-sm-4">
+                        <div class="img_list">
+                            <a href="room/slug"><img src="/img/room_list_3.jpg" alt=""></a>
+                        </div>
+                    </div>
+                    <div class="clearfix visible-xs-block">
+                    </div>
+                    <div class="col-lg-6 col-md-6 col-sm-6">
+                        <div class="rooms_list_desc">
+                            <h3><strong>King double</strong> room</h3>
+                            <p>
+                                Sed pretium, ligula sollicitudin laoreet viverra, tortor libero sodales leo, eget blandit nunc tortor eu nibh. Lorem ipsum dolor sit amet, consectetuer adipiscing elit....
+                            </p>
+                            <ul class="add_info">
+                                <li>
+                                    <a href="javascript:void(0);" class="tooltip-1" data-placement="top" title="Plasma TV with cable channels"><i class="icon_set_2_icon-116"></i></a>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0);" class="tooltip-1" data-placement="top" title="Breakfast included"><i class="icon_set_1_icon-59"></i></a>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0);" class="tooltip-1" data-placement="top" title="King size bed"><i class="icon_set_2_icon-104"></i></a>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0);" class="tooltip-1" data-placement="top" title="Shower"><i class="icon_set_2_icon-118"></i></a>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0);" class="tooltip-1" data-placement="top" title="No smoking"><i class="icon_set_1_icon-47"></i></a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-2 col-md-2 col-sm-2">
+                        <div class="price_list">
+                            <div>
+                                <sup>$</sup>89*<span class="normal_price_list">$99</span><small>*Pax/Per night</small>
+                                <p>
+                                    <a href="room/slug" class="btn_1">Details</a>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div><!--End strip -->
+        </div><!-- End col-lg-9 -->
 
-    <!-- Room Boxes -->
-    <div class="room-box clearfix">
-        <div class="img-container col-xs-6">
-            <img src="../assets/img/rooms/grid/6.jpg" alt="">
-            <a href="room/slug" class="btn btn-default">More Details</a>
-        </div>
-        <div class="details col-xs-6">
-            <div class="title"><a href="room/slug"><span>King</span> Suit</a></div>
-            <div class="desc">
-                Short description of rooms will be located in this section that you can describe some special features and equipment of rooms.
-                <ul class="facilities list-inline">
-                    <li><i class="fa fa-check"></i>Breakfast Included</li>
-                    <li><i class="fa fa-check"></i>Free Wifi</li>
-                    <li><i class="fa fa-check"></i>Room Size : 60 sqm</li>
-                    <li><i class="fa fa-check"></i>Max 2 people</li>
-                    <li><i class="fa fa-check"></i>Sea View</li>
+        <div class="col-lg-3 col-md-4">
+            <div class="box_style_1" id="general_facilities">
+                <h3>General facilities</h3>
+                <ul>
+                    <li><i class="icon_set_1_icon-86"></i>Free Wifi</li>
+                    <li><i class="icon_set_2_icon-103"></i>Loundry service</li>
+                    <li><i class="icon_set_2_icon-110"></i>Swimming pool</li>
+                    <li><i class="icon_set_1_icon-58"></i>Restaurant</li>
+                    <li><i class="icon_set_1_icon-27"></i>Parking</li>
                 </ul>
+                <p>
+                    His <strong>civibus tacimates</strong> ex, an quo nominavi qualisque. In erant dissentiunt vel, dicit legimus docendi an nam. Te congue perfecto eos, aliquid corrumpit ea est, eam petentium repudiandae ad.
+                </p>
             </div>
-            <div class="price">
-                <span>$620</span>
-                - Per Night
+            <div class=" box_style_2">
+                <i class="icon_set_1_icon-90"></i>
+                <h4>Need help? Call us</h4>
+                <a href="tel://004542344599" class="phone">+45 423 445 99</a>
+                <small>Monday to Friday 9.00am - 7.30pm</small>
             </div>
-        </div>
-    </div>
-</div>
-<!-- End of Rooms Container -->
-<!-- Pagination -->
-<div class="pagination-box">
-    <ul class="list-inline">
-        <li class="active"><a href="#"><span>1</span></a></li>
-        <li><a href="rooms/1"><span>2</span></a></li>
-        <li><a href="rooms/2"><span>3</span></a></li>
-        <li><a href="rooms/3"><span>4</span></a></li>
-        <li><a href="rooms/4"><span>5</span></a></li>
-    </ul>
-</div>
-<!-- End of Pagination -->
+        </div><!-- End col-lg-3 -->
+    </div><!-- End row -->
+</div><!-- End Container -->
+

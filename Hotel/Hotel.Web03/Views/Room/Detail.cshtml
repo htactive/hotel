@@ -1,130 +1,221 @@
 ﻿@{
     ViewData["Title"] = "Room details";
-    ViewBag.BodyClass = "internal-pages sticky room-details trans-header";
 }
 
-<div class="room-detail-page">
-
-    <!-- Main Slider -->
-    <div id="room-details-slider">
-        <div class="items">
-            <img src="../assets/img/slider/1.jpg" alt="3" /><!-- Change the URL section based on your image\'s name -->
-        </div>
-        <div class="items">
-            <img src="../assets/img/slider/3.jpg" alt="3" />
-        </div>
-        <div class="items">
-            <img src="../assets/img/slider/4.jpg" alt="4" />
-        </div>
-        <div class="items">
-            <img src="../assets/img/slider/2.jpg" alt="2" />
+<section class="sub_header" id="bg_room">
+    <div class="sub_header_content">
+        <div class="animated fadeInDown">
+            <h1>Double Room</h1>
+            <p>
+                Ridiculus sociosqu cursus neque cursus curae ante scelerisque vehicula.
+            </p>
         </div>
     </div>
+</section><!-- End Section -->
 
-    <div class="booking-title-box">
-        <div class="booking-title-box-inner container">
-            <!-- Heading box -->
-            <div class="heading-box">
-                <h2><span>Deluxe</span> One-bedroom Suite</h2><!-- Title -->
-                <div class="subtitle price">$240 <span>- Per Night</span></div><!-- Subtitle -->
-            </div>
-
-            <!-- Booking form -->
-            <form class="booking-form clearfix" action="#">
-                <!-- Do Not remove the classes -->
-                <div class="input-daterange col-md-6">
-                    <div class="booking-fields col-md-6">
-                        <input placeholder="Check-in" class="datepicker-fields check-in" type="text" name="start" /><!-- Date Picker field ( Do Not remove the "datepicker-fields" class ) -->
-                        <i class="fa fa-calendar"></i><!-- Date Picker Icon -->
-                    </div>
-                    <div class="booking-fields col-md-6">
-                        <input placeholder="Check-Out" class="datepicker-fields check-out" type="text" name="end" />
-                        <i class="fa fa-calendar"></i>
-                    </div>
-                </div>
-                <div class="booking-fields col-md-3">
-                    <!-- Select boxes ( you can change the items and its value based on your project's needs ) -->
-                    <select name="room-type" id="booking-field2">
-                        <option value="">Adult</option><!-- Select box items ( you can change the items and its value based on your project's needs ) -->
-                        <option value="2">1</option>
-                        <option value="3">2</option>
-                        <option value="4">3</option>
-                        <option value="5">4</option>
-                        <option value="6">5</option>
-                    </select>
-                    <!-- End of Select boxes -->
-                </div>
-                <div class="booking-fields col-md-3">
-                    <select name="guest" id="booking-field3">
-                        <option value="1">Children</option>
-                        <option value="2">1</option>
-                        <option value="3">2</option>
-                        <option value="4">3</option>
-                        <option value="5">4</option>
-                        <option value="6">5</option>
-                    </select>
-                </div>
-                <div class="booking-button-container">
-                    <input class="btn btn-default" value="Book Now" type="submit" /><!-- Submit button -->
-                </div>
-            </form>
-        </div>
-    </div>
-    <div class="room-details container">
-        <div class="description">
-            All details about the rooms can be added in this section. Details can be included of all details and features of the rooms like descriptive details about the view, equipments and etc. Also you can describe all the services which are included in this rooms that means that what services a guest can use by booking this room. Descriptive details can helps the guest to choose the best room and enjoy the time they will spend in this room. You can list all the highlighted features and services that guest can use by booking this room in the below list, this list helps the users to be notified about the important features of this room.
-        </div>
-        <ul class="services list-inline">
-            <li><i class="fa fa-check"></i>Breakfast Included</li>
-            <li><i class="fa fa-check"></i>Free Wifi</li>
-            <li><i class="fa fa-check"></i>Room Size : 60 sqm</li>
-            <li><i class="fa fa-check"></i>Max 2 people</li>
-            <li><i class="fa fa-check"></i>Sea View</li>
+<div id="position">
+    <div class="container">
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Category</a></li>
+            <li>Page active</li>
         </ul>
     </div>
-</div>
+</div><!-- End Position -->
 
-<!-- Rooms Container -->
-<div class="room-container container room-grid">
-    <!-- Heading box -->
-    <div class="heading-box">
-        <h2>Other <span>Rooms</span></h2><!-- Title -->
-    </div>
+<div class="container margin_60">
+    <div class="row">
+        <div class="col-lg-9 col-md-8" id="single_tour_desc">
+            <div id="Img_carousel" class="slider-pro">
+                <div class="sp-slides">
 
-    <!-- Room Boxes -->
-    <div class="room-box col-xs-6">
-        <div class="img-container">
-            <img src="../assets/img/rooms/grid/5.jpg" alt="">
-            <a href="#" class="btn btn-default">More Details</a>
-        </div>
-        <div class="details">
-            <div class="title"><a href="#"><span>Royal</span> Suit</a></div>
-            <div class="desc">
-                Short description of rooms will be located in this section that you can describe some special features and equipment of rooms.
-            </div>
-            <div class="price">
-                <span>$530</span>
-                - Per Night
-            </div>
-        </div>
-    </div>
+                    <div class="sp-slide">
+                        <img alt="" class="sp-image" 
+                             data-src="/img/room_photo/1_medium.jpg"
+                             data-small="/img/room_photo/1_small.jpg"
+                             data-medium="/img/room_photo/1_medium.jpg"
+                             data-large="/img/room_photo/1_large.jpg"
+                             data-retina="/img/room_photo/1_large.jpg">
+                    </div>
+                    <div class="sp-slide">
+                        <img alt="" class="sp-image"
+                             data-src="/img/room_photo/2_medium.jpg"
+                             data-small="/img/room_photo/2_small.jpg"
+                             data-medium="/img/room_photo/2_medium.jpg"
+                             data-large="/img/room_photo/2_large.jpg"
+                             data-retina="/img/room_photo/2_large.jpg">
+                        <p class="sp-layer sp-black sp-padding" data-position="bottomLeft" data-horizontal="5%" data-vertical="5%" data-width="90%" data-show-transition="up" data-show-delay="400">
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                        </p>
+                    </div>
 
-    <!-- Room Boxes -->
-    <div class="room-box col-xs-6">
-        <div class="img-container">
-            <img src="../assets/img/rooms/grid/6.jpg" alt="">
-            <a href="#" class="btn btn-default">More Details</a>
-        </div>
-        <div class="details">
-            <div class="title"><a href="#"><span>King</span> Suit</a></div>
-            <div class="desc">
-                Short description of rooms will be located in this section that you can describe some special features and equipment of rooms.
+                    <div class="sp-slide">
+                        <img alt="" class="sp-image"
+                             data-src="/img/room_photo/3_medium.jpg"
+                             data-small="/img/room_photo/3_small.jpg"
+                             data-medium="/img/room_photo/3_medium.jpg"
+                             data-large="/img/room_photo/3_large.jpg"
+                             data-retina="/img/room_photo/3_large.jpg">
+                        <p class="sp-layer sp-black sp-padding" data-position="bottomLeft" data-horizontal="5%" data-vertical="5%" data-width="90%" data-show-transition="up" data-show-delay="400">
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                        </p>
+                    </div>
+
+                    <div class="sp-slide">
+                        <img alt="" class="sp-image"
+                             data-src="/img/room_photo/4_medium.jpg"
+                             data-small="/img/room_photo/4_small.jpg"
+                             data-medium="/img/room_photo/4_medium.jpg"
+                             data-large="/img/room_photo/4_large.jpg"
+                             data-retina="/img/room_photo/4_large.jpg">
+                        <p class="sp-layer sp-black sp-padding" data-position="bottomLeft" data-horizontal="5%" data-vertical="5%" data-width="90%" data-show-transition="up" data-show-delay="400">
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                        </p>
+                    </div>
+
+                    <div class="sp-slide">
+                        <img alt="" class="sp-image"
+                             data-src="/img/room_photo/5_medium.jpg"
+                             data-small="/img/room_photo/5_small.jpg"
+                             data-medium="/img/room_photo/5_medium.jpg"
+                             data-large="/img/room_photo/5_large.jpg"
+                             data-retina="/img/room_photo/5_large.jpg">
+                        <p class="sp-layer sp-black sp-padding" data-position="bottomLeft" data-horizontal="5%" data-vertical="5%" data-width="90%" data-show-transition="up" data-show-delay="400">
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                        </p>
+                    </div>
+
+                    <div class="sp-slide">
+                        <img alt="" class="sp-image"
+                             data-src="/img/room_photo/6_medium.jpg"
+                             data-small="/img/room_photo/6_small.jpg"
+                             data-medium="/img/room_photo/6_medium.jpg"
+                             data-large="/img/room_photo/6_large.jpg"
+                             data-retina="/img/room_photo/6_large.jpg">
+                        <p class="sp-layer sp-black sp-padding" data-position="bottomLeft" data-horizontal="5%" data-vertical="5%" data-width="90%" data-show-transition="up" data-show-delay="400">
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                        </p>
+                    </div>
+
+                    <div class="sp-slide">
+                        <img alt="" class="sp-image"
+                             data-src="/img/room_photo/7_medium.jpg"
+                             data-small="/img/room_photo/7_small.jpg"
+                             data-medium="/img/room_photo/7_medium.jpg"
+                             data-large="/img/room_photo/7_large.jpg"
+                             data-retina="/img/room_photo/7_large.jpg">
+                        <p class="sp-layer sp-black sp-padding" data-position="bottomLeft" data-horizontal="5%" data-vertical="5%" data-width="90%" data-show-transition="up" data-show-delay="400">
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                        </p>
+                    </div>
+
+                    <div class="sp-slide">
+                        <img alt="" class="sp-image"
+                             data-src="/img/room_photo/8_medium.jpg"
+                             data-small="/img/room_photo/8_small.jpg"
+                             data-medium="/img/room_photo/8_medium.jpg"
+                             data-large="/img/room_photo/8_large.jpg"
+                             data-retina="/img/room_photo/8_large.jpg">
+                        <p class="sp-layer sp-black sp-padding" data-position="bottomLeft" data-horizontal="5%" data-vertical="5%" data-width="90%" data-show-transition="up" data-show-delay="400">
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                        </p>
+                    </div>
+
+                </div>
+                <div class="sp-thumbnails">
+                    <img alt="" class="sp-thumbnail" src="/img/room_photo/1_thumb.jpg">
+                    <img alt="" class="sp-thumbnail" src="/img/room_photo/2_thumb.jpg">
+                    <img alt="" class="sp-thumbnail" src="/img/room_photo/3_thumb.jpg">
+                    <img alt="" class="sp-thumbnail" src="/img/room_photo/4_thumb.jpg">
+                    <img alt="" class="sp-thumbnail" src="/img/room_photo/5_thumb.jpg">
+                    <img alt="" class="sp-thumbnail" src="/img/room_photo/6_thumb.jpg">
+                    <img alt="" class="sp-thumbnail" src="/img/room_photo/7_thumb.jpg">
+                    <img alt="" class="sp-thumbnail" src="/img/room_photo/8_thumb.jpg">
+                </div>
             </div>
-            <div class="price">
-                <span>$620</span>
-                - Per Night
+            <div id="single_room_feat">
+                <ul>
+                    <li><i class="icon_set_2_icon-116"></i>Plasma TV</li>
+                    <li><i class="icon_set_2_icon-104"></i>King size bed</li>
+                    <li><i class="icon_set_1_icon-59"></i>Breakfast inclueded</li>
+                    <li><i class="icon_set_2_icon-111"></i>Bathtub</li>
+                    <li><i class="icon_set_1_icon-22"></i>Pet allowed</li>
+                    <li><i class="icon_set_2_icon-106"></i>Safe box</li>
+                </ul>
             </div>
-        </div>
-    </div>
-</div>
-<!-- End of Rooms Container -->
+            <div class="row">
+                <div class="col-md-3">
+                    <h3>Description</h3>
+                </div>
+                <div class="col-md-9">
+                    <p>
+                        Lorem ipsum dolor sit amet, at omnes deseruisse pri. Quo aeterno legimus insolens ad. Sit cu detraxit constituam, an mel iudico constituto efficiendi. Eu ponderum mediocrem has, vitae adolescens in pro. Mea liber ridens inermis ei, mei legendos vulputate an, labitur tibique te qui.  Ad cum movet fierent assueverit, mei stet legere ne. Mel at vide soluta, ut utamur antiopam inciderint sed. Ut iriure perpetua voluptaria has, vim postea denique in, mollis pertinax elaboraret sed in. Per no vidit timeam, quis omittam sed at.
+                    </p>
+                    <h4>Room facilities</h4>
+                    <p>
+                        Lorem ipsum dolor sit amet, at omnes deseruisse pri. Quo aeterno legimus insolens ad. Sit cu detraxit constituam, an mel iudico constituto efficiendi.
+                    </p>
+                    <div class="row">
+                        <div class="col-md-6 col-sm-6">
+                            <ul class="list_ok">
+                                <li>Lorem ipsum dolor sit amet</li>
+                                <li>No scripta electram necessitatibus sit</li>
+                                <li>Quidam percipitur instructior an eum</li>
+                                <li>Ut est saepe munere ceteros</li>
+                            </ul>
+                        </div>
+                        <div class="col-md-6 col-sm-6">
+                            <ul class="list_ok">
+                                <li>Lorem ipsum dolor sit amet</li>
+                                <li>No scripta electram necessitatibus sit</li>
+                                <li>Quidam percipitur instructior an eum</li>
+                                <li>No scripta electram necessitatibus sit</li>
+                            </ul>
+                        </div>
+                    </div><!-- End row  -->
+                    <h4>Room Prices</h4>
+                    <!-- start pricing table -->
+                    <table class="table table-striped">
+                        <tbody>
+                            <tr>
+                                <td>Low (from 23/03 to 31/05)</td>
+                                <td>140$</td>
+                            </tr>
+                            <tr>
+                                <td>Middle (from 23/03 to 31/05)</td>
+                                <td>180$</td>
+                            </tr>
+                            <tr>
+                                <td>High (from 23/03 to 31/05)</td>
+                                <td>200$</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div><!-- End col-md-9  -->
+            </div><!-- End row  -->
+
+            <hr>
+
+        </div><!-- End col-lg-9 -->
+
+        <div class="col-lg-3 col-md-4">
+            <div class="box_style_1" id="general_facilities">
+                <h3>General facilities</h3>
+                <ul>
+                    <li><i class="icon_set_1_icon-86"></i>Free Wifi</li>
+                    <li><i class="icon_set_2_icon-103"></i>Loundry service</li>
+                    <li><i class="icon_set_2_icon-110"></i>Swimming pool</li>
+                    <li><i class="icon_set_1_icon-58"></i>Restaurant</li>
+                    <li><i class="icon_set_1_icon-27"></i>Parking</li>
+                </ul>
+                <p>His <strong>civibus tacimates</strong> ex, an quo nominavi qualisque. In erant dissentiunt vel, dicit legimus docendi an nam. Te congue perfecto eos, aliquid corrumpit ea est, eam petentium repudiandae ad.</p>
+            </div>
+            <div class=" box_style_2">
+                <i class="icon_set_1_icon-90"></i>
+                <h4>Need help? Call us</h4>
+                <a href="tel://004542344599" class="phone">+45 423 445 99</a>
+                <small>Monday to Friday 9.00am - 7.30pm</small>
+            </div>
+        </div><!-- End col-lg-3 -->
+    </div><!-- End row -->
+</div><!-- End Container -->
