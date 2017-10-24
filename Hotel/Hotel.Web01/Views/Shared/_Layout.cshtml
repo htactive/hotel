@@ -1,12 +1,14 @@
-﻿
+﻿@{
+    var companyInfo = (Hotel.WebBase.Models.CompanyInfoModel)ViewBag.CurrentCompanyInfo;
+}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Pinar Hotel - Responsive Hotel Template</title>
-    <meta name="description" content="Pinar is Hotel and Resort HTML template.">
-    <meta name="keywords" content="Responsive,HTML5,CSS3,XML,JavaScript">
-    <meta name="author" content="Joseph a, services@htactive.com">
+    <title>@(companyInfo.CompanyName) - @(ViewBag.Title ?? "")</title>
+    <meta name="description" content="@(companyInfo.CompanyName)">
+    <meta name="keywords" content="@(companyInfo.CompanyName)">
+    <meta name="author" content="services@htactive.com">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=2.0, user-scalable=no">
     <link href='https://fonts.googleapis.com/css?family=Lobster%7cRaleway:400,300,100,600,700,800' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" type="text/css" href="/assets/css/styles.css">
@@ -19,8 +21,8 @@
         <div class="inner-container container">
             <!-- Contact Info -->
             <ul class="contact-info list-inline">
-                <li><i class="fa fa-phone"></i>0185 26 37 48 59</li>
-                <li><i class="fa fa-envelope-o"></i>info@ravistheme.com</li>
+                <li><a href="tel:@(companyInfo.Phone1)"><i class="fa fa-phone"></i>@(companyInfo.Phone1)</a></li>
+                <li><a href="mailto:@(companyInfo.Email1)"><i class="fa fa-envelope-o"></i>@(companyInfo.Email1)</a></li>
             </ul>
 
         </div>
@@ -32,12 +34,7 @@
             <div class="left-sec col-sm-4 col-md-2 clearfix">
                 <!-- Top Logo -->
                 <div id="top-logo">
-                    <div class="title"><span>Pinar</span> Hotel</div>
-                    <i class="fa fa-star-o"></i>
-                    <i class="fa fa-star-o"></i>
-                    <i class="fa fa-star-o"></i>
-                    <i class="fa fa-star-o"></i>
-                    <i class="fa fa-star-o"></i>
+                    <img src="@(companyInfo?.Logo?.Url)"/>
                 </div>
             </div>
             <div class="right-sec col-sm-8 col-md-10 clearfix">
@@ -81,30 +78,45 @@
             <div class="widget col-xs-6 col-md-4">
                 <h4>Thông tin khách sạn</h4>
                 <div class="widget-content">
-                    vài dòng mô tả khách sạn từ database
-                </div>
-            </div>
-            <div class="widget col-xs-6 col-md-4">
-                <h4>Hình ảnh</h4>
-                <div class="widget-content">
-
+                    @Html.Raw(companyInfo.ShortDescription)
                 </div>
             </div>
             <div class="widget col-md-4 get-in-touch">
                 <h4>Liên hệ</h4>
                 <div class="widget-content">
                     <ul>
-                        <li><i class="fa fa-map-marker "></i>địa chỉ của khách sạn</li>
-                        <li><i class="fa fa-phone"></i>01227 423 919</li>
-                        <li><i class="fa fa-envelope-o"></i>info@@htactive.com</li>
+                        <li><i class="fa fa-map-marker "></i>@(companyInfo.Address1)</li>
+                        <li><a href="tel:@(companyInfo.Phone1)"><i class="fa fa-phone"></i>@(companyInfo.Phone1)</a></li>
+                        <li><a href="mailto:@(companyInfo.Email1)"><i class="fa fa-envelope-o"></i>@(companyInfo.Email1)</a></li>
                     </ul>
                     <ul class="list-inline social-icons">
-                        <li><a href="#"><i class="fa fa-facebook "></i></a></li>
-                        <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                        <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
-                        <li><a href="#"><i class="fa fa-skype"></i></a></li>
-                        <li><a href="#"><i class="fa fa-youtube"></i></a></li>
+                        @if (!string.IsNullOrEmpty(companyInfo.Facebook))
+                        {
+                            <li><a href="@(companyInfo.Facebook)" target="_blank"><i class="fa fa-facebook "></i></a></li>
+                        }
+                        @if (!string.IsNullOrEmpty(companyInfo.Twitter))
+                        {
+                            <li><a href="@(companyInfo.Twitter)" target="_blank"><i class="fa fa-twitter "></i></a></li>
+                        }
+                        @if (!string.IsNullOrEmpty(companyInfo.GooglePlus))
+                        {
+                            <li><a href="@(companyInfo.GooglePlus)" target="_blank"><i class="fa fa-google-plus "></i></a></li>
+                        }
+                        @if (!string.IsNullOrEmpty(companyInfo.Skype))
+                        {
+                            <li><a href="@(companyInfo.Skype)" target="_blank"><i class="fa fa-skype "></i></a></li>
+                        }
+                        @if (!string.IsNullOrEmpty(companyInfo.YouTube))
+                        {
+                            <li><a href="@(companyInfo.YouTube)" target="_blank"><i class="fa fa-youtube "></i></a></li>
+                        }
                     </ul>
+                </div>
+            </div>
+            <div class="widget col-xs-6 col-md-4">
+                <h4>Liên kết Facebook</h4>
+                <div class="widget-content">
+                    <iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fhtactive%2F&amp;tabs&amp;width=340&amp;height=214&amp;small_header=false&amp;adapt_container_width=true&amp;hide_cover=false&amp;show_facepile=true&amp;appId=1780445882280832" width="340" height="214" style="border:none;overflow:hidden;height:213px;" scrolling="no" frameborder="0" allowtransparency="true"></iframe>
                 </div>
             </div>
         </div>
@@ -114,12 +126,12 @@
     <footer id="footer">
         <nav>
             <ul class="list-inline">
-                <li><a href="#">Trang chủ</a></li>
-                <li><a href="#">Phòng</a></li>
-                <li><a href="#">Dịch vụ</a></li>
-                <li><a href="#">Tin tức</a></li>
-                <li><a href="#">Hình ảnh</a></li>
-                <li><a href="#">Liên hệ</a></li>
+                <li><a href="/">Trang chủ</a></li>
+                <li><a href="rooms">Phòng</a></li>
+                <li><a href="services">Dịch vụ</a></li>
+                <li><a href="articles">Tin tức</a></li>
+                <li><a href="gallery">Hình ảnh</a></li>
+                <li><a href="contact">Liên hệ</a></li>
             </ul>
         </nav>
         <div class="copy-right">
