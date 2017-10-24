@@ -28,10 +28,11 @@
     <link href='http://fonts.googleapis.com/css?family=Gochi+Hand' rel='stylesheet' type='text/css'>
 
     <!-- BASE CSS -->
-    <link href="css/base.css" rel="stylesheet">
+    <link href="/css/base.css" rel="stylesheet">
     <!-- REVOLUTION SLIDER CSS -->
-    <link href="rs-plugin/css/settings.css" rel="stylesheet">
-    <link href="css/extralayers.css" rel="stylesheet">
+    <link href="/rs-plugin/css/settings.css" rel="stylesheet">
+    <link href="/css/extralayers.css" rel="stylesheet">
+    <base href="@ViewBag.BaseHref" />
     <!--[if lt IE 9]>
       <script src="js/html5shiv.min.js"></script>
       <script src="js/respond.min.js"></script>
@@ -57,77 +58,27 @@
                 <div class="row">
                     <div class="col-md-4 col-sm-4 col-xs-4">
                         <div id="logo">
-                            <a href="index.html"><img src="img/logo.png" width="240" height="40" alt="CountryHolidays" data-retina="true"></a>
+                            <a href="index.html"><img src="/img/logo.png" width="240" height="40" alt="CountryHolidays" data-retina="true"></a>
                         </div>
                     </div>
                     <nav class="col-md-8 col-sm-8 col-xs-8">
                         <a class="cmn-toggle-switch cmn-toggle-switch__rot  open_close" href="javascript:void(0);"><span>Menu mobile</span></a>
                         <div class="main-menu">
                             <div id="header_menu">
-                                <img src="img/logo.png" width="240" height="40" alt="CountryHolidays" data-retina="true">
+                                <img src="/img/logo.png" width="240" height="40" alt="CountryHolidays" data-retina="true">
                             </div>
                             <a href="#" class="open_close" id="close_in"><i class="icon_set_1_icon-77"></i></a>
                             <ul>
                                 <li class="submenu">
-                                    <a href="javascript:void(0);" class="show-submenu">Home <i class="icon-down-open-mini"></i></a>
-                                    <ul>
-                                        <li><a href="index.html">With Revolution Slider</a></li>
-                                        <li><a href="index_2.html">With Video Background</a></li>
-                                        <li><a href="index_3.html">With Booking Form</a></li>
-                                    </ul>
+                                    <a href="" class="show-submenu">Trang chủ</a>
                                 </li>
                                 <li class="submenu">
-                                    <a href="javascript:void(0);" class="show-submenu">Rooms <i class="icon-down-open-mini"></i></a>
-                                    <ul>
-                                        <li><a href="rooms_list.html">Room list</a></li>
-                                        <li><a href="room_details.html">Room details</a></li>
-                                        <li><a href="room_booking.html">Room details Booking</a></li>
-                                    </ul>
+                                    <a href="rooms" class="show-submenu">Phòng</a>
                                 </li>
-                                <li><a href="about.html">About</a></li>
-                                <li class="submenu">
-                                    <a href="javascript:void(0);" class="show-submenu">Activities <i class="icon-down-open-mini"></i></a>
-                                    <ul>
-                                        <li><a href="all_activities.html">All activities</a></li>
-                                        <li><a href="horses.html">Horses</a></li>
-                                        <li><a href="local_food.html">Discover local food</a></li>
-                                        <li><a href="cooking.html">Cooking local food</a></li>
-                                        <li><a href="farm.html">Farm activities</a></li>
-                                    </ul>
-                                </li>
-                                <li><a href="contacts.html">Contact us</a></li>
-                                <li class="megamenu submenu">
-                                    <a href="javascript:void(0);" class="show-submenu-mega">Pages &amp; elements<i class="icon-down-open-mini"></i></a>
-                                    <div class="menu-wrapper">
-                                        <div class="col-md-4">
-                                            <h3>Pages</h3>
-                                            <ul>
-                                                <li><a href="gallery_3_columns.html">Gallery 3 columns</a></li>
-                                                <li><a href="gallery_4_columns.html">Gallery 4 columns</a></li>
-                                                <li><a href="fullscreen_gallery.html">Gallery fullscreen</a></li>
-                                                <li><a href="404.html">404 Error page</a></li>
-                                            </ul>
-                                        </div>
-                                        <div class="col-md-4">
-                                            <h3>Pages</h3>
-                                            <ul>
-                                                <li><a href="blog.html">Blog</a></li>
-                                                <li><a href="blog_post.html">Blog post</a></li>
-                                                <li><a href="site_launch/index.html">Site launch / Coming soon</a></li>
-                                                <li><a href="shortcodes.html"><i class="icon-tools"></i> Shortcodes</a></li>
-                                            </ul>
-                                        </div>
-                                        <div class="col-md-4">
-                                            <h3>Elements</h3>
-                                            <ul>
-                                                <li><a href="boxed/index.html"><i class="icon-columns"></i> Boxed version</a></li>
-                                                <li><a href="icon_pack_1.html"><i class="icon-inbox-alt"></i> Icon pack 1 (1900)</a></li>
-                                                <li><a href="icon_pack_2.html"><i class="icon-inbox-alt"></i> Icon pack 2 (100)</a></li>
-                                                <li><a href="icon_pack_3.html"><i class="icon-inbox-alt"></i> Icon pack 3(17)</a></li>
-                                            </ul>
-                                        </div>
-                                    </div><!-- End menu-wrapper -->
-                                </li>
+                                <li><a href="services">Dịch vụ</a></li>
+                                <li><a href="articles">Tin tức</a></li>
+                                <li><a href="photos">Hình ảnh</a></li>
+                                <li><a href="contact">Liên hệ</a></li>
                             </ul>
                         </div><!-- End main-menu -->
 
@@ -201,15 +152,15 @@
     <div id="toTop"></div><!-- Back to top button -->
     <!-- Common scripts -->
     <script src="https://ajax.cloudflare.com/cdn-cgi/scripts/78d64697/cloudflare-static/email-decode.min.js"></script>
-    <script src="js/jquery-1.11.2.min.js"></script>
-    <script src="js/common_scripts_min.js"></script>
-    <script src="js/functions.js"></script>
-    <script src="assets/validate.js"></script>
+    <script src="/js/jquery-1.11.2.min.js"></script>
+    <script src="/js/common_scripts_min.js"></script>
+    <script src="/js/functions.js"></script>
+    <script src="/assets/validate.js"></script>
 
     <!-- SLIDER REVOLUTION 4.x SCRIPTS  -->
-    <script src="rs-plugin/js/jquery.themepunch.tools.min.js"></script>
-    <script src="rs-plugin/js/jquery.themepunch.revolution.min.js"></script>
-    <script src="js/revolution_func.js"></script>
+    <script src="/rs-plugin/js/jquery.themepunch.tools.min.js"></script>
+    <script src="/rs-plugin/js/jquery.themepunch.revolution.min.js"></script>
+    <script src="/js/revolution_func.js"></script>
 
 </body>
 </html>

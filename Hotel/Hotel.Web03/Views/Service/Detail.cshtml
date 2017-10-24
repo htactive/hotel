@@ -1,0 +1,130 @@
+﻿@{
+    ViewData["Title"] = "Room details";
+    ViewBag.BodyClass = "internal-pages sticky room-details trans-header";
+}
+
+<div class="room-detail-page">
+
+    <!-- Main Slider -->
+    <div id="room-details-slider">
+        <div class="items">
+            <img src="../assets/img/slider/1.jpg" alt="3" /><!-- Change the URL section based on your image\'s name -->
+        </div>
+        <div class="items">
+            <img src="../assets/img/slider/3.jpg" alt="3" />
+        </div>
+        <div class="items">
+            <img src="../assets/img/slider/4.jpg" alt="4" />
+        </div>
+        <div class="items">
+            <img src="../assets/img/slider/2.jpg" alt="2" />
+        </div>
+    </div>
+
+    <div class="booking-title-box">
+        <div class="booking-title-box-inner container">
+            <!-- Heading box -->
+            <div class="heading-box">
+                <h2><span>Deluxe</span> One-bedroom Suite</h2><!-- Title -->
+                <div class="subtitle price">$240 <span>- Per Night</span></div><!-- Subtitle -->
+            </div>
+
+            <!-- Booking form -->
+            <form class="booking-form clearfix" action="#">
+                <!-- Do Not remove the classes -->
+                <div class="input-daterange col-md-6">
+                    <div class="booking-fields col-md-6">
+                        <input placeholder="Check-in" class="datepicker-fields check-in" type="text" name="start" /><!-- Date Picker field ( Do Not remove the "datepicker-fields" class ) -->
+                        <i class="fa fa-calendar"></i><!-- Date Picker Icon -->
+                    </div>
+                    <div class="booking-fields col-md-6">
+                        <input placeholder="Check-Out" class="datepicker-fields check-out" type="text" name="end" />
+                        <i class="fa fa-calendar"></i>
+                    </div>
+                </div>
+                <div class="booking-fields col-md-3">
+                    <!-- Select boxes ( you can change the items and its value based on your project's needs ) -->
+                    <select name="room-type" id="booking-field2">
+                        <option value="">Adult</option><!-- Select box items ( you can change the items and its value based on your project's needs ) -->
+                        <option value="2">1</option>
+                        <option value="3">2</option>
+                        <option value="4">3</option>
+                        <option value="5">4</option>
+                        <option value="6">5</option>
+                    </select>
+                    <!-- End of Select boxes -->
+                </div>
+                <div class="booking-fields col-md-3">
+                    <select name="guest" id="booking-field3">
+                        <option value="1">Children</option>
+                        <option value="2">1</option>
+                        <option value="3">2</option>
+                        <option value="4">3</option>
+                        <option value="5">4</option>
+                        <option value="6">5</option>
+                    </select>
+                </div>
+                <div class="booking-button-container">
+                    <input class="btn btn-default" value="Book Now" type="submit" /><!-- Submit button -->
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="room-details container">
+        <div class="description">
+            All details about the rooms can be added in this section. Details can be included of all details and features of the rooms like descriptive details about the view, equipments and etc. Also you can describe all the services which are included in this rooms that means that what services a guest can use by booking this room. Descriptive details can helps the guest to choose the best room and enjoy the time they will spend in this room. You can list all the highlighted features and services that guest can use by booking this room in the below list, this list helps the users to be notified about the important features of this room.
+        </div>
+        <ul class="services list-inline">
+            <li><i class="fa fa-check"></i>Breakfast Included</li>
+            <li><i class="fa fa-check"></i>Free Wifi</li>
+            <li><i class="fa fa-check"></i>Room Size : 60 sqm</li>
+            <li><i class="fa fa-check"></i>Max 2 people</li>
+            <li><i class="fa fa-check"></i>Sea View</li>
+        </ul>
+    </div>
+</div>
+
+<!-- Rooms Container -->
+<div class="room-container container room-grid">
+    <!-- Heading box -->
+    <div class="heading-box">
+        <h2>Other <span>Rooms</span></h2><!-- Title -->
+    </div>
+
+    <!-- Room Boxes -->
+    <div class="room-box col-xs-6">
+        <div class="img-container">
+            <img src="../assets/img/rooms/grid/5.jpg" alt="">
+            <a href="#" class="btn btn-default">More Details</a>
+        </div>
+        <div class="details">
+            <div class="title"><a href="#"><span>Royal</span> Suit</a></div>
+            <div class="desc">
+                Short description of rooms will be located in this section that you can describe some special features and equipment of rooms.
+            </div>
+            <div class="price">
+                <span>$530</span>
+                - Per Night
+            </div>
+        </div>
+    </div>
+
+    <!-- Room Boxes -->
+    <div class="room-box col-xs-6">
+        <div class="img-container">
+            <img src="../assets/img/rooms/grid/6.jpg" alt="">
+            <a href="#" class="btn btn-default">More Details</a>
+        </div>
+        <div class="details">
+            <div class="title"><a href="#"><span>King</span> Suit</a></div>
+            <div class="desc">
+                Short description of rooms will be located in this section that you can describe some special features and equipment of rooms.
+            </div>
+            <div class="price">
+                <span>$620</span>
+                - Per Night
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End of Rooms Container -->
