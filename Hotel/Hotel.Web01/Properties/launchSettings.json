@@ -25,6 +25,7 @@
     },
     "Dev1": {
       "commandName": "IISExpress",
+      "launchBrowser": true,
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development1"
       }
