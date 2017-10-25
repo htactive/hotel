@@ -14,16 +14,18 @@ namespace Hotel.Web02.Controllers
         {
         }
 
-        public IActionResult List()
+        public IActionResult List(int p = 0)
         {
-            return View();
+            var viewmodel = this.GetArticlesListPage(8, p);
+            return View(viewmodel);
         }
+
 
         public IActionResult Detail(string slug)
         {
-            // Get data by slug
-
-            return View();
+            var viewmodel = this.GetArticleDetailPage(slug);
+            ViewBag.NewestArticles = this.GetArticlesListPage(5, null).Articles;
+            return View(viewmodel);
         }
     }
 }
