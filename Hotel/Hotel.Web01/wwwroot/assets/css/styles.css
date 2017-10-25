@@ -21987,6 +21987,10 @@ body.room-details .booking-title-box {
     padding-bottom: 70px;
     margin-bottom: 60px;
 }
+    body.room-details .booking-title-box.no-booking-form {
+        padding-bottom: 0px;
+        margin-bottom: 0px;
+    }
 
     body.room-details .booking-title-box .heading-box {
         margin: 50px 0;

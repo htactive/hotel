@@ -2,8 +2,9 @@
     ViewData["Title"] = "Home Page";
     ViewBag.BodyClass = "internal-pages trans-header sticky";
 }
+@model Hotel.WebBase.Models.ServicesListPageViewModel
 <!-- Internal Page Header -->
-<div class="internal-page-title about-page" data-parallax="scroll" data-image-src="../assets/img/internal-header.jpg">
+<div class="internal-page-title about-page" data-parallax="scroll" data-image-src="/assets/img/internal-header.jpg">
     <h1>Dịch vụ của khách sạn</h1>
     <ol class="breadcrumb">
         <!-- Internal Page Breadcrumb -->
@@ -14,100 +15,34 @@
 <!-- End of Internal Page Header -->
 <!-- Rooms Container -->
 <div class="room-container container room-grid">
+    @foreach (var item in Model.Services)
+    {
 
-    <!-- Room Boxes -->
-    <div class="room-box col-xs-6">
-        <div class="img-container">
-            <img src="../assets/img/rooms/grid/1.jpg" alt="1">
-            <a href="service/slug" class="btn btn-default">Xem thêm</a>
-        </div>
-        <div class="details">
-            <div class="title"><a href="service/slug">Cho thuê xe</a></div>
-            <div class="desc">
-                Short description of rooms will be located in this section that you can describe some special features and equipment of rooms.
+        <div class="room-box col-xs-6">
+            <div class="img-container">
+                <img src="@(item.CoverImage?.Url ?? "/assets/img/rooms/grid/1.jpg")" alt="@(item.Title)">
+                <a href="service/slug" class="btn btn-default">Xem thêm</a>
+            </div>
+            <div class="details">
+                <div class="title"><a href="service/@(Hotel.WebBase.Helpers.SlugOrIdHelper.EncodeSlugOrId(item.Slug,item.Id))">@item.Title</a></div>
+                <div class="desc">
+                    @Html.Raw(item.ShortDescription)
+                </div>
             </div>
         </div>
-    </div>
-
-    <!-- Room Boxes -->
-    <div class="room-box col-xs-6">
-        <div class="img-container">
-            <img src="../assets/img/rooms/grid/2.jpg" alt="2">
-            <a href="service/slug" class="btn btn-default">Xem thêm</a>
-        </div>
-        <div class="details">
-            <div class="title"><a href="service/slug">Double <span>Room</span></a></div>
-            <div class="desc">
-                Short description of rooms will be located in this section that you can describe some special features and equipment of rooms.
-            </div>
-        </div>
-    </div>
-
-    <!-- Room Boxes -->
-    <div class="room-box col-xs-6">
-        <div class="img-container">
-            <img src="../assets/img/rooms/grid/3.jpg" alt="">
-            <a href="service/slug" class="btn btn-default">Xem thêm</a>
-        </div>
-        <div class="details">
-            <div class="title"><a href="service/slug">Deluxe <span>One-bedroom</span> Suite</a></div>
-            <div class="desc">
-                Short description of rooms will be located in this section that you can describe some special features and equipment of rooms.
-            </div>
-        </div>
-    </div>
-
-    <!-- Room Boxes -->
-    <div class="room-box col-xs-6">
-        <div class="img-container">
-            <img src="../assets/img/rooms/grid/4.jpg" alt="">
-            <a href="service/slug" class="btn btn-default">Xem thêm</a>
-        </div>
-        <div class="details">
-            <div class="title"><a href="service/slug">Deluxe <span>Two-bedroom</span> Suite</a></div>
-            <div class="desc">
-                Short description of rooms will be located in this section that you can describe some special features and equipment of rooms.
-            </div>
-        </div>
-    </div>
-
-    <!-- Room Boxes -->
-    <div class="room-box col-xs-6">
-        <div class="img-container">
-            <img src="../assets/img/rooms/grid/5.jpg" alt="">
-            <a href="service/slug" class="btn btn-default">Xem thêm</a>
-        </div>
-        <div class="details">
-            <div class="title"><a href="service/slug"><span>Royal</span> Suit</a></div>
-            <div class="desc">
-                Short description of rooms will be located in this section that you can describe some special features and equipment of rooms.
-            </div>
-        </div>
-    </div>
-
-    <!-- Room Boxes -->
-    <div class="room-box col-xs-6">
-        <div class="img-container">
-            <img src="../assets/img/rooms/grid/6.jpg" alt="">
-            <a href="service/slug" class="btn btn-default">Xem thêm</a>
-        </div>
-        <div class="details">
-            <div class="title"><a href="service/slug"><span>King</span> Suit</a></div>
-            <div class="desc">
-                Short description of rooms will be located in this section that you can describe some special features and equipment of rooms.
-            </div>
-        </div>
-    </div>
+    }
 </div>
 <!-- End of Rooms Container -->
 <!-- Pagination -->
 <div class="pagination-box">
     <ul class="list-inline">
-        <li class="active"><a href="#"><span>1</span></a></li>
-        <li><a href="services/1"><span>2</span></a></li>
-        <li><a href="services/2"><span>3</span></a></li>
-        <li><a href="services/3"><span>4</span></a></li>
-        <li><a href="services/4"><span>5</span></a></li>
+        @{
+            var pages = Hotel.WebBase.Helpers.PaginationHelper.GetPages(Model.CurrentPage, Model.TotalPage);
+        }
+        @foreach (var item in pages)
+        {
+            <li class="@(item.IsActive ? "active":"")"><a href="rooms/@(item.Value)"><span>@(item.Text)</span></a></li>
+        }
     </ul>
 </div>
 <!-- End of Pagination -->
