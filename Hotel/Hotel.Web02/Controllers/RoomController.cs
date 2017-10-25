@@ -16,13 +16,14 @@ namespace Hotel.Web02.Controllers
 
         public IActionResult List()
         {
-            return View();
+            var rooms = GetRoomsListPage(10, null);
+            return View(rooms);
         }
 
         public IActionResult Detail(string slug)
         {
-            // get detail by slug
-            return View();
+            var model = GetRoomDetailPage(slug);
+            return View(model);
         }
     }
 }

@@ -2,8 +2,9 @@
 @{
     var slider = Model.TopSlides;
     var rooms = Model.Rooms;
-    var companyInfo = Model.CompanyInfo;
+    var services = Model.Services.Take(4).ToList();
 }
+
 <!-- slider -->
 <div id="slider">
     <div class="callbacks_container">
@@ -15,10 +16,10 @@
                     <div class="text-wrap">
                         <div class="inner">
                             <div class="mid">
-                                <h3>@slider[i].Text2</h3>
-                                <h1>@slider[i].Text1</h1>
+                                <h3>@Html.Raw(slider[i].Text2)</h3>
+                                <h1>@Html.Raw(slider[i].Text1)</h1>
                                 <div class="desc">
-                                    @slider[i].Text3.Trim();
+                                    @Html.Raw(slider[i].Text3);
                                 </div>
                             </div>
                         </div>
@@ -95,8 +96,6 @@
                         <input type="submit" id="send" value="Đặt phòng" class="btn btn-custom" />
                     </p>
                 </div>
-
-
             </form>
         </div>
 
@@ -114,10 +113,10 @@
             <div class="room-item item">
                 <div class="overlay">
                     <a href="single-room.html">
-                        <h1>@rooms[i].Name</h1>
+                        <h1>@Html.Raw(rooms[i].Name) </h1>
                     </a>
                     <div class="desc">
-                        @rooms[i].Description.ToString();
+                        @Html.Raw(rooms[i].Description);
                         <div class="price">@string.Format("{0:C}", rooms[i].Price)<span>/Đêm</span></div>
                         <a href="single-room.html" class="btn-border">Xem chi tiết</a>
                     </div>
@@ -131,52 +130,24 @@
 
         <div class="container">
             <div class="row">
-                <div class="col-md-6">
-                    <div class="icon-box">
-                        <i class="fa fa-bell-o"></i>
-                        <div class="text">
-                            <h3>Room Services</h3>
-                            Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.
+                @for (int i = 0; i < services.Count(); i++)
+                {
+                    <div class="col-md-6">
+                        <div class="icon-box">
+                            <i class="fa fa-bell-o"></i>
+                            <div class="text">
+                                <h3>@Html.Raw(services[i].Title)</h3>
+                                @Html.Raw(services[i].ShortDescription)
+                            </div>
                         </div>
                     </div>
-                </div>
-
-                <div class="col-md-6">
-                    <div class="icon-box">
-                        <i class="fa fa-coffee"></i>
-                        <div class="text">
-                            <h3>Free Coffee</h3>
-                            Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-md-6">
-                    <div class="icon-box">
-                        <i class="fa fa-car"></i>
-                        <div class="text">
-                            <h3>Free Parking</h3>
-                            Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-md-6">
-                    <div class="icon-box">
-                        <i class="fa fa-dropbox"></i>
-                        <div class="text">
-                            <h3>Deposit Box</h3>
-                            Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.
-                        </div>
-                    </div>
-                </div>
+                }
             </div>
-
         </div>
     </section>
 
 
-    <section id="section-about-1" class="dark side-bg">
+    @*<section id="section-about-1" class="dark side-bg">
         <div class="col-md-6 col-md-offset-6 pull-right image-container">
             <div class="background-image"></div>
         </div>
@@ -216,7 +187,7 @@
             </div>
         </div>
         <div class="clearfix"></div>
-    </section>
+    </section>*@
 
 
     @*<section class="call-to-action text-center">
