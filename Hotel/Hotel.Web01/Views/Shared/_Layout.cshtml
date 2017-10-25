@@ -1,5 +1,6 @@
 ﻿@{
     var companyInfo = (Hotel.WebBase.Models.CompanyInfoModel)ViewBag.CurrentCompanyInfo;
+    var tabName = (string)ViewBag.TabName;
 }
 <!DOCTYPE html>
 <html lang="en">
@@ -40,18 +41,22 @@
             <div class="right-sec col-sm-8 col-md-10 clearfix">
                 <nav id="main-menu">
                     <ul class="list-inline">
-                        <li class="active">
+                        <li class="@(tabName == "home" ? "active" : "")">
                             <a href="">Trang chủ</a>
                         </li>
-                        <li>
+                        <li class="@(tabName == "room" ? "active" : "")">
                             <a href="rooms">Phòng</a>
                         </li>
-                        <li>
+                        <li class="@(tabName == "service" ? "active" : "")">
                             <a href="services">Dịch vụ</a>
                         </li>
-                        <li><a href="articles">Tin tức</a></li>
-                        <li><a href="photos">Hình ảnh</a></li>
-                        <li>
+                        <li class="@(tabName == "article" ? "active" : "")">
+                            <a href="articles">Tin tức</a>
+                        </li>
+                        <li class="@(tabName == "gallery" ? "active" : "")">
+                            <a href="gallery">Hình ảnh</a>
+                        </li>
+                        <li class="@(tabName == "contact" ? "active" : "")">
                             <a href="contact">Liên hệ</a>
                         </li>
                     </ul>
@@ -87,23 +92,23 @@
                     <ul class="list-inline social-icons">
                         @if (!string.IsNullOrEmpty(companyInfo.Facebook))
                         {
-                        <li><a href="@(companyInfo.Facebook)" target="_blank"><i class="fa fa-facebook "></i></a></li>
+                            <li><a href="@(companyInfo.Facebook)" target="_blank"><i class="fa fa-facebook "></i></a></li>
                         }
                         @if (!string.IsNullOrEmpty(companyInfo.Twitter))
                         {
-                        <li><a href="@(companyInfo.Twitter)" target="_blank"><i class="fa fa-twitter "></i></a></li>
+                            <li><a href="@(companyInfo.Twitter)" target="_blank"><i class="fa fa-twitter "></i></a></li>
                         }
                         @if (!string.IsNullOrEmpty(companyInfo.GooglePlus))
                         {
-                        <li><a href="@(companyInfo.GooglePlus)" target="_blank"><i class="fa fa-google-plus "></i></a></li>
+                            <li><a href="@(companyInfo.GooglePlus)" target="_blank"><i class="fa fa-google-plus "></i></a></li>
                         }
                         @if (!string.IsNullOrEmpty(companyInfo.Skype))
                         {
-                        <li><a href="@(companyInfo.Skype)" target="_blank"><i class="fa fa-skype "></i></a></li>
+                            <li><a href="@(companyInfo.Skype)" target="_blank"><i class="fa fa-skype "></i></a></li>
                         }
                         @if (!string.IsNullOrEmpty(companyInfo.YouTube))
                         {
-                        <li><a href="@(companyInfo.YouTube)" target="_blank"><i class="fa fa-youtube "></i></a></li>
+                            <li><a href="@(companyInfo.YouTube)" target="_blank"><i class="fa fa-youtube "></i></a></li>
                         }
                     </ul>
                 </div>

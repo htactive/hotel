@@ -141,7 +141,7 @@ namespace Hotel.WebBase.Controllers
                 Services = GetServicesListPage(TakeInHome, null).Services,
                 Articles = GetArticlesListPage(TakeInHome, null)?.Articles
             };
-
+            ViewBag.TabName = "home";
             return viewmodel;
         }
 
@@ -177,6 +177,7 @@ namespace Hotel.WebBase.Controllers
                     })).ToList();
                 })).ToList()
             };
+            ViewBag.TabName = "room";
             return viewmodel;
         }
 
@@ -218,6 +219,7 @@ namespace Hotel.WebBase.Controllers
                 Room = mapper(entity),
                 RelatedRooms = relatedRooms.Select(mapper).ToList()
             };
+            ViewBag.TabName = "room";
             return viewmodel;
         }
 
@@ -249,6 +251,7 @@ namespace Hotel.WebBase.Controllers
                 })).ToList(),
 
             };
+            ViewBag.TabName = "article";
             return viewmodel;
         }
 
@@ -285,6 +288,7 @@ namespace Hotel.WebBase.Controllers
                 Article = mapper(entity),
                 RelatedArticles = relatedArticles.Select(mapper).ToList()
             };
+            ViewBag.TabName = "article";
             return viewmodel;
         }
 
@@ -316,6 +320,7 @@ namespace Hotel.WebBase.Controllers
                 })).ToList(),
 
             };
+            ViewBag.TabName = "service";
             return viewmodel;
         }
 
@@ -353,6 +358,7 @@ namespace Hotel.WebBase.Controllers
                 Service = mapper(entity),
                 RelatedServices = relatedServices.Select(mapper).ToList()
             };
+            ViewBag.TabName = "service";
             return viewmodel;
         }
 
@@ -383,6 +389,7 @@ namespace Hotel.WebBase.Controllers
                     m.Image = Mappers.Mapper.ToModel(e.Image);
                 })).ToList(),
             };
+            ViewBag.TabName = "gallery";
             return viewmodel;
         }
 
