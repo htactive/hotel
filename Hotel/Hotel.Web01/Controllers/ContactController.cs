@@ -19,6 +19,7 @@ namespace Hotel.Web01.Controllers
 
         public IActionResult Index()
         {
+            ViewBag.TabName = "contact";
             return View();
         }
         [HttpPost]

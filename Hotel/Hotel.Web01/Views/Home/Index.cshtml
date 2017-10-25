@@ -12,7 +12,7 @@
 
             <div class="items">
                 <a href="@topSlide.Url">
-                    <img src="@(topSlide.Image?.Url??"/assets/img/slider/1.jpg")" alt="3" />
+                    <img src="@(topSlide.Image?.Url??"/assets/img/blank_slider.jpg")" alt="3" />
                 </a>
             </div>
         }
@@ -84,7 +84,7 @@
         {
         <!-- Room box -->
             <div class="room-boxes @(i++%2>0?"right":"")">
-                <div class="room-img-cover" style="background-image:url('@(room?.CoverImage?.Url ?? "/assets/img/rooms/1.jpg")')"></div>
+                <div class="room-img-cover" style="background-image:url('@(room?.CoverImage?.Url ?? "/assets/img/blank_rooms.jpg")')"></div>
                 <!-- Room Image -->
                 <div class="room-details col-xs-6 col-md-4">
                     <div class="title">@room.Name</div>
@@ -117,7 +117,7 @@
         @foreach (var service in Model.Services ?? new List<Hotel.WebBase.Models.ServiceModel>())
         {
             <div class="item">
-                <img src="@(service.CoverImage?.Url ?? "/assets/img/services/1.jpg")" alt="2">
+                <img src="@(service.CoverImage?.Url ?? "/assets/img/blank_services.jpg")" alt="2">
                 <div class="title"><span>@service.Title</span></div>
                 <div class="short-desc">
                     @Html.Raw(service.ShortDescription)
@@ -144,7 +144,7 @@
             <div class="col-lg-4 col-lg-4 col-xs-6">
                 <div class="post-box">
                     <a href="article/@(Hotel.WebBase.Helpers.SlugOrIdHelper.EncodeSlugOrId(article.Slug,article.Id))">
-                        <img src="@(article.CoverImage?.Url ?? "/assets/img/blog/1.jpg")" alt="@article.Title" class="post-img">
+                        <img src="@(article.CoverImage?.Url ?? "/assets/img/blank_block.jpg")" alt="@article.Title" class="post-img">
                     </a>
                     <a href="article/@(Hotel.WebBase.Helpers.SlugOrIdHelper.EncodeSlugOrId(article.Slug,article.Id))" class="post-title">@article.Title</a>
                     <div class="post-desc">
@@ -187,8 +187,8 @@
 
                         <li class="item col-xs-6 col-md-4">
                             <figure>
-                                <img src="@(photo?.Image?.Url ?? "/assets/img/gallery/1.jpg")" alt="@photo.Title" />
-                                <a href="@(photo?.Image?.Url ?? "/assets/img/gallery/1.jpg")" class="more-details" data-title="@photo.Title">@photo.Title</a>
+                                <img src="@(photo?.Image?.Url ?? "/assets/img/blank_gallery.jpg")" alt="@photo.Title" />
+                                <a href="@(photo?.Image?.Url ?? "/assets/img/blank_gallery.jpg")" class="more-details" data-title="@photo.Title">@photo.Title</a>
                                 <figcaption>
                                     <h4><span class="fa fa-search-plus" /></h4>
                                 </figcaption>

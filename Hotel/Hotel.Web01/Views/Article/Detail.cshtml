@@ -16,7 +16,7 @@
         <div class="post-container">
             <!-- Post boxes -->
             <div class="post-box">
-                <img src="@(Model?.Article?.CoverImage?.Url ?? "/assets/img/blog/3.jpg")" alt="@(Model?.Article?.Title)" class="post-img">
+                <img src="@(Model?.Article?.CoverImage?.Url ?? "/assets/img/blank_block.jpg")" alt="@(Model?.Article?.Title)" class="post-img">
                 <a href="article/@(Hotel.WebBase.Helpers.SlugOrIdHelper.EncodeSlugOrId(Model?.Article?.Slug, Model?.Article?.Id ?? 0))" class="post-title">@(Model?.Article?.Title)</a>
                 <div class="post-desc">
                     @(Html.Raw(Model.Article.Html))
