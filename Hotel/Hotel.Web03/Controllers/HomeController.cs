@@ -18,7 +18,8 @@ namespace Hotel.Web03.Controllers
 
         public IActionResult Index()
         {
-            return View();
+            var homePageViewModel = GetHomePage();
+            return View(homePageViewModel);
         }
 
         public IActionResult Error()
