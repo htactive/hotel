@@ -32,6 +32,7 @@ namespace Hotel.WebBase.Mappers
                 Skype = entity.Skype,
                 Twitter = entity.Twitter,
                 YouTube = entity.YouTube,
+                FacebookIframe = entity.FacebookIframe
             };
             then?.Invoke(model, entity);
             return model;

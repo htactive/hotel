@@ -44,6 +44,8 @@ namespace Hotel.Entities
         public string Skype { get; set; }
         [StringLength(512)]
         public string YouTube { get; set; }
+        [StringLength(512)]
+        public string FacebookIframe { get; set; }
 
         public float? MapLatitude { get; set; }
         public float? MapLongitude { get; set; }

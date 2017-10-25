@@ -33,5 +33,7 @@ namespace Hotel.WebBase.Models
         public CompanyModel Company { get; set; }
         public ImageModel Logo { get; set; }
 
+        public string FacebookIframe { get; set; }
+
     }
 }

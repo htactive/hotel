@@ -49,7 +49,7 @@ namespace Hotel.WebBase
 
         public static void Configure(IApplicationBuilder app, IHostingEnvironment env, IConfiguration Configuration)
         {
-            if (env.IsDevelopment())
+            if (env.IsEnvironment("Development") || env.IsEnvironment("Development1"))
             {
                 app.UseDeveloperExceptionPage();
             }

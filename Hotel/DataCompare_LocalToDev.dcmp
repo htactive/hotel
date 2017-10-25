@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<DataComparison>
+  <Version>10</Version>
+  <ConnectionProperties1>
+    <ConnectionString>Data Source=DESKTOP-OIGDQ89\SQLEXPRESS;Initial Catalog=HMS;Integrated Security=True;Persist Security Info=False;Pooling=False;MultipleActiveResultSets=False;Connect Timeout=60;Encrypt=False;TrustServerCertificate=True</ConnectionString>
+    <FullDisplayName>DESKTOP-OIGDQ89\SQLEXPRESS.HMS (DESKTOP-OIGDQ89\THUAN)</FullDisplayName>
+  </ConnectionProperties1>
+  <ConnectionProperties2>
+    <ConnectionString>Data Source=htactive.cbinodrpwdmp.ap-southeast-1.rds.amazonaws.com;Initial Catalog=HSM_Dev;Persist Security Info=True;User ID=hotel_db_dev;Pooling=False;MultipleActiveResultSets=False;Connect Timeout=60;Encrypt=False;TrustServerCertificate=True</ConnectionString>
+    <FullDisplayName>htactive.cbinodrpwdmp.ap-southeast-1.rds.amazonaws.com.HSM_Dev (hotel_db_dev)</FullDisplayName>
+  </ConnectionProperties2>
+  <SessionSettings>Default</SessionSettings>
+</DataComparison>
