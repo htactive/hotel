@@ -8,7 +8,7 @@
     <div id="room-details-slider">
 
         <div class="items">
-            <img src="@(Model?.Service?.CoverImage?.Url ?? "/assets/img/slider/1.jpg")" alt="@Model?.Service?.Title" />
+            <img src="@(Model?.Service?.CoverImage?.Url ?? "/assets/img/blank_slider.jpg")" alt="@Model?.Service?.Title" />
         </div>
     </div>
 
@@ -42,7 +42,7 @@
     <!-- Room Boxes -->
         <div class="room-box col-xs-6">
             <div class="img-container">
-                <img src="@(item.CoverImage?.Url??"/assets/img/rooms/grid/5.jpg")" alt="@item.Title">
+                <img src="@(item.CoverImage?.Url??"/assets/img/blank_rooms_grid.jpg")" alt="@item.Title">
                 <a href="service/@(Hotel.WebBase.Helpers.SlugOrIdHelper.EncodeSlugOrId(item.Slug, item.Id))" class="btn btn-default">Xem chi tiết</a>
             </div>
             <div class="details">

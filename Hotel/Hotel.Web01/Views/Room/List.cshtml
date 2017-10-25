@@ -20,7 +20,7 @@
     <!-- Room Boxes -->
         <div class="room-box clearfix">
             <div class="img-container col-xs-6">
-                <img src="@(room?.CoverImage?.Url ?? "/assets/img/rooms/grid/1.jpg")" alt="1">
+                <img src="@(room?.CoverImage?.Url ?? "/assets/img/blank_rooms_grid.jpg")" alt="1">
                 <a href="room/@(Hotel.WebBase.Helpers.SlugOrIdHelper.EncodeSlugOrId(room.Slug,room.Id))" class="btn btn-default">Xem thêm</a>
             </div>
             <div class="details col-xs-6">

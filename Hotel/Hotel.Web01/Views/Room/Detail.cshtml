@@ -10,7 +10,7 @@
         @foreach (var image in Model.Room.RoomImages?.OrderBy(x=>x.Priority).ToList() ?? new List<Hotel.WebBase.Models.RoomImageModel>())
         {
             <div class="items">
-                <img src="@(image?.Image?.Url ?? "/assets/img/slider/3.jpg")" alt="@image.Priority" />
+                <img src="@(image?.Image?.Url ?? "/assets/img/blank_slider.jpg")" alt="@image.Priority" />
             </div>
         }
     </div>
@@ -89,7 +89,7 @@
     <!-- Room Boxes -->
         <div class="room-box col-xs-6">
             <div class="img-container">
-                <img src="@(room?.CoverImage?.Url ?? "/assets/img/rooms/grid/5.jpg")" alt="">
+                <img src="@(room?.CoverImage?.Url ?? "/assets/img/blank_rooms_grid.jpg")" alt="">
                 <a href="room/@(Hotel.WebBase.Helpers.SlugOrIdHelper.EncodeSlugOrId(room.Slug,room.Id))" class="btn btn-default">Xem thêm</a>
             </div>
             <div class="details">
