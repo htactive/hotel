@@ -34,15 +34,10 @@
             <div class="left-sec col-sm-4 col-md-2 clearfix">
                 <!-- Top Logo -->
                 <div id="top-logo">
-                    <img src="@(companyInfo?.Logo?.Url)"/>
+                    <img src="@(companyInfo?.Logo?.Url)" />
                 </div>
             </div>
             <div class="right-sec col-sm-8 col-md-10 clearfix">
-
-                <!-- Book Now -->
-                <a href="pages/booking.html" class="book-now-btn btn btn-default btn-sm">Đặt phòng ngay</a>
-
-                <!-- Main Menu -->
                 <nav id="main-menu">
                     <ul class="list-inline">
                         <li class="active">
@@ -92,23 +87,23 @@
                     <ul class="list-inline social-icons">
                         @if (!string.IsNullOrEmpty(companyInfo.Facebook))
                         {
-                            <li><a href="@(companyInfo.Facebook)" target="_blank"><i class="fa fa-facebook "></i></a></li>
+                        <li><a href="@(companyInfo.Facebook)" target="_blank"><i class="fa fa-facebook "></i></a></li>
                         }
                         @if (!string.IsNullOrEmpty(companyInfo.Twitter))
                         {
-                            <li><a href="@(companyInfo.Twitter)" target="_blank"><i class="fa fa-twitter "></i></a></li>
+                        <li><a href="@(companyInfo.Twitter)" target="_blank"><i class="fa fa-twitter "></i></a></li>
                         }
                         @if (!string.IsNullOrEmpty(companyInfo.GooglePlus))
                         {
-                            <li><a href="@(companyInfo.GooglePlus)" target="_blank"><i class="fa fa-google-plus "></i></a></li>
+                        <li><a href="@(companyInfo.GooglePlus)" target="_blank"><i class="fa fa-google-plus "></i></a></li>
                         }
                         @if (!string.IsNullOrEmpty(companyInfo.Skype))
                         {
-                            <li><a href="@(companyInfo.Skype)" target="_blank"><i class="fa fa-skype "></i></a></li>
+                        <li><a href="@(companyInfo.Skype)" target="_blank"><i class="fa fa-skype "></i></a></li>
                         }
                         @if (!string.IsNullOrEmpty(companyInfo.YouTube))
                         {
-                            <li><a href="@(companyInfo.YouTube)" target="_blank"><i class="fa fa-youtube "></i></a></li>
+                        <li><a href="@(companyInfo.YouTube)" target="_blank"><i class="fa fa-youtube "></i></a></li>
                         }
                     </ul>
                 </div>

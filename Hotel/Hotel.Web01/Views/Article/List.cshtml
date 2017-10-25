@@ -1,0 +1,62 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+    ViewBag.BodyClass = "internal-pages trans-header sticky";
+}
+@model Hotel.WebBase.Models.ArticlesListPageViewModel
+<!-- Internal Page Header -->
+<div class="internal-page-title about-page" data-parallax="scroll" data-image-src="../assets/img/internal-header.jpg">
+    <h1>Tin tức và bài viết</h1>
+    <ol class="breadcrumb">
+        <!-- Internal Page Breadcrumb -->
+        <li><a href="">Trang chủ</a></li>
+        <li class="active">Tin tức và bài viết</li>
+    </ol>
+</div>
+<!-- End of Internal Page Header -->
+<!-- Main Container -->
+<div class="main-content container">
+    <!-- Page Content -->
+    <div class="page-content col-md-12">
+        <!-- Post Container -->
+        <div class="post-container">
+            @foreach (var article in Model.Articles)
+            {
+        <!-- Post boxes -->
+                <div class="col-lg-4 col-lg-4 col-xs-6">
+                    <div class="post-box">
+                        <a href="article/@(Hotel.WebBase.Helpers.SlugOrIdHelper.EncodeSlugOrId(article.Slug,article.Id))">
+                            <img src="@(article.CoverImage?.Url ?? "/assets/img/blog/1.jpg")" alt="@article.Title" class="post-img">
+                        </a>
+                        <a href="article/@(Hotel.WebBase.Helpers.SlugOrIdHelper.EncodeSlugOrId(article.Slug,article.Id))" class="post-title">@article.Title</a>
+                        <div class="post-desc">
+                            @Html.Raw(article.ShortDescription)
+                        </div>
+                        <div class="post-meta clearfix">
+                            <div class="post-date">@(string.Format("{0:MM/dd/yyyy}", article.CreatedDate))</div>
+                        </div>
+                    </div>
+                </div>
+
+            }
+        </div>
+        <!-- End of Post Container -->
+        <!-- Pagination -->
+        <div class="pagination-box">
+            <ul class="list-inline">
+                @{
+                    var pages = Hotel.WebBase.Helpers.PaginationHelper.GetPages(Model.CurrentPage, Model.TotalPage);
+                }
+                @foreach (var item in pages)
+                {
+                    <li class="@(item.IsActive ? "active":"")"><a href="rooms/@(item.Value)"><span>@(item.Text)</span></a></li>
+                }
+            </ul>
+        </div>
+        <!-- End of Pagination -->
+
+
+    </div>
+</div>
+
+
+

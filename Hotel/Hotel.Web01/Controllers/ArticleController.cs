@@ -16,14 +16,16 @@ namespace Hotel.Web01.Controllers
         {
         }
 
-        public IActionResult List(int page = 0)
+        public IActionResult List(int p = 0)
         {
-            return View();
+            var viewmodel = this.GetArticlesListPage(8, p);
+            return View(viewmodel);
         }
 
         public IActionResult Detail(string slug)
         {
-            return View();
+            var viewmodel = this.GetArticleDetailPage(slug);
+            return View(viewmodel);
         }
 
     }

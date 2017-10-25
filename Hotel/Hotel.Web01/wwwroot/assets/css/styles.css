@@ -21908,7 +21908,7 @@ body.contact.type-2 .contact-info-inner .contact-info-box .info {
 
     .post-box .post-meta {
         color: #d0d4d7;
-        margin: 40px 0;
+        margin: 10px 0 0 0;
     }
 
         .post-box .post-meta a {
@@ -23129,12 +23129,12 @@ form.comment-form {
 }
 
 
-#articles-in-home .post-box .post-title {
+.post-box .post-title {
     font-size: 18px;
     line-height: 1.5;
 }
 
-    #articles-in-home .post-box .post-title:after {
+    .post-box .post-title:after {
         bottom: -10px;
     }
 
