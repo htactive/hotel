@@ -30,7 +30,7 @@
                         </div>
                         <h2>@Html.Raw(article.Title)</h2>
                         <p>@Html.Raw(article.ShortDescription)</p>
-                        <a href="article/slug" class="btn_1">Read more</a>
+                        <a href="article/@(Hotel.WebBase.Helpers.SlugOrIdHelper.EncodeSlugOrId(article.Slug,article.Id))" class="btn_1">Read more</a>
                     </div><!-- end post -->
 
                     <hr>
