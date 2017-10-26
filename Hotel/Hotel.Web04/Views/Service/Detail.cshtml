@@ -1,13 +1,14 @@
-﻿@{
-    ViewData["Title"] = "Chi tiết dịch vụ";
+﻿@model Hotel.WebBase.Models.ServiceDetailPageViewModel
+@{
+    ViewData["Title"] = Model.Service.Title;
 }
 
 <div id="content" class="site-content">
-    
+
     <div id="content" class="site-content">
         <!-- Parallax Effect -->
         <script type="text/javascript">
-jQuery(document).ready(function () {
+            jQuery(document).ready(function () {
                 jQuery('#parallax-pagetitle').parallax("50%", -0.55);
             });</script>
         <div class="parallax-effect">
@@ -17,16 +18,15 @@ jQuery(document).ready(function () {
                     <div class="container">
                         <div class="row">
                             <div class="col-sm-12">
-
                                 <ol class="breadcrumb">
                                     <li><a href="">Trang chủ</a></li>
                                     <li>
                                         <a href="services">Dịch vụ</a>
                                     </li>
-                                    <li class="active">Bar Overnight</li>
+                                    <li class="active">@Model.Service?.Title</li>
                                 </ol>
 
-                                <h1>Bar Overnight</h1>
+                                <h1>@Model.Service?.Title</h1>
                             </div>
                         </div>
                     </div>
@@ -40,7 +40,12 @@ jQuery(document).ready(function () {
                 <div class="room-slider standard-slider mt50">
                     <div class="col-md-offset-3 col-md-6">
                         <div id="owl-standard" class="owl-carousel">
-                            <div class='item mfp_open'> <a href='http://www.slashdown.net/starhotel-wp/wp-content/uploads/2015/03/room-slider-01.jpg'><img src='http://www.slashdown.net/starhotel-wp/wp-content/uploads/2015/03/room-slider-01.jpg' alt='' class='img-responsive'></a> </div><div class='item mfp_open'> <a href='http://www.slashdown.net/starhotel-wp/wp-content/uploads/2015/03/room-slider-02.jpg'><img src='http://www.slashdown.net/starhotel-wp/wp-content/uploads/2015/03/room-slider-02.jpg' alt='' class='img-responsive'></a> </div>
+                            <div class='item mfp_open'>
+                                <a href='@(Model.Service?.CoverImage?.Url ?? "/images/blank_slide_room.jpg")'>
+                                    <img src='@(Model.Service?.CoverImage?.Url ?? "/images/blank_slide_room.jpg")' alt='@Model.Service?.Title' class='img-responsive'>
+                                </a>
+                            </div>
+
                         </div>
                     </div>
                 </div>
@@ -66,8 +71,7 @@ jQuery(document).ready(function () {
                                         <div class="wpb_tabs wpb_content_element" data-interval="0">
                                             <div class="wpb_wrapper wpb_tour_tabs_wrapper ui-tabs vc_clearfix">
                                                 <div class="wpb_wrapper">
-                                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse interdum eleifend augue, quis rhoncus purus fermentum. In hendrerit risus arcu, in eleifend metus dapibus varius. Nulla dolor sapien, laoreet vel tincidunt non, egestas non justo. Phasellus et mattis lectus, et gravida urna.</p>
-                                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse interdum eleifend augue, quis rhoncus purus fermentum. In hendrerit risus arcu, in eleifend metus dapibus varius. Nulla dolor sapien, laoreet vel tincidunt non, egestas non justo. Phasellus et mattis lectus, et gravida urna.</p>
+                                                    @Html.Raw(Model.Service.ShortDescription)
                                                 </div>
                                             </div>
                                         </div>
@@ -88,53 +92,23 @@ jQuery(document).ready(function () {
                                         <div class="rooms mt110">
                                             <div class="row room-list">
 
-                                                <!-- Room -->
-                                                <div class="col-sm-4 Double-Room">
-                                                    <div class="room-thumb">
-                                                        <img width="356" height="228" src="http://www.slashdown.net/starhotel-wp/wp-content/uploads/2015/03/room-08.jpg" class="img-responsive wp-post-image" alt="" />                                <div class="mask">
-                                                            <div class="main">
-                                                                <h5>Dịch vụ 01</h5>
-                                                                <div class='price'> Miễn phí</div>
-                                                            </div>
-                                                            <div class="content">
-                                                                <p><span>Tiêu đề dịch vụ 1</span>Mô tả dịch vụ 1 Mô tả dịch vụ 1 Mô tả dịch vụ 1 Mô tả dịch vụ 1 Mô tả dịch vụ 1 Mô tả dịch vụ 1</p>
+                                                @foreach (var service in Model.RelatedServices.Take(3).ToList())
+                                                {
+                                                    <div class="col-sm-4">
+                                                        <div class="room-thumb">
+                                                            <img width="356" height="228" src="@(service.CoverImage?.Url ?? "/images/blank_room.jpg")" class="img-responsive wp-post-image" alt="" />                                <div class="mask">
+                                                                <div class="main">
+                                                                    <h5>@service.Title</h5>
+                                                                </div>
+                                                                <div class="content">
+                                                                    <p>@Html.Raw(service.ShortDescription)</p>
 
-                                                                <a href="service/bar-overnight" class="btn btn-primary btn-block"> Xem chi tiết </a>
+                                                                    <a href="service/@(Hotel.WebBase.Helpers.SlugOrIdHelper.EncodeSlugOrId(service.Slug, service.Id))" class="btn btn-primary btn-block"> Xem chi tiết </a>
+                                                                </div>
                                                             </div>
                                                         </div>
                                                     </div>
-                                                </div>
-                                                <!-- Room -->
-                                                <div class="col-sm-4 Double-Room Executive-Room">
-                                                    <div class="room-thumb">
-                                                        <img width="356" height="228" src="http://www.slashdown.net/starhotel-wp/wp-content/uploads/2015/03/room-04.jpg" class="img-responsive wp-post-image" alt="" />                                <div class="mask">
-                                                            <div class="main">
-                                                                <h5>Dịch vụ 02</h5>
-                                                                <div class='price'> $ 10<span>một giờ</span></div>
-                                                            </div>
-                                                            <div class="content">
-                                                                <p><span>Tiêu đề dịch vụ 2</span>Mô tả dịch vụ 2 Mô tả dịch vụ 2 Mô tả dịch vụ 2 Mô tả dịch vụ 2 Mô tả dịch vụ 2 Mô tả dịch vụ 2</p>
-
-                                                                <a href="service/bar-overnight" class="btn btn-primary btn-block"> Xem chi tiết </a>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <!-- Room -->
-                                                <div class="col-sm-4 Double-Room">
-                                                    <div class="room-thumb">
-                                                        <img width="356" height="228" src="http://www.slashdown.net/starhotel-wp/wp-content/uploads/2015/03/room-05.jpg" class="img-responsive wp-post-image" alt="" />                                <div class="mask">
-                                                            <div class="main">
-                                                                <h5>Dịch vụ 03</h5>
-                                                                <div class='price'> $20<span>một ngày</span></div>
-                                                            </div>
-                                                            <div class="content">
-                                                                <p><span>Tiêu đề dịch vụ 3</span>Mô tả dịch vụ Mô tả dịch vụ Mô tả dịch vụ Mô tả dịch vụ Mô tả dịch vụ Mô tả dịch vụ Mô tả dịch vụ.</p>
-                                                                <a href="service/bar-overnight" class="btn btn-primary btn-block"> Xem chi tiết </a>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
+                                                }
 
                                             </div>
                                         </div>
