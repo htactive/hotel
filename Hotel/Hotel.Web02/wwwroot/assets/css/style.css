@@ -751,40 +751,18 @@ section.dark {
     top:0
 }
 
-.side-bg .background-image {
-    background:url(../img/bg/bg-2.jpg);
+.service-image {
+ 
     background-position:50% 50%!important;
     background-size:cover!important;
     width:100%;
     height:100%;
     left:0;
     position:absolute;
-    z-index:0
+    z-index:1
 }
 
-#explore-1.side-bg .background-image {
-    background:url('../../assets/img/explore/pic (1).jpg')
-}
 
-#explore-2.side-bg .background-image {
-    background: url('../../assets/img/explore/pic (2).jpg')
-}
-
-#explore-3.side-bg .background-image {
-    background:url('../../assets/img/explore/pic (3).jpg')
-}
-
-#explore-4.side-bg .background-image {
-    background: url('../../assets/img/explore/pic (4).jpg')
-}
-
-#explore-5.side-bg .background-image {
-    background: url('../../assets/img/explore/pic (5).jpg')
-}
-
-#explore-6.side-bg .background-image {
-    background: url('../../assets/img/explore/pic (6).jpg')
-}
 .side-bg .inner-padding {
     padding:40px 0
 }

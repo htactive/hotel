@@ -14,9 +14,10 @@ namespace Hotel.Web02.Controllers
         {
         }
 
-        public IActionResult List()
+        public IActionResult List(int p = 0)
         {
-            return View();
+            var viewmodel = this.GetServicesListPage(10, p);
+            return View(viewmodel);
         }
     }
 }

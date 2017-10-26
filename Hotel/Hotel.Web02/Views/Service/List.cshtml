@@ -3,7 +3,10 @@
     ViewData["Title"] = "List";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-
+@model Hotel.WebBase.Models.ServicesListPageViewModel;
+   @{ 
+       var services = Model.Services;
+   }
    <!-- subheader begin -->
 <div id="subheader">
     <h1>Dịch vụ</h1>
@@ -12,17 +15,18 @@
 <!-- subheader close -->
 <!-- content begin -->
 <div id="content" class="no-top no-bottom">
+    @for( int i = 0; i < services.Count(); i++) {
     <section id="explore-1" class="side-bg">
-        <div class="col-md-6 col-md-offset-6 pull-right image-container">
-            <div class="background-image"></div>
+        <div class="col-md-6 col-md-offset-6 @((i%2==0)?"pull-right":"pull-left") image-container">
+                <img class="service-image" src="@services[i].CoverImage.Url" />
         </div>
 
         <div class="container">
             <div class="row">
-                <div class="col-md-5">
+                <div class="col-md-5 @((i%2==0)?"pull-left":"pull-right")">
                     <div class="inner-padding">
-                        <h2>Spa</h2>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                        <h2>@services[i].Title</h2>
+                         @Html.Raw(@services[i].ShortDescription);
                         <div class="small-border"></div>
                     </div>
 
@@ -30,109 +34,8 @@
             </div>
         </div>
     </section>
+    }
 
-
-    <section id="explore-2" class="side-bg">
-        <div class="col-md-6 col-md-offset-6 pull-left image-container">
-            <div class="background-image"></div>
-        </div>
-
-        <div class="container">
-            <div class="row">
-                <div class="col-md-5 col-md-offset-7">
-                    <div class="inner-padding">
-                        <h2>Massage</h2>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                        <div class="small-border"></div>
-                    </div>
-
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="explore-3" class="side-bg">
-        <div class="col-md-6 col-md-offset-6 pull-right image-container">
-            <div class="background-image"></div>
-        </div>
-
-        <div class="container">
-            <div class="row">
-                <div class="col-md-5">
-                    <div class="inner-padding">
-                        <h2>Bể bơi bốn mùa</h2>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                        <div class="small-border"></div>
-                    </div>
-
-                </div>
-            </div>
-        </div>
-    </section>
-
-
-    <section id="explore-4" class="side-bg">
-        <div class="col-md-6 col-md-offset-6 pull-left image-container">
-            <div class="background-image"></div>
-        </div>
-
-        <div class="container">
-            <div class="row">
-                <div class="col-md-5 col-md-offset-7">
-                    <div class="inner-padding">
-                        <h2>Ẩm thực</h2>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                        <div class="small-border"></div>
-                    </div>
-
-                </div>
-            </div>
-        </div>
-    </section>
-
-
-    <section id="explore-5" class="side-bg">
-        <div class="col-md-6 col-md-offset-6 pull-right image-container">
-            <div class="background-image"></div>
-        </div>
-
-        <div class="container">
-            <div class="row">
-                <div class="col-md-5">
-                    <div class="inner-padding">
-                        <h2>Gym and Fitness</h2>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                        <div class="small-border"></div>
-                    </div>
-
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="explore-6" class="side-bg">
-        <div class="col-md-6 col-md-offset-6 pull-left image-container">
-            <div class="background-image"></div>
-        </div>
-
-        <div class="container">
-            <div class="row">
-                <div class="col-md-5 col-md-offset-7">
-                    <div class="inner-padding">
-                        <h2>Giặt là</h2>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                        <div class="small-border"></div>
-                    </div>
-
-                </div>
-            </div>
-        </div>
-    </section>
-
-    @*<section class="call-to-action text-center">
-        <a href="#" class="btn-big-border">Make Your Reservation</a>
-    </section>*@
-
-
+   
 </div>
 <!-- content close -->

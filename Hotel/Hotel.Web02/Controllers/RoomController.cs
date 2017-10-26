@@ -14,9 +14,9 @@ namespace Hotel.Web02.Controllers
         {
         }
 
-        public IActionResult List()
+        public IActionResult List(int p = 0)
         {
-            var rooms = GetRoomsListPage(10, null);
+            var rooms = GetRoomsListPage(10, p);
             return View(rooms);
         }
 

@@ -14,9 +14,10 @@ namespace Hotel.Web02.Controllers
         {
         }
 
-        public IActionResult Index()
+        public IActionResult Index(int p = 0)
         {
-            return View();
+            var galary = GetPhotosListPage(20, p);
+            return View(galary);
         }
     }
 }
