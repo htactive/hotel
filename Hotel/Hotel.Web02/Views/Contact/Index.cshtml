@@ -2,6 +2,11 @@
 @{
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
+
+@{
+    var companyInfo = (Hotel.WebBase.Models.CompanyInfoModel)ViewBag.CurrentCompanyInfo;
+}
+
 <title>Liên hệ</title>
 <div id="subheader">
     <h1>Liện hệ</h1>
@@ -10,7 +15,7 @@
 <!-- subheader close -->
 
 <div id="map-container">
-    <iframe frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.co.id/maps?f=q&amp;source=s_q&amp;hl=en&amp;q=16+Riverside+Rd,+Singapore&amp;sll=-2.547988,118.037109&amp;sspn=29.394918,50.756836&amp;ie=UTF8&amp;geocode=Fb8IFgAdu40vBg&amp;split=0&amp;hq=&amp;hnear=16+Riverside+Rd,+Singapore&amp;ll=1.444031,103.779771&amp;spn=0.014522,0.024784&amp;t=m&amp;z=14&amp;output=embed&amp;iwloc=false"></iframe>
+    <iframe frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3834.6630676550867!2d108.25432513038095!3d16.031045651812665!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31421744216244cf%3A0x11908a5e23ec76fd!2sFusion+Maia+Danang!5e0!3m2!1sen!2s!4v1509004091315"></iframe>
 </div>
 
 <!-- content begin -->
@@ -62,30 +67,12 @@
 
                 <div class="widget widget-text">
                     <address>
-                        <h4>Corsiva South Beach</h4>
-                        <span>10 Main Street, South Beach</span>
-                        <span><strong>Phone:</strong>(200) 333 8890</span>
-                        <span><strong>Fax:</strong>(200) 333 8892</span>
-                        <span><strong>Email:</strong><a href="mailto:contact@example.com">contact@example.com</a></span>
+                        <h4>@companyInfo.CompanyName</h4>
+                        <span>@companyInfo.Address1</span>
+                        <span><strong>Phone:</strong>@companyInfo.Phone1</span>
+                        <span><strong>Fax:</strong>@companyInfo.Phone1</span>
+                        <span><strong>Email:</strong><a href="mailto:@(companyInfo.Email1)"> @companyInfo.Email1</a></span>
                     </address>
-                    <div class="small-border"></div>
-                    <address>
-                        <h4>Corsiva Los Angles</h4>
-                        <span>15 Main Street, Los Angles</span>
-                        <span><strong>Phone:</strong>(200) 333 8890</span>
-                        <span><strong>Fax:</strong>(200) 333 8892</span>
-                        <span><strong>Email:</strong><a href="mailto:contact@example.com">contact@example.com</a></span>
-                    </address>
-                    <div class="small-border"></div>
-                    <address>
-                        <h4>Corsiva New York</h4>
-                        <span>20 Main Street, New York</span>
-                        <span><strong>Phone:</strong>(200) 333 8890</span>
-                        <span><strong>Fax:</strong>(200) 333 8892</span>
-                        <span><strong>Email:</strong><a href="mailto:contact@example.com">contact@example.com</a></span>
-                    </address>
-
-
                 </div>
 
             </div>
