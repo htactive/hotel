@@ -17,7 +17,8 @@ namespace Hotel.WebBase.Mappers
                 Id = entity.Id,
                 Description = entity.Description,
                 Title = entity.Title,
-                ImageId = entity.ImageId
+                ImageId = entity.ImageId,
+                CreateDate = entity.CreatedDate
             };
             then?.Invoke(model, entity);
             return model;

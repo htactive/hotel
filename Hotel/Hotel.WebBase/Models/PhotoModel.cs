@@ -11,5 +11,6 @@ namespace Hotel.WebBase.Models
         public string Description { get; set; }
         public int? ImageId { get; set; }
         public ImageModel Image { get; set; }
+        public DateTime? CreateDate { get; set; }
     }
 }

@@ -20,11 +20,14 @@
                     {
                     <!-- <h4>Gallery Title -->
                         <div class="item news">
-                            <a class="preview" href="@item.Image?.Url" data-gal="prettyPhoto" title="@item.Title">
-                                <img src="@item.Image?.Url" alt="" class="img-responsive">
+                            <a class="preview" href="@item?.Image?.Url" data-gal="prettyPhoto" title="@item?.Title">
+                                <img src="@item?.Image?.Url" alt="" class="img-responsive">
                             </a>
                             <h4>@item.Title</h4>
-                            <span>Tháng 10, 2013</span>
+                            @if (item.CreateDate != null)
+                            {
+                            <span>Tháng @(item.CreateDate.Value.Month) năm @item.CreateDate.Value.Year</span>
+                            }
                         </div>
                     }
                     <!-- close <h4>Gallery Title -->
