@@ -40,7 +40,6 @@ namespace Hotel.WebBase.Controllers
             }
             ViewBag.CurrentUser = this.CurrentUser;
             ViewBag.CurrentCompanyInfo = this.GetCompanyInfo();
-            ViewBag.PhotosInFooter = this.GetPhotosListPage(TakeInHome, null).Photos;
             base.OnActionExecuting(context);
         }
 
@@ -139,7 +138,8 @@ namespace Hotel.WebBase.Controllers
                 TopSlides = GetTopSlides(),
                 Rooms = GetRoomsListPage(TakeInHome, null)?.Rooms,
                 Services = GetServicesListPage(TakeInHome, null).Services,
-                Articles = GetArticlesListPage(TakeInHome, null)?.Articles
+                Articles = GetArticlesListPage(TakeInHome, null)?.Articles,
+                Photos = this.GetPhotosListPage(TakeInHome, null).Photos
             };
             ViewBag.TabName = "home";
             return viewmodel;

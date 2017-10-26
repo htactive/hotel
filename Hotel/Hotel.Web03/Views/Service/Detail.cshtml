@@ -1,9 +1,12 @@
-﻿<section class="sub_header" id="bg_general">
+﻿@{
+    ViewData["Title"] = "Service details";
+}
+<section class="sub_header" id="bg_general">
     <div class="sub_header_content">
         <div class="animated fadeInDown">
-            <h1>Local Food</h1>
+            <h1>@Model?.Service?.Title</h1>
             <p>
-                Ridiculus sociosqu cursus neque cursus curae ante scelerisque vehicula.
+                @Html.Raw(Model?.Service.ShortDescription)
             </p>
         </div>
     </div>
@@ -11,74 +14,12 @@
 
 <div class="container margin_60">
     <div class="row">
-        <div class="col-lg-9 col-md-8">
-            <img src="/img/food_1.jpg" alt="" class="img-responsive styled nopadding">
-            <h3>Nonumes explicari</h3>
+        <div class="col-lg-12 col-md-12">
+            <img src="@(Model?.Service?.CoverImage?.Url ?? "/img/food_1.jpg")" alt="" class="img-responsive styled nopadding">
             <p>
-                Ad qui consulatu scripserit comprehensam. Eum <strong>purto epicurei cotidieque</strong> at, ius luptatum invidunt no, vim at sint pertinacia repudiandae. Ad cum dicant laboramus delicatissimi, ex has nonumes explicari prodesset, brute tincidunt conclusionemque no has. Sit ullum latine ei. Ius id adhuc iriure torquatos. Justo prompta senserit eos cu, omnesque posidonium liberavisse pri in. Malorum fabulas elaboraret mea in, vel ut harum tacimates posidonium.
+                @Html.Raw(Model?.Service?.Html)
             </p>
-            <div class="row">
-                <div class="col-md-6">
-                    <img src="/img/food_2.jpg" alt="" class="img-responsive styled">
-                    <h3>Ubique impetus</h3>
-                    <p>
-                        Ad sed apeirian senserit gloriatur, eu iusto ubique impetus quo. Sea no essent cotidieque reformidans, sea an <strong>persius moderatius</strong> comprehensam, at nam tamquam alterum definiebas. Nibh facilisi mei eu, essent virtute ius id. Ne ullum consequat sit, dolorum deserunt expetendis no eam.
-                    </p>
-                </div>
-                <div class="col-md-6">
-                    <img src="/img/food_3.jpg" alt="" class="img-responsive styled">
-                    <h3>ullum consequat </h3>
-                    <p>
-                        Ad sed apeirian senserit gloriatur, eu iusto ubique impetus quo. Sea no <strong>essent cotidieque</strong> reformidans, sea an persius moderatius comprehensam, at nam tamquam alterum definiebas. Nibh facilisi mei eu, essent virtute ius id. Ne ullum consequat sit, dolorum deserunt expetendis no eam.
-                    </p>
-                </div>
-            </div><!-- End row -->
-
-            <hr>
-
-            <h3>Table for pricing and other stuff</h3>
-            <table class="table table-striped">
-                <thead>
-                    <tr>
-                        <th>Impetus</th>
-                        <th>Virtute</th>
-                        <th>Facilisi</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>Definiebas</td>
-                        <td>$50 /hr</td>
-                        <td>$90 /hr</td>
-                    </tr>
-                    <tr>
-                        <td>Tamquam</td>
-                        <td>$150 /hr</td>
-                        <td>$250 /hr</td>
-                    </tr>
-                    <tr>
-                        <td>Consequat</td>
-                        <td>$350 /hr</td>
-                        <td>$450 /hr</td>
-                    </tr>
-                </tbody>
-            </table>
 
         </div><!-- End col-lg-9 -->
-
-        <div class="col-lg-3 col-md-4">
-            <div class="box_style_1" id="general_facilities">
-                <h3>General facilities</h3>
-                <ul>
-                    <li><i class="icon_set_1_icon-86"></i>Free Wifi</li>
-                    <li><i class="icon_set_2_icon-103"></i>Loundry service</li>
-                    <li><i class="icon_set_2_icon-110"></i>Swimming pool</li>
-                    <li><i class="icon_set_1_icon-58"></i>Restaurant</li>
-                    <li><i class="icon_set_2_icon-106"></i>Safe box</li>
-                </ul>
-                <p>His <strong>civibus tacimates</strong> ex, an quo nominavi qualisque. In erant dissentiunt vel, dicit legimus docendi an nam. Te congue perfecto eos, aliquid corrumpit ea est, eam petentium repudiandae ad.</p>
-            </div>
-
-        </div><!-- End col-lg-3 -->
     </div><!-- End row -->
 </div><!-- End Container -->
