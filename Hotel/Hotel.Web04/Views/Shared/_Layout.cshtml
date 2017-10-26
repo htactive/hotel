@@ -1,18 +1,14 @@
 ﻿<!DOCTYPE html>
+@{
+    string activePage = (string)ViewBag.TabName;
+    var companyInfo = (Hotel.WebBase.Models.CompanyInfoModel)ViewBag.CurrentCompanyInfo;
+}
 <html>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>@ViewData["Title"] - Khách sạn Mường Thanh</title>
+    <title>@(companyInfo.CompanyName) - @(ViewData["Title"] ?? "")</title>
     <base href="@ViewBag.BaseHref" />
-    <environment include="Development">
-        <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
-    </environment>
-    <environment exclude="Development">
-        <link rel="stylesheet" href="https://ajax.aspnetcdn.com/ajax/bootstrap/3.3.7/css/bootstrap.min.css"
-              asp-fallback-href="~/lib/bootstrap/dist/css/bootstrap.min.css"
-              asp-fallback-test-class="sr-only" asp-fallback-test-property="position" asp-fallback-test-value="absolute" />
-    </environment>
 
     <style>
         footer .widget .news-content h4 {
@@ -101,8 +97,8 @@
                 <div class="row">
                     <div class="col-sm-6">
                         <div class="th-text th-left-center">
-                            <div class="th-item"> <a href="tel://0123456789"><i class="fa fa-phone"></i> 0123456789</a> </div>
-                            <div class="th-item"> <a href="mailto:services@htactive.com"><i class="fa fa-envelope"></i> services@htactive.com </a></div>
+                            <div class="th-item"> <a href="tel:@(companyInfo.Phone1)"><i class="fa fa-phone"></i> @(companyInfo.Phone1)</a> </div>
+                            <div class="th-item"> <a href="mailto:@(companyInfo.Email1)"><i class="fa fa-envelope"></i> @(companyInfo.Email1)</a></div>
                         </div>
                     </div>
                     <div class="col-sm-6">
@@ -129,31 +125,33 @@
                             <span class="icon-bar"></span>
                             <span class="icon-bar"></span>
                         </button>
-                        <a class="navbar-brand" href="http://www.slashdown.net/starhotel-wp">
+                        <a class="navbar-brand" href="">
                             <!-- Logo -->
                             <div id="logo">
-                                <img id="default-logo" src="http://www.slashdown.net/starhotel-wp/wp-content/uploads/2016/06/logo-1.png" alt="Starhotel" style="height:44px;">
-                                <img id="retina-logo" src="http://www.slashdown.net/starhotel-wp/wp-content/uploads/2016/06/logo-retina-1.png" alt="Starhotel" style="height:44px;">
+                                <img id="default-logo" src="@(companyInfo.Logo?.Url ?? "images/blank_logo.png")" alt="@(companyInfo.CompanyName)" style="height:44px;">
+                                <img id="retina-logo" src="@(companyInfo.Logo?.Url ?? "images/blank_logo.png")" alt="@(companyInfo.CompanyName)" style="height:44px;">
                             </div>
                         </a>
                     </div>
                     <div id="bs-example-navbar-collapse-1" class="collapse navbar-collapse">
                         <ul id="menu-primary" class="nav navbar-nav">
-                            <li id="menu-item-137" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home @(ViewBag.ActivePage == "home" ? "active active" : "")">
-                                <a href="">Trang chủ</a></li>
-                            <li id="menu-item-143" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-room @(ViewBag.ActivePage == "room" ? "active active" : "")">
-                                <a href="rooms" >Phòng</a>
+                            <li id="menu-item-137" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home @(activePage == "home" ? "active active" : "")">
+                                <a href="">Trang chủ</a>
                             </li>
-                            <li id="menu-item-159" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-service @(ViewBag.ActivePage == "service" ? "active active" : "")">
-                                <a href="services" >Dịch vụ</a>
+                            <li id="menu-item-143" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-room @(activePage == "room" ? "active active" : "")">
+                                <a href="rooms">Phòng</a>
                             </li>
-                            <li id="menu-item-159" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-article @(ViewBag.ActivePage == "article" ? "active active" : "")">
+                            <li id="menu-item-159" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-service @(activePage == "service" ? "active active" : "")">
+                                <a href="services">Dịch vụ</a>
+                            </li>
+                            <li id="menu-item-159" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-article @(activePage == "article" ? "active active" : "")">
                                 <a href="articles">Tin tức</a>
                             </li>
-                            <li id="menu-item-139" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-gallery @(ViewBag.ActivePage == "gallery" ? "active active" : "")">
-                                <a href="gallery">Hình ảnh</a></li>
-                            <li id="menu-item-258" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-contact @(ViewBag.ActivePage == "contact" ? "active active" : "")">
-                                <a href="contact" >Liên hệ</a>
+                            <li id="menu-item-139" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-gallery @(activePage == "gallery" ? "active active" : "")">
+                                <a href="gallery">Hình ảnh</a>
+                            </li>
+                            <li id="menu-item-258" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-contact @(activePage == "contact" ? "active active" : "")">
+                                <a href="contact">Liên hệ</a>
                             </li>
                         </ul>
                     </div>
@@ -171,56 +169,34 @@
                 <div class="row">
                     <div class="col-md-4 col-sm-4">
                         <div class="widget">
-                            <h4>Thông tin khách sạn</h4>			<div class="textwidget">
-                                <p>vài dòng mô tả khách sạn từ database</p>
-                                <p>vài dòng mô tả khách sạn từ database vài dòng mô tả khách sạn từ database vài dòng mô tả khách sạn từ database</p>
+                            <h4>Thông tin khách sạn</h4>
+                            <div class="textwidget">
+                                @Html.Raw(companyInfo.ShortDescription)
                             </div>
                         </div>
                     </div>
                     <div class="col-md-5 col-sm-5">
                         <div class="widget">
-                            <h4>Tin tức mới nhất</h4><ul class="list-unstyled">
-                                <li>
-                                    <article>
-                                        <div class="news-thumb"> <a href="http://www.slashdown.net/starhotel-wp/blog/pool/new-lounge-area/"><img width="75" height="75" src="http://www.slashdown.net/starhotel-wp/wp-content/uploads/2015/03/blog-img-e1429642868724-165x165.jpg" class="attachment-75x75 size-75x75 wp-post-image" alt="" /></a> </div>
-                                        <div class="news-content clearfix">
-                                            <h4><a href="http://www.slashdown.net/starhotel-wp/blog/pool/new-lounge-area/" title="New lounge area">New lounge area</a></h4>
-                                            <span><a href="http://www.slashdown.net/starhotel-wp/blog/pool/new-lounge-area/">March 18, 2015</a></span>
-                                        </div>
-                                    </article>
-                                </li>
-                                <li>
-                                    <article>
-                                        <div class="news-thumb"> <a href="http://www.slashdown.net/starhotel-wp/blog/and-this-is-another-post/"><img width="75" height="75" src="http://www.slashdown.net/starhotel-wp/wp-content/uploads/2015/02/slide2-e1429650906315-165x165.jpg" class="attachment-75x75 size-75x75 wp-post-image" alt="" /></a> </div>
-                                        <div class="news-content clearfix">
-                                            <h4><a href="http://www.slashdown.net/starhotel-wp/blog/and-this-is-another-post/" title="And this is another post">And this is another post</a></h4>
-                                            <span><a href="http://www.slashdown.net/starhotel-wp/blog/and-this-is-another-post/">March 17, 2015</a></span>
-                                        </div>
-                                    </article>
-                                </li>
-                                <li>
-                                    <article>
-                                        <div class="news-thumb"> <a href="http://www.slashdown.net/starhotel-wp/blog/new-rooms/"><img width="75" height="75" src="http://www.slashdown.net/starhotel-wp/wp-content/uploads/2015/03/slide1-e1429650748302-165x165.jpg" class="attachment-75x75 size-75x75 wp-post-image" alt="" /></a> </div>
-                                        <div class="news-content clearfix">
-                                            <h4><a href="http://www.slashdown.net/starhotel-wp/blog/new-rooms/" title="Renovated gym">Renovated gym</a></h4>
-                                            <span><a href="http://www.slashdown.net/starhotel-wp/blog/new-rooms/">March 14, 2015</a></span>
-                                        </div>
-                                    </article>
-                                </li>
-                            </ul>
+                            <h4>Liên kết facebook</h4>
+                            <div class="widget-content">
+                                <iframe src="@(companyInfo.FacebookIframe)" width="340" height="214" style="border:none;overflow:hidden;height:213px;" scrolling="no" frameborder="0" allowtransparency="true"></iframe>
+                            </div>
                         </div>
                     </div>
 
                     <div class="col-md-3 col-sm-3">
                         <div class="widget">
-                            <h4>Địa chỉ</h4>			<div class="textwidget">
+                            <h4>Địa chỉ</h4>
+                            <div class="textwidget">
                                 <address>
-                                    <strong>Mường Thanh</strong><br />
-                                    962 Ngô Quyền<br />
-                                    An Hải Tây, Sơn Trà, Đà Nẵng<br />
-                                    <abbr title="Phone">P:</abbr> <a href="#">(123) 456-7890</a><br>
-                                    <abbr title="Email">E:</abbr> <a href="#">mail@example.com</a><br>
-                                    <abbr title="Website">W:</abbr> <a href="#">www.slashdown.nl</a><br>
+                                    <strong>@(companyInfo.CompanyName)</strong><br />
+                                    @(companyInfo.Address1)<br />
+                                    @if (!string.IsNullOrEmpty(companyInfo.Address2))
+                                    {
+                                        <span>@(companyInfo.Address2) </span><br />
+                                    }
+                                    <abbr title="Phone">P:</abbr> <a href="tel:@(companyInfo.Phone1)">@(companyInfo.Phone1)</a><br>
+                                    <abbr title="Email">E:</abbr> <a href="mailto:@(companyInfo.Email1)">@(companyInfo.Email1)</a><br>
                                 </address>
                             </div>
                         </div>
@@ -278,7 +254,7 @@
     <script type='text/javascript' src='~/js/widget.min.js'></script>
     <script type='text/javascript' src='~/js/tabs.min.js'></script>
     <script type='text/javascript' src='~/lib/js/jquery-ui-tabs-rotate.min.js'></script>
-    
+
 
     @RenderSection("Scripts", required: false)
 </body>

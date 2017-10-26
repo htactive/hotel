@@ -18,8 +18,8 @@ namespace Hotel.Web04.Controllers
 
         public IActionResult Index()
         {
-            ViewBag.ActivePage = "home";
-            return View();
+            var viewmodel = GetHomePage();
+            return View(viewmodel);
         }
 
         public IActionResult Error()

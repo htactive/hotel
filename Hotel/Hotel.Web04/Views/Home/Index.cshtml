@@ -1,6 +1,10 @@
 ﻿@{
     ViewData["Title"] = "Trang chủ";
 }
+@model Hotel.WebBase.Models.HomePageViewModel
+@{
+    var companyInfo = (Hotel.WebBase.Models.CompanyInfoModel)ViewBag.CurrentCompanyInfo;
+}
 
 <div id="content" class="site-content">
     <!-- Revolution Slider -->
@@ -10,220 +14,190 @@
             <!-- START REVOLUTION SLIDER 5.2.5.2 fullwidth mode -->
             <div id="rev_slider_1_1" class="rev_slider fullwidthabanner" style="display:none;" data-version="5.2.5.2">
                 <ul>
+                    @{ var index = 0;}
+                    @foreach (var slide in Model.TopSlides)
+                    {
+                        index++;
                     <!-- SLIDE  -->
-                    <li data-index="rs-1" data-transition="fade" data-slotamount="7" data-hideafterloop="0" data-hideslideonmobile="off" data-easein="default" data-easeout="default" data-masterspeed="300" data-thumb="http://www.slashdown.net/starhotel-wp/wp-content/uploads/revslider/homepage/slide-bg-100x50.jpg" data-rotate="0" data-saveperformance="off" data-title="Slide" data-param1="" data-param2="" data-param3="" data-param4="" data-param5="" data-param6="" data-param7="" data-param8="" data-param9="" data-param10="" data-description="">
-                        <!-- MAIN IMAGE -->
-                        <img src="http://www.slashdown.net/starhotel-wp/wp-content/uploads/revslider/homepage/slide-bg.jpg" alt="" title="Home" data-bgposition="center top" data-bgfit="100% 100%" data-bgrepeat="no-repeat" class="rev-slidebg" data-no-retina>
-                        <!-- LAYERS -->
-                        <!-- LAYER NR. 1 -->
-                        <div class="tp-caption starhotelbigtext   tp-resizeme"
-                             id="slide-1-layer-1"
-                             data-x="393"
-                             data-y="38"
-                             data-width="['auto']"
-                             data-height="['auto']"
-                             data-transform_idle="o:1;"
-                             data-transform_in="y:top;s:600;e:easeInBack;"
-                             data-transform_out="auto:auto;s:300;"
-                             data-start="500"
-                             data-splitin="none"
-                             data-splitout="none"
-                             data-responsive_offset="on"
-                             style="z-index: 5; white-space: nowrap;font-family:Open Sans;border-color:rgba(255, 255, 255, 1.00);"><span class="sm-stars"><i class="fa fa-star-o"></i> <i class="fa fa-star-o"></i> <i class="fa fa-star-o"></i> <i class="fa fa-star-o"></i> <i class="fa fa-star-o"></i>
-                                        </span>Tiêu đề slider 1<span class="sm-stars">
-                            <i class="fa fa-star-o"></i> <i class="fa fa-star-o"></i> <i class="fa fa-star-o"></i> <i class="fa fa-star-o"></i> <i class="fa fa-star-o"></i></span></div>
-                        <!-- LAYER NR. 2 -->
-                        <div class="tp-caption starhotelsmalltext   tp-resizeme"
-                             id="slide-1-layer-2"
-                             data-x="540"
-                             data-y="97"
-                             data-width="['auto']"
-                             data-height="['auto']"
-                             data-transform_idle="o:1;"
-                             data-transform_in="y:top;s:700;e:easeInOutBack;"
-                             data-transform_out="auto:auto;s:300;"
-                             data-start="500"
-                             data-splitin="none"
-                             data-splitout="none"
-                             data-responsive_offset="on"
-                             style="z-index: 6; white-space: nowrap; font-size: 20px; font-weight: 600;font-family:Open Sans;">Nội dung slider 1 </div>
-                        
-                    </li>
-                    <!-- SLIDE  -->
-                    <li data-index="rs-2" data-transition="fade" data-slotamount="7" data-hideafterloop="0" data-hideslideonmobile="off" data-easein="default" data-easeout="default" data-masterspeed="300" data-thumb="http://www.slashdown.net/starhotel-wp/wp-content/uploads/2015/03/slide-bg-02-100x50.jpg" data-rotate="0" data-saveperformance="off" data-title="Slide" data-param1="" data-param2="" data-param3="" data-param4="" data-param5="" data-param6="" data-param7="" data-param8="" data-param9="" data-param10="" data-description="">
-                        <!-- MAIN IMAGE -->
-                        <img src="http://www.slashdown.net/starhotel-wp/wp-content/uploads/2015/03/slide-bg-02.jpg" alt="" title="slide-bg-02.jpg" width="1700" height="449" data-bgposition="center top" data-bgfit="cover" data-bgrepeat="no-repeat" class="rev-slidebg" data-no-retina>
-                        <!-- LAYERS -->
-                        <!-- LAYER NR. 1 -->
-                        <div class="tp-caption starhotelbigtext   tp-resizeme"
-                             id="slide-2-layer-1"
-                             data-x="402"
-                             data-y="42"
-                             data-width="['auto']"
-                             data-height="['auto']"
-                             data-transform_idle="o:1;"
-                             data-transform_in="y:top;s:600;e:easeInBack;"
-                             data-transform_out="auto:auto;s:300;"
-                             data-start="500"
-                             data-splitin="none"
-                             data-splitout="none"
-                             data-responsive_offset="on"
-                             style="z-index: 5; white-space: nowrap;font-family:Open Sans;border-color:rgba(255, 255, 255, 1.00);">
-                        <span class="sm-stars"><i class="fa fa-star-o"></i> <i class="fa fa-star-o"></i> <i class="fa fa-star-o"></i> <i class="fa fa-star-o"></i> <i class="fa fa-star-o"></i></span>
-                            Tiêu đề slider 2<span class="sm-stars"><i class="fa fa-star-o"></i> <i class="fa fa-star-o"></i> <i class="fa fa-star-o"></i> <i class="fa fa-star-o"></i> <i class="fa fa-star-o"></i></span></div>
-                        <!-- LAYER NR. 2 -->
-                        <div class="tp-caption starhotelsmalltext   tp-resizeme"
-                             id="slide-2-layer-2"
-                             data-x="540"
-                             data-y="97"
-                             data-width="['auto']"
-                             data-height="['auto']"
-                             data-transform_idle="o:1;"
-                             data-transform_in="y:top;s:700;e:easeInOutBack;"
-                             data-transform_out="auto:auto;s:300;"
-                             data-start="500"
-                             data-splitin="none"
-                             data-splitout="none"
-                             data-responsive_offset="on"
-                             style="z-index: 6; white-space: nowrap; font-size: 20px; font-weight: 600;font-family:Open Sans;">Nội dung slider 2 </div>
-                        
-                    </li>
+                        <li data-index="rs-@(index)" data-transition="fade" data-slotamount="7" data-hideafterloop="0" data-hideslideonmobile="off" data-easein="default" data-easeout="default" data-masterspeed="300" data-thumb="http://www.slashdown.net/starhotel-wp/wp-content/uploads/revslider/homepage/slide-bg-100x50.jpg" data-rotate="0" data-saveperformance="off" data-title="Slide" data-param1="" data-param2="" data-param3="" data-param4="" data-param5="" data-param6="" data-param7="" data-param8="" data-param9="" data-param10="" data-description="">
+                            <!-- MAIN IMAGE -->
+                            <img src="@(slide.Image?.Url ?? "/images/blank_slide.jpg")" alt="" title="Home" data-bgposition="center top" data-bgfit="100% 100%" data-bgrepeat="no-repeat" class="rev-slidebg" data-no-retina>
+                            <!-- LAYERS -->
+                            <!-- LAYER NR. 1 -->
+                            <div class="tp-caption starhotelbigtext   tp-resizeme"
+                                 id="slide-1-layer-1"
+                                 data-x="@(384+index*9)"
+                                 data-y="@(34+index*4)"
+                                 data-width="['auto']"
+                                 data-height="['auto']"
+                                 data-transform_idle="o:1;"
+                                 data-transform_in="y:top;s:600;e:easeInBack;"
+                                 data-transform_out="auto:auto;s:300;"
+                                 data-start="500"
+                                 data-splitin="none"
+                                 data-splitout="none"
+                                 data-responsive_offset="on"
+                                 style="z-index: 5; white-space: nowrap;font-family:Open Sans;border-color:rgba(255, 255, 255, 1.00);">
+                                @slide.Text1
+                            </div>
+                            <!-- LAYER NR. 2 -->
+                            <div class="tp-caption starhotelsmalltext   tp-resizeme"
+                                 id="slide-1-layer-2"
+                                 data-x="540"
+                                 data-y="97"
+                                 data-width="['auto']"
+                                 data-height="['auto']"
+                                 data-transform_idle="o:1;"
+                                 data-transform_in="y:top;s:700;e:easeInOutBack;"
+                                 data-transform_out="auto:auto;s:300;"
+                                 data-start="500"
+                                 data-splitin="none"
+                                 data-splitout="none"
+                                 data-responsive_offset="on"
+                                 style="z-index: 6; white-space: nowrap; font-size: 20px; font-weight: 600;font-family:Open Sans;">@slide.Text2</div>
+
+                            </li>
+
+                    }
                 </ul>
-                <script>var htmlDiv = document.getElementById("rs-plugin-settings-inline-css"); var htmlDivCss="";
-						if(htmlDiv) {
-							htmlDiv.innerHTML = htmlDiv.innerHTML + htmlDivCss;
-						}else{
-							var htmlDiv = document.createElement("div");
-							htmlDiv.innerHTML = "<style>" + htmlDivCss + "</style>";
-							document.getElementsByTagName("head")[0].appendChild(htmlDiv.childNodes[0]);
-						}
+                <script>
+                    var htmlDiv = document.getElementById("rs-plugin-settings-inline-css"); var htmlDivCss = "";
+                    if (htmlDiv) {
+                        htmlDiv.innerHTML = htmlDiv.innerHTML + htmlDivCss;
+                    } else {
+                        var htmlDiv = document.createElement("div");
+                        htmlDiv.innerHTML = "<style>" + htmlDivCss + "</style>";
+                        document.getElementsByTagName("head")[0].appendChild(htmlDiv.childNodes[0]);
+                    }
                 </script>
                 <div class="tp-bannertimer tp-bottom" style="visibility: hidden !important;"></div>
             </div>
-            <script>var htmlDiv = document.getElementById("rs-plugin-settings-inline-css"); var htmlDivCss=".tp-caption.black,.black{color:#000;text-shadow:none}.tp-caption.starhotelbigtext,.starhotelbigtext{font-size:45px;line-height:55px;font-weight:600;color:#ffffff;text-decoration:none;padding:1px 4px 0px 4px;background-color:transparent;border-width:0px;border-color:rgb(255,255,255);border-style:none;text-shadow:rgba(0,0,0,0.298039) 0px 3px 3px;margin:0px;white-space:nowrap}.tp-caption.starhotelsmalltext,.starhotelsmalltext{color:rgba(255,255,255,1.00);font-size:30px;line-height:30px;font-weight:300;font-style:normal;font-family:Teko;padding:1px 4px 0px 4px;text-decoration:none;background-color:transparent;border-color:rgba(255,255,255,1.00);border-style:none;border-width:0px;border-radius:0 0 0 0px;text-align:left;text-shadow:rgba(0,0,0,0.298039) 0px 3px 3px;margin:0px;white-space:nowrap}";
-				if(htmlDiv) {
-					htmlDiv.innerHTML = htmlDiv.innerHTML + htmlDivCss;
-				}else{
-					var htmlDiv = document.createElement("div");
-					htmlDiv.innerHTML = "<style>" + htmlDivCss + "</style>";
-					document.getElementsByTagName("head")[0].appendChild(htmlDiv.childNodes[0]);
-				}
+            <script>
+                    var htmlDiv = document.getElementById("rs-plugin-settings-inline-css"); var htmlDivCss = ".tp-caption.black,.black{color:#000;text-shadow:none}.tp-caption.starhotelbigtext,.starhotelbigtext{font-size:45px;line-height:55px;font-weight:600;color:#ffffff;text-decoration:none;padding:1px 4px 0px 4px;background-color:transparent;border-width:0px;border-color:rgb(255,255,255);border-style:none;text-shadow:rgba(0,0,0,0.298039) 0px 3px 3px;margin:0px;white-space:nowrap}.tp-caption.starhotelsmalltext,.starhotelsmalltext{color:rgba(255,255,255,1.00);font-size:30px;line-height:30px;font-weight:300;font-style:normal;font-family:Teko;padding:1px 4px 0px 4px;text-decoration:none;background-color:transparent;border-color:rgba(255,255,255,1.00);border-style:none;border-width:0px;border-radius:0 0 0 0px;text-align:left;text-shadow:rgba(0,0,0,0.298039) 0px 3px 3px;margin:0px;white-space:nowrap}";
+                    if (htmlDiv) {
+                        htmlDiv.innerHTML = htmlDiv.innerHTML + htmlDivCss;
+                    } else {
+                        var htmlDiv = document.createElement("div");
+                        htmlDiv.innerHTML = "<style>" + htmlDivCss + "</style>";
+                        document.getElementsByTagName("head")[0].appendChild(htmlDiv.childNodes[0]);
+                    }
             </script>
             <script type="text/javascript">
-						/******************************************
-				-	PREPARE PLACEHOLDER FOR SLIDER	-
-			******************************************/
+                    /******************************************
+            -	PREPARE PLACEHOLDER FOR SLIDER	-
+        ******************************************/
 
-			var setREVStartSize=function(){
-				try{var e=new Object,i=jQuery(window).width(),t=9999,r=0,n=0,l=0,f=0,s=0,h=0;
-					e.c = jQuery('#rev_slider_1_1');
-					e.gridwidth = [960];
-					e.gridheight = [450];
+                    var setREVStartSize = function () {
+                        try {
+                            var e = new Object, i = jQuery(window).width(), t = 9999, r = 0, n = 0, l = 0, f = 0, s = 0, h = 0;
+                            e.c = jQuery('#rev_slider_1_1');
+                            e.gridwidth = [960];
+                            e.gridheight = [450];
 
-					e.sliderLayout = "fullwidth";
-					if(e.responsiveLevels&&(jQuery.each(e.responsiveLevels,function(e,f){f>i&&(t=r=f,l=e),i>f&&f>r&&(r=f,n=e)}),t>r&&(l=n)),f=e.gridheight[l]||e.gridheight[0]||e.gridheight,s=e.gridwidth[l]||e.gridwidth[0]||e.gridwidth,h=i/s,h=h>1?1:h,f=Math.round(h*f),"fullscreen"==e.sliderLayout){var u=(e.c.width(),jQuery(window).height());if(void 0!=e.fullScreenOffsetContainer){var c=e.fullScreenOffsetContainer.split(",");if (c) jQuery.each(c,function(e,i){u=jQuery(i).length>0?u-jQuery(i).outerHeight(!0):u}),e.fullScreenOffset.split("%").length>1&&void 0!=e.fullScreenOffset&&e.fullScreenOffset.length>0?u-=jQuery(window).height()*parseInt(e.fullScreenOffset,0)/100:void 0!=e.fullScreenOffset&&e.fullScreenOffset.length>0&&(u-=parseInt(e.fullScreenOffset,0))}f=u}else void 0!=e.minHeight&&f<e.minHeight&&(f=e.minHeight);e.c.closest(".rev_slider_wrapper").css({height:f})
+                            e.sliderLayout = "fullwidth";
+                            if (e.responsiveLevels && (jQuery.each(e.responsiveLevels, function (e, f) { f > i && (t = r = f, l = e), i > f && f > r && (r = f, n = e) }), t > r && (l = n)), f = e.gridheight[l] || e.gridheight[0] || e.gridheight, s = e.gridwidth[l] || e.gridwidth[0] || e.gridwidth, h = i / s, h = h > 1 ? 1 : h, f = Math.round(h * f), "fullscreen" == e.sliderLayout) { var u = (e.c.width(), jQuery(window).height()); if (void 0 != e.fullScreenOffsetContainer) { var c = e.fullScreenOffsetContainer.split(","); if (c) jQuery.each(c, function (e, i) { u = jQuery(i).length > 0 ? u - jQuery(i).outerHeight(!0) : u }), e.fullScreenOffset.split("%").length > 1 && void 0 != e.fullScreenOffset && e.fullScreenOffset.length > 0 ? u -= jQuery(window).height() * parseInt(e.fullScreenOffset, 0) / 100 : void 0 != e.fullScreenOffset && e.fullScreenOffset.length > 0 && (u -= parseInt(e.fullScreenOffset, 0)) } f = u } else void 0 != e.minHeight && f < e.minHeight && (f = e.minHeight); e.c.closest(".rev_slider_wrapper").css({ height: f })
 
-				}catch(d){console.log("Failure at Presize of Slider:"+d)}
-			};
+                        } catch (d) { console.log("Failure at Presize of Slider:" + d) }
+                    };
 
-			setREVStartSize();
+                    setREVStartSize();
 
-						var tpj=jQuery;
-			tpj.noConflict();
-			var revapi1;
-			tpj(document).ready(function() {
-				if(tpj("#rev_slider_1_1").revolution == undefined){
-					revslider_showDoubleJqueryError("#rev_slider_1_1");
-				}else{
-					revapi1 = tpj("#rev_slider_1_1").show().revolution({
-						sliderType:"standard",
-jsFileLocation:"//www.slashdown.net/starhotel-wp/wp-content/plugins/revslider/public/assets/js/",
-						sliderLayout:"fullwidth",
-						dottedOverlay:"none",
-						delay:9000,
-						navigation: {
-							keyboardNavigation:"off",
-							keyboard_direction: "horizontal",
-							mouseScrollNavigation:"off",
- 							mouseScrollReverse:"default",
-							onHoverStop:"off",
-							touch:{
-								touchenabled:"on",
-								swipe_threshold: 75,
-								swipe_min_touches: 1,
-								swipe_direction: "horizontal",
-								drag_block_vertical: false
-							}
-							,
-							arrows: {
-								style:"hesperiden",
-								enable:true,
-								hide_onmobile:false,
-								hide_onleave:false,
-								tmp:'',
-								left: {
-									h_align:"left",
-									v_align:"center",
-									h_offset:20,
-									v_offset:0
-								},
-								right: {
-									h_align:"right",
-									v_align:"center",
-									h_offset:20,
-									v_offset:0
-								}
-							}
-						},
-						visibilityLevels:[1240,1024,778,480],
-						gridwidth:960,
-						gridheight:450,
-						lazyType:"none",
-						shadow:0,
-						spinner:"spinner2",
-						stopLoop:"off",
-						stopAfterLoops:-1,
-						stopAtSlide:-1,
-						shuffle:"off",
-						autoHeight:"off",
-						disableProgressBar:"on",
-						hideThumbsOnMobile:"off",
-						hideSliderAtLimit:0,
-						hideCaptionAtLimit:0,
-						hideAllCaptionAtLilmit:0,
-						debugMode:false,
-						fallbacks: {
-							simplifyAll:"off",
-							nextSlideOnWindowFocus:"off",
-							disableFocusListener:false,
-						}
-					});
-				}
-			});	/*ready*/
+                    var tpj = jQuery;
+                    tpj.noConflict();
+                    var revapi1;
+                    tpj(document).ready(function () {
+                        if (tpj("#rev_slider_1_1").revolution == undefined) {
+                            revslider_showDoubleJqueryError("#rev_slider_1_1");
+                        } else {
+                            revapi1 = tpj("#rev_slider_1_1").show().revolution({
+                                sliderType: "standard",
+                                jsFileLocation: "//www.slashdown.net/starhotel-wp/wp-content/plugins/revslider/public/assets/js/",
+                                sliderLayout: "fullwidth",
+                                dottedOverlay: "none",
+                                delay: 9000,
+                                navigation: {
+                                    keyboardNavigation: "off",
+                                    keyboard_direction: "horizontal",
+                                    mouseScrollNavigation: "off",
+                                    mouseScrollReverse: "default",
+                                    onHoverStop: "off",
+                                    touch: {
+                                        touchenabled: "on",
+                                        swipe_threshold: 75,
+                                        swipe_min_touches: 1,
+                                        swipe_direction: "horizontal",
+                                        drag_block_vertical: false
+                                    }
+                                    ,
+                                    arrows: {
+                                        style: "hesperiden",
+                                        enable: true,
+                                        hide_onmobile: false,
+                                        hide_onleave: false,
+                                        tmp: '',
+                                        left: {
+                                            h_align: "left",
+                                            v_align: "center",
+                                            h_offset: 20,
+                                            v_offset: 0
+                                        },
+                                        right: {
+                                            h_align: "right",
+                                            v_align: "center",
+                                            h_offset: 20,
+                                            v_offset: 0
+                                        }
+                                    }
+                                },
+                                visibilityLevels: [1240, 1024, 778, 480],
+                                gridwidth: 960,
+                                gridheight: 450,
+                                lazyType: "none",
+                                shadow: 0,
+                                spinner: "spinner2",
+                                stopLoop: "off",
+                                stopAfterLoops: -1,
+                                stopAtSlide: -1,
+                                shuffle: "off",
+                                autoHeight: "off",
+                                disableProgressBar: "on",
+                                hideThumbsOnMobile: "off",
+                                hideSliderAtLimit: 0,
+                                hideCaptionAtLimit: 0,
+                                hideAllCaptionAtLilmit: 0,
+                                debugMode: false,
+                                fallbacks: {
+                                    simplifyAll: "off",
+                                    nextSlideOnWindowFocus: "off",
+                                    disableFocusListener: false,
+                                }
+                            });
+                        }
+                    });	/*ready*/
             </script>
             <script>
-					var htmlDivCss = ' #rev_slider_1_1_wrapper .tp-loader.spinner2{ background-color: #FFFFFF !important; } ';
-					var htmlDiv = document.getElementById('rs-plugin-settings-inline-css');
-					if(htmlDiv) {
-						htmlDiv.innerHTML = htmlDiv.innerHTML + htmlDivCss;
-					}
-					else{
-						var htmlDiv = document.createElement('div');
-						htmlDiv.innerHTML = '<style>' + htmlDivCss + '</style>';
-						document.getElementsByTagName('head')[0].appendChild(htmlDiv.childNodes[0]);
-					}
+                    var htmlDivCss = ' #rev_slider_1_1_wrapper .tp-loader.spinner2{ background-color: #FFFFFF !important; } ';
+                    var htmlDiv = document.getElementById('rs-plugin-settings-inline-css');
+                    if (htmlDiv) {
+                        htmlDiv.innerHTML = htmlDiv.innerHTML + htmlDivCss;
+                    }
+                    else {
+                        var htmlDiv = document.createElement('div');
+                        htmlDiv.innerHTML = '<style>' + htmlDivCss + '</style>';
+                        document.getElementsByTagName('head')[0].appendChild(htmlDiv.childNodes[0]);
+                    }
             </script>
             <script>
-					var htmlDivCss = unescape(".hesperiden.tparrows%20%7B%0A%09cursor%3Apointer%3B%0A%09background%3Argba%280%2C0%2C0%2C0.5%29%3B%0A%09width%3A40px%3B%0A%09height%3A40px%3B%0A%09position%3Aabsolute%3B%0A%09display%3Ablock%3B%0A%09z-index%3A100%3B%0A%20%20%20%20border-radius%3A%2050%25%3B%0A%7D%0A.hesperiden.tparrows%3Ahover%20%7B%0A%09background%3Argba%280%2C%200%2C%200%2C%201%29%3B%0A%7D%0A.hesperiden.tparrows%3Abefore%20%7B%0A%09font-family%3A%20%22revicons%22%3B%0A%09font-size%3A20px%3B%0A%09color%3Argb%28255%2C%20255%2C%20255%29%3B%0A%09display%3Ablock%3B%0A%09line-height%3A%2040px%3B%0A%09text-align%3A%20center%3B%0A%7D%0A.hesperiden.tparrows.tp-leftarrow%3Abefore%20%7B%0A%09content%3A%20%22%5Ce82c%22%3B%0A%20%20%20%20margin-left%3A-3px%3B%0A%7D%0A.hesperiden.tparrows.tp-rightarrow%3Abefore%20%7B%0A%09content%3A%20%22%5Ce82d%22%3B%0A%20%20%20%20margin-right%3A-3px%3B%0A%7D%0A");
-					var htmlDiv = document.getElementById('rs-plugin-settings-inline-css');
-					if(htmlDiv) {
-						htmlDiv.innerHTML = htmlDiv.innerHTML + htmlDivCss;
-					}
-					else{
-						var htmlDiv = document.createElement('div');
-						htmlDiv.innerHTML = '<style>' + htmlDivCss + '</style>';
-						document.getElementsByTagName('head')[0].appendChild(htmlDiv.childNodes[0]);
-					}
+                    var htmlDivCss = unescape(".hesperiden.tparrows%20%7B%0A%09cursor%3Apointer%3B%0A%09background%3Argba%280%2C0%2C0%2C0.5%29%3B%0A%09width%3A40px%3B%0A%09height%3A40px%3B%0A%09position%3Aabsolute%3B%0A%09display%3Ablock%3B%0A%09z-index%3A100%3B%0A%20%20%20%20border-radius%3A%2050%25%3B%0A%7D%0A.hesperiden.tparrows%3Ahover%20%7B%0A%09background%3Argba%280%2C%200%2C%200%2C%201%29%3B%0A%7D%0A.hesperiden.tparrows%3Abefore%20%7B%0A%09font-family%3A%20%22revicons%22%3B%0A%09font-size%3A20px%3B%0A%09color%3Argb%28255%2C%20255%2C%20255%29%3B%0A%09display%3Ablock%3B%0A%09line-height%3A%2040px%3B%0A%09text-align%3A%20center%3B%0A%7D%0A.hesperiden.tparrows.tp-leftarrow%3Abefore%20%7B%0A%09content%3A%20%22%5Ce82c%22%3B%0A%20%20%20%20margin-left%3A-3px%3B%0A%7D%0A.hesperiden.tparrows.tp-rightarrow%3Abefore%20%7B%0A%09content%3A%20%22%5Ce82d%22%3B%0A%20%20%20%20margin-right%3A-3px%3B%0A%7D%0A");
+                    var htmlDiv = document.getElementById('rs-plugin-settings-inline-css');
+                    if (htmlDiv) {
+                        htmlDiv.innerHTML = htmlDiv.innerHTML + htmlDivCss;
+                    }
+                    else {
+                        var htmlDiv = document.createElement('div');
+                        htmlDiv.innerHTML = '<style>' + htmlDivCss + '</style>';
+                        document.getElementsByTagName('head')[0].appendChild(htmlDiv.childNodes[0]);
+                    }
             </script>
         </div><!-- END REVOLUTION SLIDER -->
     </div>
@@ -328,102 +302,44 @@ jsFileLocation:"//www.slashdown.net/starhotel-wp/wp-content/plugins/revslider/pu
                                 <!-- Rooms -->
                                 <div class="rooms mt110">
                                     <div class="row room-list">
+                                        @foreach (var room in Model.Rooms?.Take(3).ToList() ?? new List<Hotel.WebBase.Models.RoomModel>())
+                                        {
 
                                         <!-- Room -->
-                                        <div class="col-sm-4 ">
-                                            <div class="room-thumb">
-                                                <img width="356" height="228" src="http://www.slashdown.net/starhotel-wp/wp-content/uploads/2015/03/room-01.jpg" class="img-responsive wp-post-image" alt="" />                            <div class="mask">
-                                                    <div class="main">
-                                                        <h5>Double Bedroom</h5>
-                                                        <div class='price'> € 79<span>a night</span></div>
-                                                    </div>
-                                                    <div class="content">
-                                                        <p><span>A modern hotel room in Star Hotel</span>Nunc tempor erat in magna pulvinar fermentum. Pellentesque scelerisque at leo nec vestibulum. malesuada metus.</p>
-                                                        <div class="row">
-                                                            <div class="col-xs-6">
-                                                                <ul class="list-unstyled">
-                                                                    <li><i class='fa fa-check-circle'></i> Incl. breakfast</li>
-                                                                    <li><i class='fa fa-check-circle'></i> Private balcony</li>
-                                                                    <li><i class='fa fa-check-circle'></i> Sea view</li>
-                                                                </ul>
-                                                            </div>
-                                                            <div class="col-xs-6">
-                                                                <ul class="list-unstyled">
-                                                                    <li><i class='fa fa-check-circle'></i> Free Wi-Fi</li>
-                                                                    <li><i class='fa fa-check-circle'></i> Incl. breakfast</li>
-                                                                    <li><i class='fa fa-check-circle'></i> Bathroom</li>
-                                                                </ul>
-                                                            </div>
+                                            <div class="col-sm-4 ">
+                                                <div class="room-thumb">
+                                                    <img width="356" height="228" src="@(room?.CoverImage?.Url?? "/images/blank_room.jpg")" class="img-responsive wp-post-image" alt="@(room.Name)" />                            <div class="mask">
+                                                        <div class="main">
+                                                            <h5>@(room.Name)</h5>
+                                                            <div class='price'> @(room.Price)<span>mỗi đêm</span></div>
                                                         </div>
-                                                        <a href="http://www.slashdown.net/starhotel-wp/room/double-bedroom/" class="btn btn-primary btn-block"> Book now </a>
+                                                        <div class="content">
+                                                            <p>@Html.Raw(room.Description)</p>
+                                                            <div class="row">
+                                                                @{ var features = Hotel.WebBase.Helpers.RoomFeaturesParser.Parse(room.FeaturesJson).Take(6).ToList();}
+                                                                <div class="col-xs-6">
+                                                                    <ul class="list-unstyled">
+                                                                        @foreach (var item in features.Take(3).ToList())
+                                                                        {
+                                                                            <li><i class='fa fa-check-circle'></i> @item</li>
+                                                                        }
+                                                                    </ul>
+                                                                </div>
+                                                                <div class="col-xs-6">
+                                                                    <ul class="list-unstyled">
+                                                                        @foreach (var item in features.Skip(3).ToList())
+                                                                        {
+                                                                            <li><i class='fa fa-check-circle'></i> @item</li>
+                                                                        }
+                                                                    </ul>
+                                                                </div>
+                                                            </div>
+                                                            <a href="room/@(Hotel.WebBase.Helpers.SlugOrIdHelper.EncodeSlugOrId(room.Slug,room.Id))" class="btn btn-primary btn-block"> Xem chi tiết </a>
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>
-                                        </div>
-
-                                        <!-- Room -->
-                                        <div class="col-sm-4 ">
-                                            <div class="room-thumb">
-                                                <img width="356" height="228" src="http://www.slashdown.net/starhotel-wp/wp-content/uploads/2015/03/room-04.jpg" class="img-responsive wp-post-image" alt="" />                            <div class="mask">
-                                                    <div class="main">
-                                                        <h5>Deluxe Room</h5>
-                                                        <div class='price'> € 79<span>a night</span></div>
-                                                    </div>
-                                                    <div class="content">
-                                                        <p><span>A modern hotel room in Star Hotel</span>Nunc tempor erat in magna pulvinar fermentum. Pellentesque scelerisque at leo nec vestibulum. malesuada metus.</p>
-                                                        <div class="row">
-                                                            <div class="col-xs-6">
-                                                                <ul class="list-unstyled">
-                                                                    <li><i class='fa fa-check-circle'></i> Incl. breakfast</li>
-                                                                    <li><i class='fa fa-check-circle'></i> Private balcony</li>
-                                                                    <li><i class='fa fa-check-circle'></i> Sea view</li>
-                                                                </ul>
-                                                            </div>
-                                                            <div class="col-xs-6">
-                                                                <ul class="list-unstyled">
-                                                                    <li><i class='fa fa-check-circle'></i> Free Wi-Fi</li>
-                                                                    <li><i class='fa fa-check-circle'></i> Incl. breakfast</li>
-                                                                    <li><i class='fa fa-check-circle'></i> Bathroom</li>
-                                                                </ul>
-                                                            </div>
-                                                        </div>
-                                                        <a href="http://www.slashdown.net/starhotel-wp/room/deluxe-room/" class="btn btn-primary btn-block"> Book now </a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        <!-- Room -->
-                                        <div class="col-sm-4 ">
-                                            <div class="room-thumb">
-                                                <img width="356" height="228" src="http://www.slashdown.net/starhotel-wp/wp-content/uploads/2015/03/room-09.jpg" class="img-responsive wp-post-image" alt="" />                            <div class="mask">
-                                                    <div class="main">
-                                                        <h5>Special Spa Room</h5>
-                                                        <div class='price'> € 259<span>a night</span></div>
-                                                    </div>
-                                                    <div class="content">
-                                                        <p><span>A modern hotel room in Star Hotel</span>Nunc tempor erat in magna pulvinar fermentum. Pellentesque scelerisque at leo nec vestibulum. malesuada metus.</p>
-                                                        <div class="row">
-                                                            <div class="col-xs-6">
-                                                                <ul class="list-unstyled">
-                                                                    <li><i class='fa fa-check-circle'></i> Incl. breakfast</li>
-                                                                    <li><i class='fa fa-check-circle'></i> Private balcony</li>
-                                                                    <li><i class='fa fa-check-circle'></i> Sea view</li>
-                                                                </ul>
-                                                            </div>
-                                                            <div class="col-xs-6">
-                                                                <ul class="list-unstyled">
-                                                                    <li><i class='fa fa-check-circle'></i> Free Wi-Fi</li>
-                                                                    <li><i class='fa fa-check-circle'></i> Incl. breakfast</li>
-                                                                    <li><i class='fa fa-check-circle'></i> Bathroom</li>
-                                                                </ul>
-                                                            </div>
-                                                        </div>
-                                                        <a href="http://www.slashdown.net/starhotel-wp/room/jungle-view/" class="btn btn-primary btn-block"> Book now </a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
+                                                                    }
 
                                     </div>
                                 </div>
@@ -440,78 +356,43 @@ jsFileLocation:"//www.slashdown.net/starhotel-wp/wp-content/plugins/revslider/pu
                                     </span>
                                 </h2>
                                 <div class="vc_row wpb_row vc_inner vc_row-fluid">
-                                    <div class="wpb_column vc_column_container vc_col-sm-3">
-                                        <div class="vc_column-inner ">
-                                            <div class="wpb_wrapper">
-                                                <div class="usp">
-                                                    <div class="box-icon">
-                                                        <div class="circle"><i class="fa fa fa-glass fa-lg"></i></div>
-                                                        <h3>Dịch vụ 1</h3>
-                                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse interdum eleifend augue, quis rhoncus purus fermentum.</p>
-                                                        <p><a href="#">Tìm hiểu thêm</a></p>
+                                    @foreach (var item in Model.Services?.Take(4).ToList() ?? new List<Hotel.WebBase.Models.ServiceModel>())
+                                    {
+                                        <div class="wpb_column vc_column_container vc_col-sm-3">
+                                            <div class="vc_column-inner ">
+                                                <div class="wpb_wrapper">
+                                                    <div class="usp">
+                                                        <div class="box-icon">
+                                                            <div class="circle"><i class="fa fa fa-check-circle fa-lg"></i></div>
+                                                            <h3>@item.Title</h3>
+                                                            <p>@Html.Raw(item.ShortDescription)</p>
+                                                            <p><a href="service/@(Hotel.WebBase.Helpers.SlugOrIdHelper.EncodeSlugOrId(item.Slug,item.Id))">Tìm hiểu thêm</a></p>
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
-                                    </div><div class="wpb_column vc_column_container vc_col-sm-3">
-                                        <div class="vc_column-inner ">
-                                            <div class="wpb_wrapper">
-                                                <div class="usp">
-                                                    <div class="box-icon">
-                                                        <div class="circle"><i class="fa fa fa-credit-card fa-lg"></i></div>
-                                                        <h3>Dịch vụ 2!</h3>
-                                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse interdum eleifend augue, quis rhoncus purus fermentum.</p>
-                                                        <p><a href="#">Tìm hiểu thêm</a></p>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div><div class="wpb_column vc_column_container vc_col-sm-3">
-                                        <div class="vc_column-inner ">
-                                            <div class="wpb_wrapper">
-                                                <div class="usp">
-                                                    <div class="box-icon">
-                                                        <div class="circle"><i class="fa fa fa-cutlery fa-lg"></i></div>
-                                                        <h3>Dịch vụ 3</h3>
-                                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse interdum eleifend augue, quis rhoncus purus fermentum.</p>
-                                                        <p><a href="#">Tìm hiểu thêm</a></p>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div><div class="wpb_column vc_column_container vc_col-sm-3">
-                                        <div class="vc_column-inner ">
-                                            <div class="wpb_wrapper">
-                                                <div class="usp">
-                                                    <div class="box-icon">
-                                                        <div class="circle"><i class="fa fa fa-tint fa-lg"></i></div>
-                                                        <h3>Dịch vụ 4</h3>
-                                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse interdum eleifend augue, quis rhoncus purus fermentum.</p>
-                                                        <p><a href="#">Tìm hiểu thêm</a></p>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
+                                    }
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div><div data-vc-full-width="true" data-vc-full-width-init="false" data-vc-stretch-content="true" class="vc_row wpb_row vc_row-fluid vc_custom_1464770950170 vc_row-no-padding">
+                </div>
+                <div data-vc-full-width="true" data-vc-full-width-init="false" data-vc-stretch-content="true" class="vc_row wpb_row vc_row-fluid vc_custom_1464770950170 vc_row-no-padding">
                     <div class="wpb_column vc_column_container vc_col-sm-12">
                         <div class="vc_column-inner ">
                             <div class="wpb_wrapper">
-                                <script type="text/javascript">jQuery(document).ready(function(){jQuery("#parallax-image").parallax("50%", -0.25);});</script>
+                                <script type="text/javascript">jQuery(document).ready(function () { jQuery("#parallax-image").parallax("50%", -0.25); });</script>
                                 <div class="parallax-effect">
                                     <div id="parallax-image" style="background-image: url(http://www.slashdown.net/starhotel-wp/wp-content/uploads/2015/03/parallax-01.jpg);">
                                         <div class="color-overlay fadeIn appear" data-start="600">
                                             <div class="container">
                                                 <div class="content">
-                                                    <h3 class="text-center">Mường Thanh Hotel</h3>
+                                                    <h3 class="text-center">@companyInfo.CompanyName</h3>
                                                     <p class="text-center">
-                                                        Một điểm đến kỳ thú
+                                                        @Html.Raw(companyInfo.ShortDescription)
                                                         <br>
-                                                        <a class="btn mt30 btn-lg btn-ghost" href="http://www.slashdown.net/starhotel-wp/blog/2015/03/14/new-rooms/">Xem tin tức mới nhất</a>
+                                                        <a class="btn mt30 btn-lg btn-ghost" href="contact">Liên hệ với chúng tôi</a>
                                                     </p>
                                                 </div>
                                             </div>
@@ -521,33 +402,47 @@ jsFileLocation:"//www.slashdown.net/starhotel-wp/wp-content/plugins/revslider/pu
                             </div>
                         </div>
                     </div>
-                </div><div class="vc_row-full-width vc_clearfix"></div><div class="vc_row wpb_row vc_row-fluid vc_custom_1464770990837">
-                    <div class="wpb_column vc_column_container vc_col-sm-12">
-                        <div class="vc_column-inner ">
-                            <div class="wpb_wrapper">
-                                <h2 class="lined-heading mt50">
-                                    <span>
-                                        Thư viện
-                                    </span>
-                                </h2>
+                </div>
+                <div class="vc_row-full-width vc_clearfix"></div>
+                @if (Model.Photos != null && Model.Photos.Count > 0)
+                {
+                    <div class="vc_row wpb_row vc_row-fluid vc_custom_1464770990837">
+                        <div class="wpb_column vc_column_container vc_col-sm-12">
+                            <div class="vc_column-inner ">
+                                <div class="wpb_wrapper">
+                                    <h2 class="lined-heading mt50">
+                                        <span>
+                                            Thư viện
+                                        </span>
+                                    </h2>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div><div data-vc-full-width="true" data-vc-full-width-init="false" data-vc-stretch-content="true" class="vc_row wpb_row vc_row-fluid vc_row-no-padding">
-                    <div class="wpb_column vc_column_container vc_col-sm-12">
-                        <div class="vc_column-inner ">
-                            <div class="wpb_wrapper">
-                                <div class="carousel">
-                                    <div id="owl-gallery" class="owl-carousel">
-                                        <div class="item mfp_open"><a href="http://www.slashdown.net/starhotel-wp/wp-content/uploads/2015/03/1.jpg"><img src="http://www.slashdown.net/starhotel-wp/wp-content/uploads/2015/03/1.jpg" /><i class="fa fa-search"></i></a></div>    <div class="item mfp_open"><a href="http://www.slashdown.net/starhotel-wp/wp-content/uploads/2015/03/6.jpg"><img src="http://www.slashdown.net/starhotel-wp/wp-content/uploads/2015/03/6.jpg" /><i class="fa fa-search"></i></a></div>    <div class="item mfp_open"><a href="http://www.slashdown.net/starhotel-wp/wp-content/uploads/2015/03/4.jpg"><img src="http://www.slashdown.net/starhotel-wp/wp-content/uploads/2015/03/4.jpg" /><i class="fa fa-search"></i></a></div>    <div class="item mfp_open"><a href="http://www.slashdown.net/starhotel-wp/wp-content/uploads/2015/03/2.jpg"><img src="http://www.slashdown.net/starhotel-wp/wp-content/uploads/2015/03/2.jpg" /><i class="fa fa-search"></i></a></div>
+                    <div data-vc-full-width="true" data-vc-full-width-init="false" data-vc-stretch-content="true" class="vc_row wpb_row vc_row-fluid vc_row-no-padding">
+                        <div class="wpb_column vc_column_container vc_col-sm-12">
+                            <div class="vc_column-inner ">
+                                <div class="wpb_wrapper">
+                                    <div class="carousel">
+                                        <div id="owl-gallery" class="owl-carousel">
+                                            @foreach (var item in Model.Photos)
+                                            {
+                                                <div class="item mfp_open">
+                                                    <a href="@(item.Image?.Url)">
+                                                        <img src="@(item.Image?.Url)" /><i class="fa fa-search"></i>
+                                                    </a>
+                                                </div>
+
+                                            }
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div><div class="vc_row-full-width vc_clearfix"></div>
+                    <div class="vc_row-full-width vc_clearfix"></div>
+                }
             </div>
         </div>
     </div>
-
 </div>
