@@ -1,14 +1,11 @@
 ﻿@{
     ViewData["Title"] = "Room details";
 }
-
+@model Hotel.WebBase.Models.RoomDetailPageViewModel
 <section class="sub_header" id="bg_room">
     <div class="sub_header_content">
         <div class="animated fadeInDown">
-            <h1>Double Room</h1>
-            <p>
-                Ridiculus sociosqu cursus neque cursus curae ante scelerisque vehicula.
-            </p>
+            <h1>@Model.Room.Name</h1>
         </div>
     </div>
 </section><!-- End Section -->
@@ -18,166 +15,54 @@
         <div class="col-lg-9 col-md-8" id="single_tour_desc">
             <div id="Img_carousel" class="slider-pro">
                 <div class="sp-slides">
-
-                    <div class="sp-slide">
-                        <img alt="" class="sp-image" 
-                             data-src="/img/room_photo/1_medium.jpg"
-                             data-small="/img/room_photo/1_small.jpg"
-                             data-medium="/img/room_photo/1_medium.jpg"
-                             data-large="/img/room_photo/1_large.jpg"
-                             data-retina="/img/room_photo/1_large.jpg">
-                    </div>
-                    <div class="sp-slide">
-                        <img alt="" class="sp-image"
-                             data-src="/img/room_photo/2_medium.jpg"
-                             data-small="/img/room_photo/2_small.jpg"
-                             data-medium="/img/room_photo/2_medium.jpg"
-                             data-large="/img/room_photo/2_large.jpg"
-                             data-retina="/img/room_photo/2_large.jpg">
-                        <p class="sp-layer sp-black sp-padding" data-position="bottomLeft" data-horizontal="5%" data-vertical="5%" data-width="90%" data-show-transition="up" data-show-delay="400">
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                        </p>
-                    </div>
-
-                    <div class="sp-slide">
-                        <img alt="" class="sp-image"
-                             data-src="/img/room_photo/3_medium.jpg"
-                             data-small="/img/room_photo/3_small.jpg"
-                             data-medium="/img/room_photo/3_medium.jpg"
-                             data-large="/img/room_photo/3_large.jpg"
-                             data-retina="/img/room_photo/3_large.jpg">
-                        <p class="sp-layer sp-black sp-padding" data-position="bottomLeft" data-horizontal="5%" data-vertical="5%" data-width="90%" data-show-transition="up" data-show-delay="400">
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                        </p>
-                    </div>
-
-                    <div class="sp-slide">
-                        <img alt="" class="sp-image"
-                             data-src="/img/room_photo/4_medium.jpg"
-                             data-small="/img/room_photo/4_small.jpg"
-                             data-medium="/img/room_photo/4_medium.jpg"
-                             data-large="/img/room_photo/4_large.jpg"
-                             data-retina="/img/room_photo/4_large.jpg">
-                        <p class="sp-layer sp-black sp-padding" data-position="bottomLeft" data-horizontal="5%" data-vertical="5%" data-width="90%" data-show-transition="up" data-show-delay="400">
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                        </p>
-                    </div>
-
-                    <div class="sp-slide">
-                        <img alt="" class="sp-image"
-                             data-src="/img/room_photo/5_medium.jpg"
-                             data-small="/img/room_photo/5_small.jpg"
-                             data-medium="/img/room_photo/5_medium.jpg"
-                             data-large="/img/room_photo/5_large.jpg"
-                             data-retina="/img/room_photo/5_large.jpg">
-                        <p class="sp-layer sp-black sp-padding" data-position="bottomLeft" data-horizontal="5%" data-vertical="5%" data-width="90%" data-show-transition="up" data-show-delay="400">
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                        </p>
-                    </div>
-
-                    <div class="sp-slide">
-                        <img alt="" class="sp-image"
-                             data-src="/img/room_photo/6_medium.jpg"
-                             data-small="/img/room_photo/6_small.jpg"
-                             data-medium="/img/room_photo/6_medium.jpg"
-                             data-large="/img/room_photo/6_large.jpg"
-                             data-retina="/img/room_photo/6_large.jpg">
-                        <p class="sp-layer sp-black sp-padding" data-position="bottomLeft" data-horizontal="5%" data-vertical="5%" data-width="90%" data-show-transition="up" data-show-delay="400">
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                        </p>
-                    </div>
-
-                    <div class="sp-slide">
-                        <img alt="" class="sp-image"
-                             data-src="/img/room_photo/7_medium.jpg"
-                             data-small="/img/room_photo/7_small.jpg"
-                             data-medium="/img/room_photo/7_medium.jpg"
-                             data-large="/img/room_photo/7_large.jpg"
-                             data-retina="/img/room_photo/7_large.jpg">
-                        <p class="sp-layer sp-black sp-padding" data-position="bottomLeft" data-horizontal="5%" data-vertical="5%" data-width="90%" data-show-transition="up" data-show-delay="400">
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                        </p>
-                    </div>
-
-                    <div class="sp-slide">
-                        <img alt="" class="sp-image"
-                             data-src="/img/room_photo/8_medium.jpg"
-                             data-small="/img/room_photo/8_small.jpg"
-                             data-medium="/img/room_photo/8_medium.jpg"
-                             data-large="/img/room_photo/8_large.jpg"
-                             data-retina="/img/room_photo/8_large.jpg">
-                        <p class="sp-layer sp-black sp-padding" data-position="bottomLeft" data-horizontal="5%" data-vertical="5%" data-width="90%" data-show-transition="up" data-show-delay="400">
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                        </p>
-                    </div>
-
+                    @foreach (var image in Model.Room.RoomImages?.OrderBy(x => x.Priority).ToList() ?? new List<Hotel.WebBase.Models.RoomImageModel>())
+                    {
+                        <div class="sp-slide">
+                            <img alt="" class="sp-image"
+                                 data-src="@(image?.Image?.Url ?? "/img/room_photo/1_small.jpg")"
+                                 data-small="@(image?.Image?.Url ?? "/img/room_photo/1_small.jpg")"
+                                 data-medium="@(image?.Image?.Url ?? "/img/room_photo/1_small.jpg")"
+                                 data-large="@(image?.Image?.Url ?? "/img/room_photo/1_small.jpg")"
+                                 data-retina="@(image?.Image?.Url ?? "/img/room_photo/1_small.jpg")">
+                        </div>
+                    }
                 </div>
                 <div class="sp-thumbnails">
-                    <img alt="" class="sp-thumbnail" src="/img/room_photo/1_thumb.jpg">
-                    <img alt="" class="sp-thumbnail" src="/img/room_photo/2_thumb.jpg">
-                    <img alt="" class="sp-thumbnail" src="/img/room_photo/3_thumb.jpg">
-                    <img alt="" class="sp-thumbnail" src="/img/room_photo/4_thumb.jpg">
-                    <img alt="" class="sp-thumbnail" src="/img/room_photo/5_thumb.jpg">
-                    <img alt="" class="sp-thumbnail" src="/img/room_photo/6_thumb.jpg">
-                    <img alt="" class="sp-thumbnail" src="/img/room_photo/7_thumb.jpg">
-                    <img alt="" class="sp-thumbnail" src="/img/room_photo/8_thumb.jpg">
+                    @foreach (var image in Model.Room.RoomImages?.OrderBy(x => x.Priority).ToList() ?? new List<Hotel.WebBase.Models.RoomImageModel>())
+                    {
+                        <img alt="" class="sp-thumbnail" src="@(image?.Image?.Url ?? "/img/room_photo/1_small.jpg")">
+                    }
                 </div>
             </div>
             <div id="single_room_feat">
-                <ul>
-                    <li><i class="icon_set_2_icon-116"></i>Plasma TV</li>
-                    <li><i class="icon_set_2_icon-104"></i>King size bed</li>
-                    <li><i class="icon_set_1_icon-59"></i>Breakfast inclueded</li>
-                    <li><i class="icon_set_2_icon-111"></i>Bathtub</li>
-                    <li><i class="icon_set_1_icon-22"></i>Pet allowed</li>
-                    <li><i class="icon_set_2_icon-106"></i>Safe box</li>
-                </ul>
+                <ul></ul>
             </div>
             <div class="row">
                 <div class="col-md-3">
-                    <h3>Description</h3>
+                    <h3>Mô tả</h3>
                 </div>
                 <div class="col-md-9">
                     <p>
-                        Lorem ipsum dolor sit amet, at omnes deseruisse pri. Quo aeterno legimus insolens ad. Sit cu detraxit constituam, an mel iudico constituto efficiendi. Eu ponderum mediocrem has, vitae adolescens in pro. Mea liber ridens inermis ei, mei legendos vulputate an, labitur tibique te qui.  Ad cum movet fierent assueverit, mei stet legere ne. Mel at vide soluta, ut utamur antiopam inciderint sed. Ut iriure perpetua voluptaria has, vim postea denique in, mollis pertinax elaboraret sed in. Per no vidit timeam, quis omittam sed at.
+                        @Model.Room.Description
                     </p>
-                    <h4>Room facilities</h4>
-                    <p>
-                        Lorem ipsum dolor sit amet, at omnes deseruisse pri. Quo aeterno legimus insolens ad. Sit cu detraxit constituam, an mel iudico constituto efficiendi.
-                    </p>
+                    <h4>Dịch vụ</h4>
                     <div class="row">
-                        <div class="col-md-6 col-sm-6">
+                        <div class="col-md-12 col-sm-12">
                             <ul class="list_ok">
-                                <li>Lorem ipsum dolor sit amet</li>
-                                <li>No scripta electram necessitatibus sit</li>
-                                <li>Quidam percipitur instructior an eum</li>
-                                <li>Ut est saepe munere ceteros</li>
-                            </ul>
-                        </div>
-                        <div class="col-md-6 col-sm-6">
-                            <ul class="list_ok">
-                                <li>Lorem ipsum dolor sit amet</li>
-                                <li>No scripta electram necessitatibus sit</li>
-                                <li>Quidam percipitur instructior an eum</li>
-                                <li>No scripta electram necessitatibus sit</li>
+                                @foreach (var feature in Hotel.WebBase.Helpers.RoomFeaturesParser.Parse(Model.Room.FeaturesJson))
+                                {
+                                    <li>@feature</li>
+                                }
                             </ul>
                         </div>
                     </div><!-- End row  -->
-                    <h4>Room Prices</h4>
+                    <h4>Giá phòng</h4>
                     <!-- start pricing table -->
                     <table class="table table-striped">
                         <tbody>
                             <tr>
-                                <td>Low (from 23/03 to 31/05)</td>
-                                <td>140$</td>
-                            </tr>
-                            <tr>
-                                <td>Middle (from 23/03 to 31/05)</td>
-                                <td>180$</td>
-                            </tr>
-                            <tr>
-                                <td>High (from 23/03 to 31/05)</td>
-                                <td>200$</td>
+                                <td>1 ngày đêm</td>
+                                <td>@(string.Format("{0:n0}", @Model.Room.Price))<em> VNĐ</em></td>
                             </tr>
                         </tbody>
                     </table>
@@ -190,21 +75,21 @@
 
         <div class="col-lg-3 col-md-4">
             <div class="box_style_1" id="book_in">
-                <h3>Check availability</h3>
+                <h3>Đăng ký</h3>
                 <div id="message-booking"></div>
                 <form role="form" method="post" action="assets/check_avail.php" id="check_avail" autocomplete="off">
                     <div class="row">
                         <div class="col-md-6 col-sm-6 col-xs-6">
                             <div class="form-group">
-                                <label>Check in</label>
-                                <input class="date-pick form-control" data-date-format="M d, D" type="text" id="check_in" name="check_in" placeholder="Check in">
+                                <label>Ngày đến</label>
+                                <input class="date-pick form-control" data-date-format="M d, D" type="text" id="check_in" name="check_in" placeholder="Ngày đến">
                                 <span class="input-icon"><i class=" icon-calendar"></i></span>
                             </div>
                         </div>
                         <div class="col-md-6 col-sm-6 col-xs-6">
                             <div class="form-group">
-                                <label>Check out</label>
-                                <input class="date-pick form-control" data-date-format="M d, D" type="text" id="check_out" name="check_out" placeholder="Check out">
+                                <label>Ngày đi</label>
+                                <input class="date-pick form-control" data-date-format="M d, D" type="text" id="check_out" name="check_out" placeholder="Ngày đi">
                                 <span class="input-icon"><i class=" icon-calendar"></i></span>
                             </div>
                         </div>
@@ -212,7 +97,7 @@
                     <div class="row">
                         <div class="col-md-6 col-sm-6 col-xs-6">
                             <div class="form-group">
-                                <label>Adults</label>
+                                <label>Người lớn</label>
                                 <div class="qty-buttons">
 
                                     <input type="text" name="adults" id="adults" value="" class="form-control" placeholder="0">
@@ -222,7 +107,7 @@
                         </div>
                         <div class="col-md-6 col-sm-6 col-xs-6">
                             <div class="form-group">
-                                <label>Children</label>
+                                <label>Trẻ em</label>
                                 <div class="qty-buttons">
 
                                     <input type="text" name="children" id="children" value="" class="form-control" placeholder="0">
@@ -236,7 +121,7 @@
                             <div class="form-group">
                                 <label>Room type</label>
                                 <select class="form-control" name="room_type" id="room_type">
-                                    <option value="">Select room type</option>
+                                    <option value="">Chọn phòng</option>
                                     <option value="Single Room">Single Room</option>
                                     <option value="Double Room">Double Room</option>
                                     <option value="Luxury Double Room">Luxury Double Room</option>
@@ -245,19 +130,19 @@
                         </div>
                         <div class="col-md-12 col-sm-6">
                             <div class="form-group">
-                                <label>Name</label>
-                                <input type="text" class="form-control" name="name_booking" id="name_booking" placeholder="Name and Last name">
+                                <label>Tên</label>
+                                <input type="text" class="form-control" name="name_booking" id="name_booking" placeholder="Tên">
                             </div>
                         </div>
                         <div class="col-md-12 col-sm-6">
                             <div class="form-group">
                                 <label>Email</label>
-                                <input type="text" class="form-control" name="email_booking" id="email_booking" placeholder="Your email">
+                                <input type="text" class="form-control" name="email_booking" id="email_booking" placeholder="Email">
                             </div>
                         </div>
                         <div class="col-md-12 col-sm-12">
                             <div class="form-group">
-                                <input type="submit" value="Book now" class="btn_full" id="submit-booking">
+                                <input type="submit" value="Đăng ký" class="btn_full" id="submit-booking">
                             </div>
                         </div>
                     </div>
