@@ -41,7 +41,7 @@
     <!---begin booking-->
     <div class="col-md-12">
         <div class="contact_form_holder">
-            <form name="contactForm" id='booking_form' method="post" action='reservation.php'>
+            <form name="contactForm" id='booking_form' method="post" action=''>
                 <div class="col-md-8">
                     <div class="col-md-4">
                         <input type="text" class="form-control" name="name" id="name" placeholder="Tên của bạn*" />
@@ -112,13 +112,13 @@
         {
             <div class="room-item item">
                 <div class="overlay">
-                    <a href="single-room.html">
+                    <a href="room/@(Hotel.WebBase.Helpers.SlugOrIdHelper.EncodeSlugOrId(rooms[i].Slug,rooms[i].Id))">
                         <h1>@Html.Raw(rooms[i].Name) </h1>
                     </a>
                     <div class="desc">
                         @Html.Raw(rooms[i].Description);
                         <div class="price">@string.Format("{0:C}", rooms[i].Price)<span>/Đêm</span></div>
-                        <a href="single-room.html" class="btn-border">Xem chi tiết</a>
+                        <a href="room/@(Hotel.WebBase.Helpers.SlugOrIdHelper.EncodeSlugOrId(rooms[i].Slug,rooms[i].Id))" class="btn-border">Xem chi tiết</a>
                     </div>
                 </div>
                 <img @string.Format("src = {0}", rooms[i].RoomImages?.FirstOrDefault()?.Image.Url) alt="">
