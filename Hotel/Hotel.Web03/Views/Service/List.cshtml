@@ -14,29 +14,26 @@
     <div class="row">
         <div class="col-lg-12 col-md-12">
             <div class="row">
-@foreach (var item in Model.Services)
-{
-    <div class="col-lg-4 col-md-6 col-sm-12">
-        <section class="box_cat_wp">
-            <div class="box_cat cat-hover">
-                <a href="service/@(Hotel.WebBase.Helpers.SlugOrIdHelper.EncodeSlugOrId(item.Slug,item.Id))" class="cat-overlay">
-                    <h2>@item.Title</h2>
-                    <p>
-                        @Html.Raw(item.ShortDescription)
-                    </p>
-                    <span class="box_cat_bt">Xem thêm</span>
-                </a>
-                <div class="cat-img">
-                    <img src="@(item.CoverImage?.Url ?? "/img/activities_3.jpg")" alt="@(item.Title)">
-                </div>
-            </div>
-        </section>
-    </div>
-}
-                
+                @foreach (var item in Model.Services)
+                {
+                    <div class="col-lg-4 col-md-6 col-sm-12">
+                        <section class="box_cat_wp">
+                            <div class="box_cat cat-hover">
+                                <a href="service/@(Hotel.WebBase.Helpers.SlugOrIdHelper.EncodeSlugOrId(item.Slug,item.Id))" class="cat-overlay">
+                                    <h2>@item.Title</h2>
+                                    <p>
+                                        @Html.Raw(item.ShortDescription)
+                                    </p>
+                                    <span class="box_cat_bt">Xem thêm</span>
+                                </a>
+                                <div class="cat-img">
+                                    <img src="@(item.CoverImage?.Url ?? "/img/activities_3.jpg")" alt="@(item.Title)">
+                                </div>
+                            </div>
+                        </section>
+                    </div>
+                }
             </div><!-- End row -->
         </div><!-- End col-lg-9 -->
-
     </div><!-- End row -->
 </div><!-- End Container -->
-
