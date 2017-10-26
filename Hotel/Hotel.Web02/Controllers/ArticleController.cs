@@ -24,7 +24,7 @@ namespace Hotel.Web02.Controllers
         public IActionResult Detail(string slug)
         {
             var viewmodel = this.GetArticleDetailPage(slug);
-            ViewBag.NewestArticles = this.GetArticlesListPage(5, null).Articles;
+            ViewBag.NewestArticles = this.GetArticlesListPage(10, null).Articles.OrderByDescending(x=>x.CreatedDate).Take(5).ToList();
             return View(viewmodel);
         }
     }
