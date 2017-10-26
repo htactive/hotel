@@ -19,10 +19,4 @@
     <ProjectReference Include="..\Hotel.WebBase\Hotel.WebBase.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Content Update="appsettings.Production.json">
-      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-    </Content>
-  </ItemGroup>
-
 </Project>
