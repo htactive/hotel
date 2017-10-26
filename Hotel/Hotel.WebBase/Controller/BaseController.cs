@@ -45,12 +45,18 @@ namespace Hotel.WebBase.Controllers
 
         private string ValidateCurrentCompany(ActionExecutingContext context)
         {
-            if (!context.RouteData.Values.ContainsKey("cc"))
+            var domain = context.HttpContext.Request.Host.Host;
+            if (string.IsNullOrEmpty(domain))
             {
                 return "VCC_cc_Empty";
             }
-            var code = context.RouteData.Values["cc"]?.ToString().ToLower();
-            var entity = this.Repository.CompanyRepository.GetAll().FirstOrDefault(x => x.CompanyCode == code);
+            if (domain == "localhost")
+            {
+                domain = "00.khachsantest.htactive.com";
+            }
+            
+            domain = domain.Substring(3);
+            var entity = this.Repository.CompanyRepository.GetAll().FirstOrDefault(x => x.CompanyCode == domain);
             if (entity == null)
             {
                 return "VCC_cc_NotFound";
@@ -61,7 +67,7 @@ namespace Hotel.WebBase.Controllers
             }
             this.CurrentCompany = Mappers.Mapper.ToModel(entity);
             ViewBag.CurrentCompany = this.CurrentCompany;
-            ViewBag.BaseHref = $"/{ this.CurrentCompany.CompanyCode}/";
+            ViewBag.BaseHref = $"/";
             return string.Empty;
         }
 

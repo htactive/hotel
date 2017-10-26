@@ -62,7 +62,7 @@ namespace Hotel.WebBase
 
             app.UseMvc(routes =>
             {
-                routes.MapRoute("home", "{cc:regex(^(c_)\\w{{4}}$)}", new
+                routes.MapRoute("home", "", new
                 {
                     controller = "Home",
                     action = "Index"
@@ -70,7 +70,7 @@ namespace Hotel.WebBase
             });
             app.UseMvc(routes =>
             {
-                routes.MapRoute("contact", "{cc:regex(^(c_)\\w{{4}}$)}/contact", new
+                routes.MapRoute("contact", "contact", new
                 {
                     controller = "Contact",
                     action = "Index"
@@ -78,7 +78,7 @@ namespace Hotel.WebBase
             });
             app.UseMvc(routes =>
             {
-                routes.MapRoute("contact_post", "{cc:regex(^(c_)\\w{{4}}$)}/contact/feedback", new
+                routes.MapRoute("contact_post", "contact/feedback", new
                 {
                     controller = "Contact",
                     action = "SubmitFeedback"
@@ -86,7 +86,7 @@ namespace Hotel.WebBase
             });
             app.UseMvc(routes =>
             {
-                routes.MapRoute("rooms", "{cc:regex(^(c_)\\w{{4}}$)}/rooms/{p?}", new
+                routes.MapRoute("rooms", "rooms/{p?}", new
                 {
                     controller = "Room",
                     action = "List"
@@ -94,7 +94,7 @@ namespace Hotel.WebBase
             });
             app.UseMvc(routes =>
             {
-                routes.MapRoute("room_detail", "{cc:regex(^(c_)\\w{{4}}$)}/room/{slug}", new
+                routes.MapRoute("room_detail", "room/{slug}", new
                 {
                     controller = "Room",
                     action = "Detail"
@@ -102,7 +102,7 @@ namespace Hotel.WebBase
             });
             app.UseMvc(routes =>
             {
-                routes.MapRoute("articles", "{cc:regex(^(c_)\\w{{4}}$)}/articles/{p?}", new
+                routes.MapRoute("articles", "articles/{p?}", new
                 {
                     controller = "Article",
                     action = "List"
@@ -110,7 +110,7 @@ namespace Hotel.WebBase
             });
             app.UseMvc(routes =>
             {
-                routes.MapRoute("article_detail", "{cc:regex(^(c_)\\w{{4}}$)}/article/{slug}", new
+                routes.MapRoute("article_detail", "article/{slug}", new
                 {
                     controller = "Article",
                     action = "Detail"
@@ -118,7 +118,7 @@ namespace Hotel.WebBase
             });
             app.UseMvc(routes =>
             {
-                routes.MapRoute("services", "{cc:regex(^(c_)\\w{{4}}$)}/services/{p?}", new
+                routes.MapRoute("services", "services/{p?}", new
                 {
                     controller = "Service",
                     action = "List"
@@ -126,7 +126,7 @@ namespace Hotel.WebBase
             });
             app.UseMvc(routes =>
             {
-                routes.MapRoute("service_detail", "{cc:regex(^(c_)\\w{{4}}$)}/service/{slug}", new
+                routes.MapRoute("service_detail", "service/{slug}", new
                 {
                     controller = "Service",
                     action = "Detail"
@@ -135,7 +135,7 @@ namespace Hotel.WebBase
 
             app.UseMvc(routes =>
             {
-                routes.MapRoute("gallery", "{cc:regex(^(c_)\\w{{4}}$)}/gallery/{p?}", new
+                routes.MapRoute("gallery", "gallery/{p?}", new
                 {
                     controller = "Gallery",
                     action = "Index"
