@@ -2,6 +2,8 @@
     ViewData["Title"] = "Tin tức";
 }
 
+@model Hotel.WebBase.Models.ArticlesListPageViewModel
+
 <div id="content" class="site-content">
     <!-- Parallax Effect -->
     <script type="text/javascript">jQuery(document).ready(function () { jQuery('#parallax-pagetitle').parallax("50%", -0.55); });</script>
@@ -34,16 +36,20 @@
 
 
 
-                    <div class=" col-md-9 ">
-
+                    <div class=" col-md-12 ">
+                        @for (int i = 0; i < Model.Articles.Count(); i++) { 
                         <article class="post-165 post type-post status-publish format-standard has-post-thumbnail hentry category-pool tag-activities tag-gym tag-lounge tag-pool">
-                            <a class="mask" href="article/ho-boi-dep-nhat-chau-a"><img width="940" height="344" src="http://www.slashdown.net/starhotel-wp/wp-content/uploads/2015/03/blog-img.jpg" class="img-responsive, zoom-img wp-post-image" alt="" srcset="http://www.slashdown.net/starhotel-wp/wp-content/uploads/2015/03/blog-img.jpg 940w, http://www.slashdown.net/starhotel-wp/wp-content/uploads/2015/03/blog-img-300x110.jpg 300w" sizes="(max-width: 940px) 100vw, 940px" /></a>    <div class="row">
+                            <a class="mask" href="article/@(Hotel.WebBase.Helpers.SlugOrIdHelper.EncodeSlugOrId(Model.Articles[i].Slug,Model.Articles[i].Id))">
+                            <img width="940" height="344" src="@Model.Articles[i].CoverImage.Url" class="img-responsive, zoom-img wp-post-image" alt="" sizes="(max-width: 940px) 100vw, 940px" />
+                                </a>    
+                            <div class="row">
                                 <div class="col-sm-1 col-xs-2 meta">
                                     <div class="meta-date"><span>Mar</span>18</div>
                                 </div>
                                 <div class="col-sm-11 col-xs-10 meta">
-                                    <h2><a href="article/ho-boi-dep-nhat-chau-a">New lounge area</a></h2>            <span class="meta-author"><i class="fa fa-user"></i><a href="articles" title="Posts by Slashdown" rel="author">Slashdown</a></span>
-                                    <span class="meta-category"><i class="fa fa-pencil"></i><a href="articles" rel="category tag">Pool</a></span>
+                                    <h2><a href="article/@(Hotel.WebBase.Helpers.SlugOrIdHelper.EncodeSlugOrId(Model.Articles[i].Slug,Model.Articles[i].Id))">@Model.Articles[i].Title</a></h2>           
+                                    <span class="meta-author"><i class="fa fa-user"></i><a href="articles" title="Posts by Slashdown" rel="author">@Model.Articles[i].Author</a></span>
+                                   
                                 </div>
                                 <div class="col-md-12">
                                     <div class="intro">
@@ -54,57 +60,14 @@
                                             </div>
                                         </div>
 
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur sed turpis neque. In auctor, odio eget luctus lobortis, sapien erat blandit felis, eget volutpat augue felis in purus. Aliquam ultricies est id ultricies facilisis. Maecenas tempus&#8230; <a href="article/ho-boi-dep-nhat-chau-a" class="more-link"><span class="btn btn-lg btn-primary pull-right">Đọc tiếp</span></a></p>
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur sed turpis neque. In auctor, odio eget luctus lobortis, sapien erat blandit felis, eget volutpat augue felis in purus. Aliquam ultricies est id ultricies facilisis. Maecenas tempus&#8230; 
+                                        <a href="article/@(Hotel.WebBase.Helpers.SlugOrIdHelper.EncodeSlugOrId(Model.Articles[i].Slug,Model.Articles[i].Id))" class="more-link"><span class="btn btn-lg btn-primary pull-right">Đọc tiếp</span></a></p>
                                     </div>
                                 </div>
                             </div>
                         </article>
-                        <article class="post-155 post type-post status-publish format-standard has-post-thumbnail hentry category-blog tag-accommodation">
-                            <a class="mask" href="article/ho-boi-dep-nhat-chau-a"><img width="940" height="344" src="http://www.slashdown.net/starhotel-wp/wp-content/uploads/2015/02/slide2.jpg" class="img-responsive, zoom-img wp-post-image" alt="" srcset="http://www.slashdown.net/starhotel-wp/wp-content/uploads/2015/02/slide2.jpg 940w, http://www.slashdown.net/starhotel-wp/wp-content/uploads/2015/02/slide2-300x110.jpg 300w" sizes="(max-width: 940px) 100vw, 940px" /></a>    <div class="row">
-                                <div class="col-sm-1 col-xs-2 meta">
-                                    <div class="meta-date"><span>Mar</span>17</div>
-                                </div>
-                                <div class="col-sm-11 col-xs-10 meta">
-                                    <h2><a href="article/ho-boi-dep-nhat-chau-a">And this is another post</a></h2>            <span class="meta-author"><i class="fa fa-user"></i><a href="articles" title="Posts by Slashdown" rel="author">Slashdown</a></span>
-                                    <span class="meta-category"><i class="fa fa-pencil"></i><a href="articles" rel="category tag">Blog</a></span>
-                                </div>
-                                <div class="col-md-12">
-                                    <div class="intro">
-                                        <div class="vc_row wpb_row vc_row-fluid"></div><div class="wpb_column vc_column_container vc_col-sm-12"><div class="vc_column-inner "><div class="wpb_wrapper"></div></div></div>
-                                        <div class="wpb_text_column wpb_content_element ">
-                                            <div class="wpb_wrapper">
-
-                                            </div>
-                                        </div>
-
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur sed turpis neque. In auctor, odio eget luctus lobortis, sapien erat blandit felis, eget volutpat augue felis in purus. Aliquam ultricies est id ultricies facilisis. Maecenas tempus&#8230; <a href="article/ho-boi-dep-nhat-chau-a" class="more-link"><span class="btn btn-lg btn-primary pull-right">Đọc tiếp</span></a></p>
-                                    </div>
-                                </div>
-                            </div>
-                        </article>
-                        <article class="post-184 post type-post status-publish format-standard has-post-thumbnail hentry category-blog category-gym tag-activities tag-gym">
-                            <a class="mask" href="article/ho-boi-dep-nhat-chau-a"><img width="940" height="344" src="http://www.slashdown.net/starhotel-wp/wp-content/uploads/2015/03/slide1.jpg" class="img-responsive, zoom-img wp-post-image" alt="" srcset="http://www.slashdown.net/starhotel-wp/wp-content/uploads/2015/03/slide1.jpg 940w, http://www.slashdown.net/starhotel-wp/wp-content/uploads/2015/03/slide1-300x110.jpg 300w" sizes="(max-width: 940px) 100vw, 940px" /></a>    <div class="row">
-                                <div class="col-sm-1 col-xs-2 meta">
-                                    <div class="meta-date"><span>Mar</span>14</div>
-                                </div>
-                                <div class="col-sm-11 col-xs-10 meta">
-                                    <h2><a href="article/ho-boi-dep-nhat-chau-a">Renovated gym</a></h2>            <span class="meta-author"><i class="fa fa-user"></i><a href="articles" title="Posts by Slashdown" rel="author">Slashdown</a></span>
-                                    <span class="meta-category"><i class="fa fa-pencil"></i><a href="articles" rel="category tag">Blog</a>, <a href="articles" rel="category tag">Gym</a></span>
-                                </div>
-                                <div class="col-md-12">
-                                    <div class="intro">
-                                        <div class="vc_row wpb_row vc_row-fluid"></div><div class="wpb_column vc_column_container vc_col-sm-12"><div class="vc_column-inner "><div class="wpb_wrapper"></div></div></div>
-                                        <div class="wpb_text_column wpb_content_element ">
-                                            <div class="wpb_wrapper">
-
-                                            </div>
-                                        </div>
-
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur sed turpis neque. In auctor, odio eget luctus lobortis, sapien erat blandit felis, eget volutpat augue felis in purus. Aliquam ultricies est id ultricies facilisis. Maecenas tempus&#8230; <a href="article/ho-boi-dep-nhat-chau-a" class="more-link"><span class="btn btn-lg btn-primary pull-right">Đọc tiếp</span></a></p>
-                                    </div>
-                                </div>
-                            </div>
-                        </article>			                    <div class="text-center mt50">
+                        }
+                        <div class="text-center mt50">
                             <ul class="pagination clearfix">
                                 <li><span class='page-numbers current'>1</span></li>
                                 <li><a class='page-numbers' href='http://www.slashdown.net/starhotel-wp/category/blog/page/2/'>2</a></li>
@@ -113,72 +76,7 @@
                         </div>
                     </div>
                 </div>
-                <!-- Aside -->
-
-                <aside class="mt50" role="complementary">
-                    <div class="col-md-3">
-                        <div class="widget">
-                            <h3>Tìm kiếm tin tức</h3><form role="search" method="get" class="searchform" action="http://www.slashdown.net/starhotel-wp/">
-                                <div>
-                                    <input type="text" value="" name="s" id="s" class="form-control" placeholder="Tìm kiếm..." />
-                                </div>
-                            </form>
-                        </div>
-                        <div class="widget">
-                            <h3>Tin tức cũ</h3><ul class="list-unstyled">
-                                <li>
-                                    <article>
-                                        <div class="news-thumb"> <a href="http://www.slashdown.net/starhotel-wp/blog/pool/new-lounge-area/"><img width="75" height="75" src="http://www.slashdown.net/starhotel-wp/wp-content/uploads/2015/03/blog-img-e1429642868724-165x165.jpg" class="attachment-75x75 size-75x75 wp-post-image" alt="" /></a> </div>
-                                        <div class="news-content clearfix">
-                                            <h4><a href="http://www.slashdown.net/starhotel-wp/blog/pool/new-lounge-area/" title="New lounge area">New lounge area</a></h4>
-                                            <span><a href="http://www.slashdown.net/starhotel-wp/blog/pool/new-lounge-area/">March 18, 2015</a></span>
-                                        </div>
-                                    </article>
-                                </li>
-                                <li>
-                                    <article>
-                                        <div class="news-thumb"> <a href="http://www.slashdown.net/starhotel-wp/blog/and-this-is-another-post/"><img width="75" height="75" src="http://www.slashdown.net/starhotel-wp/wp-content/uploads/2015/02/slide2-e1429650906315-165x165.jpg" class="attachment-75x75 size-75x75 wp-post-image" alt="" /></a> </div>
-                                        <div class="news-content clearfix">
-                                            <h4><a href="http://www.slashdown.net/starhotel-wp/blog/and-this-is-another-post/" title="And this is another post">And this is another post</a></h4>
-                                            <span><a href="http://www.slashdown.net/starhotel-wp/blog/and-this-is-another-post/">March 17, 2015</a></span>
-                                        </div>
-                                    </article>
-                                </li>
-                                <li>
-                                    <article>
-                                        <div class="news-thumb"> <a href="http://www.slashdown.net/starhotel-wp/blog/new-rooms/"><img width="75" height="75" src="http://www.slashdown.net/starhotel-wp/wp-content/uploads/2015/03/slide1-e1429650748302-165x165.jpg" class="attachment-75x75 size-75x75 wp-post-image" alt="" /></a> </div>
-                                        <div class="news-content clearfix">
-                                            <h4><a href="http://www.slashdown.net/starhotel-wp/blog/new-rooms/" title="Renovated gym">Renovated gym</a></h4>
-                                            <span><a href="http://www.slashdown.net/starhotel-wp/blog/new-rooms/">March 14, 2015</a></span>
-                                        </div>
-                                    </article>
-                                </li>
-                            </ul>
-                        </div><div class="widget">
-                            <h3>Danh mục</h3>		<ul>
-                                <li class="cat-item cat-item-2 current-cat">
-                                    <a href="http://www.slashdown.net/starhotel-wp/category/blog/">Blog<span class="badge pull-right">3</span></a>
-                                </li>
-                                <li class="cat-item cat-item-25">
-                                    <a href="http://www.slashdown.net/starhotel-wp/category/blog/gym/">Gym<span class="badge pull-right">1</span></a>
-                                </li>
-                                <li class="cat-item cat-item-26">
-                                    <a href="http://www.slashdown.net/starhotel-wp/category/blog/pool/">Pool<span class="badge pull-right">2</span></a>
-                                </li>
-                            </ul>
-                        </div><div class="widget">
-                            <h3>Từ khóa</h3><div class="tagcloud">
-                                <a href='http://www.slashdown.net/starhotel-wp/tag/accommodation/' class='tag-link-6 tag-link-position-1' title='1 topic'>Accommodation</a>
-                                <a href='http://www.slashdown.net/starhotel-wp/tag/activities/' class='tag-link-7 tag-link-position-2' title='2 topics'>Activities</a>
-                                <a href='http://www.slashdown.net/starhotel-wp/tag/gym/' class='tag-link-8 tag-link-position-3' title='2 topics'>Gym</a>
-                                <a href='http://www.slashdown.net/starhotel-wp/tag/lounge/' class='tag-link-9 tag-link-position-4' title='2 topics'>Lounge</a>
-                                <a href='http://www.slashdown.net/starhotel-wp/tag/pool/' class='tag-link-10 tag-link-position-5' title='1 topic'>Pool</a>
-                                <a href='http://www.slashdown.net/starhotel-wp/tag/sun/' class='tag-link-11 tag-link-position-6' title='1 topic'>Sun</a>
-                                <a href='http://www.slashdown.net/starhotel-wp/tag/swimming/' class='tag-link-12 tag-link-position-7' title='1 topic'>Swimming</a>
-                            </div>
-                        </div>
-                    </div>
-                </aside>
+               
 
             </div>
         </div>

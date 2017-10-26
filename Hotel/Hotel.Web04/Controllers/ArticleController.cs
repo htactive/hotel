@@ -18,15 +18,15 @@ namespace Hotel.Web04.Controllers
 
         public IActionResult List(int p = 0)
         {
-            ViewBag.ActivePage = "article";
-            return View();
+            // TODO: lấy viewmodel bỏ vào vào view
+            var viewmodel = this.GetArticlesListPage(8, p);
+            return View(viewmodel);
         }
 
         public IActionResult Detail(string slug)
         {
-            ViewBag.ActivePage = "article";
-            ViewBag.ArticalTitle = "Hồ bơi đẹp nhất Châu Á";
-            return View();
+            var viewmodel = this.GetArticleDetailPage(slug);
+            return View(viewmodel);
         }
     }
 }

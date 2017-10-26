@@ -2,6 +2,8 @@
     ViewData["Title"] = "Tin tức";
 }
 
+@model Hotel.WebBase.Models.ArticleDetailPageViewModel
+
 <div id="content" class="site-content">
     <!-- Parallax Effect -->
     <script type="text/javascript">jQuery(document).ready(function () { jQuery('#parallax-pagetitle').parallax("50%", -0.55); });</script>
@@ -13,7 +15,7 @@
                     <div class="row">
                         <div class="col-sm-12">
                             <ol class="breadcrumb"><li><a href="">Trang chủ</a></li><li><a href="articles" rel="category tag">Tin tức</a></li><li class='current'>Hồ bơi đẹp nhất Châu Á</li></ol>
-                            <h1>Hồ bơi đẹp nhất Châu Á</h1>
+                            <h1>@Model.Article.Title</h1>
                         </div>
                     </div>
                 </div>
@@ -26,16 +28,17 @@
             <div class="single">
                 <div class="blog mt50">
 
-                    <div class=" col-md-9 ">
+                    <div class=" col-md-12 ">
                         <div id="primary" class="content-area">
                             <!-- Blog -->
                             <article class="post-165 post type-post status-publish format-standard has-post-thumbnail hentry category-pool tag-activities tag-gym tag-lounge tag-pool">
-                                <img width="940" height="344" src="http://www.slashdown.net/starhotel-wp/wp-content/uploads/2015/03/blog-img.jpg" class="img-responsive wp-post-image" alt="" srcset="http://www.slashdown.net/starhotel-wp/wp-content/uploads/2015/03/blog-img.jpg 940w, http://www.slashdown.net/starhotel-wp/wp-content/uploads/2015/03/blog-img-300x110.jpg 300w" sizes="(max-width: 940px) 100vw, 940px" />    <div class="row">
+                                <img width="940" height="344" src="@Model.Article.CoverImage.Url" class="img-responsive wp-post-image" alt="" 
+                                      sizes="(max-width: 940px) 100vw, 940px" />    <div class="row">
                                     <div class="col-sm-1 col-xs-2 meta">
                                         <div class="meta-date"><span>Mar</span>18</div>
                                     </div>
                                     <div class="col-sm-11 col-xs-10 meta">
-                                        <h2>Hồ bơi đẹp nhất Châu Á</h2>            <span class="meta-author"><i class="fa fa-user"></i><a href="articles" title="Posts by Slashdown" rel="author">Slashdown</a></span>
+                                        <h2>@Model.Article.Title</h2>            <span class="meta-author"><i class="fa fa-user"></i><a href="articles" title="Posts by Slashdown" rel="author">Slashdown</a></span>
                                         <span class="meta-category"><i class="fa fa-pencil"></i><a href="articles" rel="category tag">Pool</a></span>
                                     </div>
                                     <div class="col-md-12">
@@ -43,24 +46,7 @@
                                             <div class="wpb_column vc_column_container vc_col-sm-12">
                                                 <div class="vc_column-inner ">
                                                     <div class="wpb_wrapper">
-                                                        <div class="wpb_text_column wpb_content_element ">
-                                                            <div class="wpb_wrapper">
-                                                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur sed turpis neque. In auctor, odio eget luctus lobortis, sapien erat blandit felis, eget volutpat augue felis in purus. Aliquam ultricies est id ultricies facilisis. Maecenas tempus&#8230;<span id="more-165"></span></p>
-                                                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed feugiat tristique mauris, vitae ultrices mauris ultricies eu. In viverra ut sem eget venenatis. Sed nec ligula non eros ultrices euismod. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras eget arcu imperdiet, semper dolor in, lacinia augue. Mauris hendrerit vestibulum lorem, non auctor felis dignissim vel. Sed arcu est, posuere pulvinar arcu non, porttitor consequat ligula. Curabitur ac volutpat mauris. Duis pretium commodo accumsan. Nullam ut facilisis velit.</p>
-
-                                                            </div>
-                                                        </div>
-
-                                                        <blockquote>
-                                                            <p><em>"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante. "</em></p>
-                                                            <span>John Doe in CEO Travel</span>
-                                                        </blockquote>
-                                                        <div class="wpb_text_column wpb_content_element ">
-                                                            <div class="wpb_wrapper">
-                                                                <p>Donec sit amet urna eu nisi egestas iaculis sed ac massa. Morbi interdum nibh sapien, non fermentum diam laoreet quis. Maecenas congue, nibh id placerat lacinia, nisi felis dictum risus, at commodo nisl quam ac libero. Fusce imperdiet vehicula luctus. Sed at auctor ligula. Phasellus a commodo dui, at iaculis odio. Mauris diam eros, tempor at neque eget, imperdiet facilisis mauris. Donec adipiscing nisi vel nisl tristique fermentum. Quisque ultrices justo vitae massa mollis, eu ultricies tortor varius. Nam auctor viverra sodales. Suspendisse ac lobortis sem. Nunc pretium molestie mauris in aliquet. Sed vitae ante porttitor mi condimentum eleifend. Duis at dictum libero, vel pellentesque enim.</p>
-
-                                                            </div>
-                                                        </div>
+                                                       @Html.Raw(Model.Article.Html)
                                                     </div>
                                                 </div>
                                             </div>
@@ -78,7 +64,7 @@
                         </div>
                     </div>
                 </div>
-                <!-- Aside -->
+                @*<!-- Aside -->
 
                 <aside class="mt50" role="complementary">
                     <div class="col-md-3">
@@ -143,7 +129,7 @@
                             </div>
                         </div>
                     </div>
-                </aside>
+                </aside>*@
 
             </div>
         </div>
