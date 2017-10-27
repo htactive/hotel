@@ -56,7 +56,7 @@
                     </div>
 
                     <div class="col-md-2 text-center">
-                        <div class="price">@string.Format("{0:C}", rooms[i].Price)<span>/Đêm</span></div>
+                        <div class="price">@string.Format("{0:n0}", rooms[i].Price)<em>VND</em><span>/Đêm</span></div>
                         <a  href="room/@(Hotel.WebBase.Helpers.SlugOrIdHelper.EncodeSlugOrId(rooms[i].Slug,rooms[i].Id))"class="btn-border">Xem chi tiết</a>
                     </div>
                     <div class="clearfix"></div>
