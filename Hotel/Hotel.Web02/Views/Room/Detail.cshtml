@@ -48,7 +48,7 @@
 
 
                         <div class="price">
-                           @string.Format("{0:n0}", Model.Room.Price)<em>VND</em><span>/Đêm</span>
+                           @string.Format("{0:n0}", Model.Room.Price)<em>VND</em><br/><span>1 ngày đêm</span>
                         </div>
 
                         <a href="#" class="btn-border">Đặt phòng ngay</a>
@@ -77,7 +77,7 @@
                                 </a>
                                 <div class="desc">
                                    @Html.Raw(relaRooms[i].Description)
-                                    <div class="price">@string.Format("{0:n0}", relaRooms[i].Price)<em>VND</em><span>/Đêm</span></div>
+                                    <div class="price">@string.Format("{0:n0}", relaRooms[i].Price)<em>VND</em><br/><span>1 ngày đêm</span></div>
                                     <a href="room/@(Hotel.WebBase.Helpers.SlugOrIdHelper.EncodeSlugOrId(relaRooms[i].Slug,relaRooms[i].Id))" class="btn-border">Xem chi tiết</a>
                                 </div>
                             </div>
