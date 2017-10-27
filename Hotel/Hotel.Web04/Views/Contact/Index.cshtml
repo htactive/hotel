@@ -1,6 +1,9 @@
 ﻿@{
     ViewData["Title"] = "Liên hệ";
 }
+@{
+    var companyInfo = (Hotel.WebBase.Models.CompanyInfoModel)ViewBag.CurrentCompanyInfo;
+}
 
 <div id="content" class="site-content">
     <!-- GMap -->
@@ -78,12 +81,11 @@
                                 <div class="wpb_text_column wpb_content_element ">
                                     <div class="wpb_wrapper">
                                         <address class="mt50">
-                                            <strong>Mường Thanh</strong><br />
-                                            962 Ngô Quyền<br />
-                                            An Hải Tây, Sơn Trà, Đà Nẵng<br />
-                                            <abbr title="Phone">P:</abbr> <a href="#">(123) 456-7890</a><br />
-                                            <abbr title="Email">E:</abbr> <a href="#">mail@example.com</a><br />
-                                            <abbr title="Website">W:</abbr> <a href="#">www.slashdown.nl</a>
+                                            <strong>@companyInfo.CompanyName</strong><br />
+                                            @companyInfo.Address1<br />
+                                            <abbr title="Phone">P:</abbr> <a href="#">@companyInfo.Phone1</a><br />
+                                            <abbr title="Email">E:</abbr> <a href="#">@companyInfo.Email1</a><br />
+                                           
                                         </address>
 
                                     </div>
